@@ -1,6 +1,6 @@
 # fortilib - a Python Library to interact with Fortigate Firewalls
 
-This Python module contains the ability to get and configure following object on F[ortigate Firewalls](https://www.fortinet.com/products/next-generation-firewall):
+This Python module contains the ability to get and configure following object on [Fortigate Firewalls](https://www.fortinet.com/products/next-generation-firewall):
 * Addresses
 * Address Groups
 * Interfaces
