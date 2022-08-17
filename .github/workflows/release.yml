@@ -1,0 +1,65 @@
+name: New release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  draft_release:
+    runs-on: ubuntu-latest
+    name: create release draft
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: calculate next version
+        id: version
+        uses: patrickjahns/version-drafter-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install poetry
+        run: pip install poetry
+
+      - name: Update Version with poetry
+        run: poetry version ${{ steps.version.outputs.next-version }}
+
+      - name: Update Version in init
+        run: sed -i "s/^__version__ = '.*'/__version__ = '${{ steps.version.outputs.next-version }}'/g" fortilib/__init__.py
+
+      - name: Update Version in docs
+        run: sed -i "s/^release = '.*'/release = '${{ steps.version.outputs.next-version }}'/g" docs/source/conf.py
+
+      - name: Generate changelog
+        uses: charmixer/auto-changelog-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          future_release: ${{ steps.version.outputs.next-version }}
+
+      - name: push new version
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: 'master'
+          commit-message: 'update version'
+          force-add: 'true'
+          files: pyproject.toml fortilib/__init__.py docs/source/conf.py CHANGELOG.md
+          name: T-Systems MMS
+          email: frage@t-systems-mms.com
+          rebase: true
+
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+
+      - uses: release-drafter/release-drafter@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

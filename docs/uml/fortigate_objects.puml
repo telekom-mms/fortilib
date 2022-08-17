@@ -1,0 +1,81 @@
+@startuml
+
+class FortigateFirewall {
+  String name
+  FortigateApi fortigate
+}
+
+class FortigateObject {
+  String comment
+  dict object_data
+  FortigateFirewall firewall
+  void populate()
+  dict render()
+}
+
+class FortigateNamedObject {
+  String name
+}
+
+FortigateObject <|-- FortigateNamedObject
+
+class FortigateAddressGroup {
+    List[FortigateAddress] member
+}
+
+FortigateAddress <|-- FortigateAddressGroup
+
+class FortigateAddress {
+    FortigateInterface interface
+}
+
+FortigateNamedObject <|-- FortigateAddress
+
+class FortigateIpMask {
+  ipaddress network
+}
+
+FortigateAddress <|-- FortigateIpMask
+
+class FortigateIpRange {
+  ipaddress ip_start
+  ipaddress ip_end
+}
+
+FortigateAddress <|-- FortigateIpRange
+
+class FortigatFQDN {
+  String FQDN
+}
+
+FortigateAddress <|-- FortigatFQDN
+
+class FortigateVIP {
+  FortigateInterface interface
+  ipaddress external_ip_from
+  ipaddress external_ip_to
+  ipaddress mapped_ip_from
+  ipaddress mapped_ip_to
+}
+
+FortigateAddress <|-- FortigateVIP
+
+class FortigateFirewallPolicy {
+  int id
+  List[] sources
+  List[] destination
+  List[] from
+  List[] to
+}
+
+FortigateNamedObject <|-- FortigateFirewallPolicy
+
+class FortigateStaticRoute {
+  FortigateInterface interface
+  ipaddress gateway
+  ipaddress network
+}
+
+FortigateObject <|-- FortigateStaticRoute
+
+@enduml

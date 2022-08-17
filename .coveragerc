@@ -1,0 +1,7 @@
+[run]
+omit =
+    venv/*
+    tests/*
+    .tox/*
+    */__init__.py
+    fortilib/fortigateapi.py

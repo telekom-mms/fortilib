@@ -1,0 +1,15 @@
+/.idea
+/.vscode
+/*.iml
+/env
+/venv
+*.pyc
+/report.xml
+/public
+/.tox
+/.coverage
+/tests/settings.py
+/cli_settings.py
+/graphs
+/gl-code-quality-report.json
+/dist

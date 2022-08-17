@@ -1,0 +1,94 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+' Split into 4 pages
+page 2x2
+skinparam pageMargin 10
+skinparam pageExternalColor gray
+skinparam pageBorderColor black
+
+class Enum {}
+
+together {
+  class PolicyConstructionInterface {
+    Interface interface
+    List[Address] addresses
+    get_interface()
+  }
+
+  class PolicyConstructionFirewall {
+    AddressDirection direction
+    Firewall firewall
+    List[PolicyConstructionInterface] interface
+    get_firewall()
+  }
+
+  class AddressDirection {
+    Enum SOURCE
+    Enum DESTINATION
+  }
+}
+
+together {
+  class Firewall {
+    String name
+    List[Interface] interfaces
+    Bool unique
+  }
+
+  class Interface {
+    String name
+    List[Route] routes
+  }
+
+  class Route {
+    String name
+    String network
+    Bool routable
+    Bool nat
+  }
+
+  class Address {
+    String address
+    AddressDirection direction
+    Route route
+    Bool is_nat
+    Firewall firewall
+    strip_range()
+    get_ip()
+    build_range()
+    build_range_end_ip()
+    is_ipmask()
+    is_iprange()
+  }
+}
+
+class Policy {
+  List[Address] sources
+  List[Address] destinations
+  Interface source_interface
+  Interface destination_interface
+  Firewall firewall
+  Bool nat
+}
+
+
+
+Firewall::Interface -- Interface
+Interface::routes -- Route
+Address::route -- Route
+Address::firewall -- Firewall
+Enum <|-- AddressDirection
+Address::direction -- AddressDirection
+PolicyConstructionInterface::addresses -- Address
+PolicyConstructionInterface::interface -- Interface
+PolicyConstructionFirewall::direction -- AddressDirection
+PolicyConstructionFirewall::firewall -- Firewall
+PolicyConstructionFirewall::Interface -- PolicyConstructionInterface
+Policy::sources -- Address
+Policy::destinations -- Address
+Policy::source_interface -- Interface
+Policy::destination_interface -- Interface
+Policy::Firewall -- Firewall
+
+@enduml
