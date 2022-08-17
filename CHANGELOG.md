@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- fix typo [\#3](https://github.com/T-Systems-MMS/fortilib/pull/3) ([rndmh3ro](https://github.com/rndmh3ro))
 - Configure Renovate [\#2](https://github.com/T-Systems-MMS/fortilib/pull/2) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [0.1.0](https://github.com/T-Systems-MMS/fortilib/tree/0.1.0) (2022-08-17)
