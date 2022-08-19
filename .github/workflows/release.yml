@@ -33,10 +33,10 @@ jobs:
         run: poetry version ${{ steps.version.outputs.next-version }}
 
       - name: Update Version in init
-        run: sed -i "s/^__version__ = '.*'/__version__ = '${{ steps.version.outputs.next-version }}'/g" fortilib/__init__.py
+        run: sed -i "s/^__version__ = \".*\"/__version__ = \"${{ steps.version.outputs.next-version }}\"/g" fortilib/__init__.py
 
       - name: Update Version in docs
-        run: sed -i "s/^release = '.*'/release = '${{ steps.version.outputs.next-version }}'/g" docs/source/conf.py
+        run: sed -i "s/^release = \".*\"/release = \"${{ steps.version.outputs.next-version }}\"/g" docs/source/conf.py
 
       - name: Generate changelog
         uses: charmixer/auto-changelog-action@v1

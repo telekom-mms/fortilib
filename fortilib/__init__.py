@@ -1,4 +1,4 @@
-__version__ = '0.1.1'
+__version__ = "0.1.1"
 
 from typing import (
     Dict,
@@ -16,7 +16,7 @@ def get_by(attrname, attrvalue, haystack):
 def get_fortigate_member_array(source: List, attrname="name") -> List[Dict]:
     ret = []
     for member in sorted(
-            source, key=lambda _source: getattr(_source, attrname)
+        source, key=lambda _source: getattr(_source, attrname)
     ):
         ret.append(
             {

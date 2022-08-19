@@ -1029,3 +1029,11 @@ class FortiGateApi:
         return self.query_api_delete(
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_ADDRESS_GROUP, group_name
         )
+
+    def get_write_operations(self):
+        filtered: List[FortiGateOperation] = []
+        for operation in self.operations:
+            if operation.query_type != FortiGateQueryType.GET:
+                filtered.append(operation)
+
+        return filtered
