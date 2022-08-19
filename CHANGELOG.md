@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2](https://github.com/T-Systems-MMS/fortilib/tree/0.1.2) (2022-08-19)
+
+[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.1...0.1.2)
+
+**Fixed bugs:**
+
+- Bugfix/missing methods [\#5](https://github.com/T-Systems-MMS/fortilib/pull/5) ([neubi4](https://github.com/neubi4))
+
 ## [0.1.1](https://github.com/T-Systems-MMS/fortilib/tree/0.1.1) (2022-08-17)
 
 [Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.0...0.1.1)
