@@ -23,7 +23,7 @@ variables:
 
 pages:
   stage: docs
-  image: python:3.10-slim
+  image: python:3.11-slim
   before_script:
     - apt update && apt install -y graphviz
     - pip install --no-cache-dir poetry
