@@ -1,11 +1,12 @@
 # Changelog
 
-## [0.1.3](https://github.com/T-Systems-MMS/fortilib/tree/0.1.3) (2022-10-01)
+## [0.1.3](https://github.com/T-Systems-MMS/fortilib/tree/0.1.3) (2022-11-01)
 
 [Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.2...0.1.3)
 
 **Merged pull requests:**
 
+- Feature/python3.11 [\#8](https://github.com/T-Systems-MMS/fortilib/pull/8) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency pytest-cov to v4 [\#6](https://github.com/T-Systems-MMS/fortilib/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [0.1.2](https://github.com/T-Systems-MMS/fortilib/tree/0.1.2) (2022-08-19)
