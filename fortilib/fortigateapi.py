@@ -359,13 +359,32 @@ class FortigateFirewallApi:
     ):
         """Update position of policy via Fortigate API
 
-        :param policy_id: Name of policy on firewall
+        :param policy_id: ID of policy on firewall
         :param move_direction: direction after or before another policy
-        :param move_identifier: Name of policy on firewall, where policy schulde move before or after
+        :param move_identifier: ID of policy on firewall, where policy should move before or after
         """
 
         return self.fortigate.move_firewall_policy(
             str(policy_id),
+            move_direction,
+            str(move_identifier),
+        )
+
+    def move_firewall_proxy_policy(
+        self,
+        proxy_policy_id: int,
+        move_direction: FortiGateApiPolicyDirection,
+        move_identifier: int,
+    ):
+        """Update position of proxy-policy via Fortigate API
+
+        :param proxy_policy_id: ID of proxy-policy on firewall
+        :param move_direction: direction after or before another policy
+        :param move_identifier: ID of policy on firewall, where policy schulde move before or after
+        """
+
+        return self.fortigate.move_firewall_proxy_policy(
+            str(proxy_policy_id),
             move_direction,
             str(move_identifier),
         )
@@ -973,6 +992,19 @@ class FortiGateApi:
             move_identifier,
         )
 
+    def move_firewall_proxy_policy(
+        self,
+        proxy_policy_id: str,
+        move_direction: FortiGateApiPolicyDirection,
+        move_identifier: str,
+    ):
+        return self.query_api_move(
+            FortiGateApi.ENDPOINT_FIREWALL_PROXY_POLICY,
+            proxy_policy_id,
+            move_direction,
+            move_identifier,
+        )
+
     def delete_firewall_policy(self, policy_id: str):
         return self.query_api_delete(
             FortiGateApi.ENDPOINT_FIREWALL_POLICY, policy_id
@@ -997,9 +1029,13 @@ class FortiGateApi:
         )
 
     def create_firewall_proxy_policy(self, policy_id: str, data: Dict):
-        return self.query_api_create(
+        ret = self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_POLICY, policy_id, data
         )
+        if self.read_only:
+            return {"mkey": "99999999"}
+
+        return ret
 
     def update_firewall_proxy_policy(self, policy_id: str, data: Dict):
         return self.query_api_update(

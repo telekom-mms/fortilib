@@ -544,6 +544,20 @@ class FortigateFirewall:
             move_identifier_policy.policyid,
         )
 
+    def move_firewall_proxy_policy(
+        self,
+        policy: FortigateProxyPolicy,
+        move_direction: FortiGateApiPolicyDirection,
+        move_identifier_policy: FortigateProxyPolicy,
+    ):
+        """move proxy-policy on fortigate to another position with given :obj:`fortilib.policy.FortigatePolicy`, :obj:`fortilib.fortigateapi.FortiGateApiPolicyDirection` and :obj:`fortilib.policy.FortigateProxyPolicy`."""
+
+        return self.fortigate.move_firewall_proxy_policy(
+            policy.policyid,
+            move_direction,
+            move_identifier_policy.policyid,
+        )
+
     def delete_firewall_policy(self, policy: FortigatePolicy):
         """Delete policy on fortigate with given :obj:`fortilib.policy.FortigatePolicy`."""
         status = self.fortigate.delete_firewall_policy(policy.policyid)
@@ -697,6 +711,9 @@ class FortigateFirewall:
         status = self.fortigate.create_firewall_proxy_policies(
             int(policy.policyid), policy.render()
         )
+
+        policy.policyid = status["mkey"]
+
         self.proxy_policies.append(policy)
         return status
 
