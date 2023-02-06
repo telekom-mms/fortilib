@@ -1,11 +1,12 @@
 # Changelog
 
-## [0.1.3](https://github.com/T-Systems-MMS/fortilib/tree/0.1.3) (2022-11-01)
+## [0.1.3](https://github.com/T-Systems-MMS/fortilib/tree/0.1.3) (2023-02-06)
 
 [Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.2...0.1.3)
 
 **Merged pull requests:**
 
+- feat: move proxy policy [\#13](https://github.com/T-Systems-MMS/fortilib/pull/13) ([DanielZinke](https://github.com/DanielZinke))
 - Feature/python3.11 [\#8](https://github.com/T-Systems-MMS/fortilib/pull/8) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency pytest-cov to v4 [\#6](https://github.com/T-Systems-MMS/fortilib/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
 
