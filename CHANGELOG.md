@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4](https://github.com/T-Systems-MMS/fortilib/tree/0.1.4) (2023-02-06)
+
+[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.3...0.1.4)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency tox to v4 [\#10](https://github.com/T-Systems-MMS/fortilib/pull/10) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.1.3](https://github.com/T-Systems-MMS/fortilib/tree/0.1.3) (2023-02-06)
 
 [Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.2...0.1.3)
