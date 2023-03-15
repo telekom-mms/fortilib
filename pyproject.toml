@@ -25,7 +25,7 @@ pytest-integration = "^0.2.2"
 pytest-cov = "^4.0.0"
 pytest-order = "^1.0.1"
 Sphinx = "^5.1.1"
-flake8 = "^5.0.4"
+flake8 = "^6.0.0"
 flake8-gl-codeclimate = "^0.1.6"
 sphinx-rtd-theme = "^1.0.0"
 
