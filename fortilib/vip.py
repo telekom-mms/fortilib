@@ -118,3 +118,40 @@ class FortigateVIP(FortigateAddress, FortigateInterfaceMixin):
                 "mappedport": self.mappedport,
                 "color": self.color,
             }
+
+    def __repr__(self):
+        return f"FortigateVIP {self.name}"
+
+    def __eq__(self, other):
+        if isinstance(other, FortigateVIP):
+            return (
+                self.name,
+                self.extip,
+                self.extip_end,
+                self.mappedip,
+                self.mappedip_end,
+                self.extport,
+                self.mappedport,
+            ) == (
+                other.name,
+                other.extip,
+                other.extip_end,
+                other.mappedip,
+                other.mappedip_end,
+                other.extport,
+                other.mappedport,
+            )
+        return False
+
+    def __hash__(self):
+        return hash(
+            (
+                self.name,
+                self.extip,
+                self.extip_end,
+                self.mappedip,
+                self.mappedip_end,
+                self.extport,
+                self.mappedport,
+            )
+        )
