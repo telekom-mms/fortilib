@@ -1,11 +1,12 @@
 # Changelog
 
-## [0.1.4](https://github.com/T-Systems-MMS/fortilib/tree/0.1.4) (2023-02-06)
+## [0.1.4](https://github.com/T-Systems-MMS/fortilib/tree/0.1.4) (2023-03-20)
 
 [Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.3...0.1.4)
 
 **Merged pull requests:**
 
+- VIP Object hashable + repr func [\#21](https://github.com/T-Systems-MMS/fortilib/pull/21) ([DanielZinke](https://github.com/DanielZinke))
 - chore\(deps\): update dependency tox to v4 [\#10](https://github.com/T-Systems-MMS/fortilib/pull/10) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [0.1.3](https://github.com/T-Systems-MMS/fortilib/tree/0.1.3) (2023-02-06)
