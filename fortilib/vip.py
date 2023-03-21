@@ -27,8 +27,8 @@ class FortigateVIP(FortigateAddress, FortigateInterfaceMixin):
         self.extip_end: ipaddress.IPv4Address = None
         self.mappedip: ipaddress.IPv4Address = None
         self.mappedip_end: ipaddress.IPv4Address = None
-        self.extport: str = ""
-        self.mappedport: str = ""
+        self.extport: str = "0-65535"
+        self.mappedport: str = "0-65535"
         self.protocol: str = ""
         self.portforward: str = "disable"
         self.type: str = ""
