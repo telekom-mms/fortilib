@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5](https://github.com/T-Systems-MMS/fortilib/tree/0.1.5) (2023-03-21)
+
+[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.4...0.1.5)
+
+**Merged pull requests:**
+
+- set VIP Port default values [\#22](https://github.com/T-Systems-MMS/fortilib/pull/22) ([DanielZinke](https://github.com/DanielZinke))
+
 ## [0.1.4](https://github.com/T-Systems-MMS/fortilib/tree/0.1.4) (2023-03-20)
 
 [Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.3...0.1.4)
