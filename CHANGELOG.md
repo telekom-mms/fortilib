@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.7](https://github.com/T-Systems-MMS/fortilib/tree/0.1.7) (2023-06-07)
+
+[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.6...0.1.7)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency tox to v4.6.0 [\#29](https://github.com/T-Systems-MMS/fortilib/pull/29) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest-cov to v4.1.0 [\#28](https://github.com/T-Systems-MMS/fortilib/pull/28) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.2.7 [\#27](https://github.com/T-Systems-MMS/fortilib/pull/27) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx-rtd-theme to v1.2.1 [\#26](https://github.com/T-Systems-MMS/fortilib/pull/26) ([renovate[bot]](https://github.com/apps/renovate))
+- fix\(deps\): update dependency httpx to v0.24.1 [\#25](https://github.com/T-Systems-MMS/fortilib/pull/25) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.1.6](https://github.com/T-Systems-MMS/fortilib/tree/0.1.6) (2023-05-04)
+
+[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.5...0.1.6)
+
 ## [0.1.5](https://github.com/T-Systems-MMS/fortilib/tree/0.1.5) (2023-03-21)
 
 [Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.4...0.1.5)
