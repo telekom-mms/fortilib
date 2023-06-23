@@ -1,11 +1,12 @@
 # Changelog
 
-## [0.1.7](https://github.com/T-Systems-MMS/fortilib/tree/0.1.7) (2023-06-20)
+## [0.1.7](https://github.com/T-Systems-MMS/fortilib/tree/0.1.7) (2023-06-23)
 
 [Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.6...0.1.7)
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency pytest to v7.4.0 [\#33](https://github.com/T-Systems-MMS/fortilib/pull/33) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.6.3 [\#32](https://github.com/T-Systems-MMS/fortilib/pull/32) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v7.3.2 [\#31](https://github.com/T-Systems-MMS/fortilib/pull/31) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency sphinx-rtd-theme to v1.2.2 [\#30](https://github.com/T-Systems-MMS/fortilib/pull/30) ([renovate[bot]](https://github.com/apps/renovate))
