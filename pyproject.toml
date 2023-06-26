@@ -11,13 +11,13 @@ authors = [
     "Martin Neubert <Martin.Neubert@t-systems.com>"
 ]
 license = "GPL-3.0-only"
-homepage = "https://github.com/neubi4/fortilib"
-repository = "https://github.com/neubi4/fortilib"
-documentation = "https://github.com/neubi4/fortilib"
+homepage = "https://github.com/telekom-mms/fortilib"
+repository = "https://github.com/telekom-mms/fortilib"
+documentation = "https://github.com/telekom-mms/fortilib"
 keywords = ["firewall", "fortinet", "fortigate"]
 
 [tool.poetry.urls]
-Changelog = "https://github.com/neubi4/fortilib/blob/master/CHANGELOG.md"
+Changelog = "https://github.com/telekom-mms/fortilib/blob/master/CHANGELOG.md"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
