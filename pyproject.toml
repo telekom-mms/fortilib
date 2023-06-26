@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fortilib"
-version = "0.1.7"
+version = "0.1.8"
 description = "fortilib - a Python Library to interact with Fortigate Firewalls"
 readme = "README.md"
 authors = [
