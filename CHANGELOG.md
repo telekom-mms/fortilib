@@ -1,72 +1,72 @@
 # Changelog
 
-## [0.1.7](https://github.com/T-Systems-MMS/fortilib/tree/0.1.7) (2023-06-23)
+## [0.1.7](https://github.com/telekom-mms/fortilib/tree/0.1.7) (2023-06-26)
 
-[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.6...0.1.7)
-
-**Merged pull requests:**
-
-- chore\(deps\): update dependency pytest to v7.4.0 [\#33](https://github.com/T-Systems-MMS/fortilib/pull/33) ([renovate[bot]](https://github.com/apps/renovate))
-- chore\(deps\): update dependency tox to v4.6.3 [\#32](https://github.com/T-Systems-MMS/fortilib/pull/32) ([renovate[bot]](https://github.com/apps/renovate))
-- chore\(deps\): update dependency pytest to v7.3.2 [\#31](https://github.com/T-Systems-MMS/fortilib/pull/31) ([renovate[bot]](https://github.com/apps/renovate))
-- chore\(deps\): update dependency sphinx-rtd-theme to v1.2.2 [\#30](https://github.com/T-Systems-MMS/fortilib/pull/30) ([renovate[bot]](https://github.com/apps/renovate))
-- chore\(deps\): update dependency tox to v4.6.0 [\#29](https://github.com/T-Systems-MMS/fortilib/pull/29) ([renovate[bot]](https://github.com/apps/renovate))
-- chore\(deps\): update dependency pytest-cov to v4.1.0 [\#28](https://github.com/T-Systems-MMS/fortilib/pull/28) ([renovate[bot]](https://github.com/apps/renovate))
-- chore\(deps\): update dependency coverage to v7.2.7 [\#27](https://github.com/T-Systems-MMS/fortilib/pull/27) ([renovate[bot]](https://github.com/apps/renovate))
-- chore\(deps\): update dependency sphinx-rtd-theme to v1.2.1 [\#26](https://github.com/T-Systems-MMS/fortilib/pull/26) ([renovate[bot]](https://github.com/apps/renovate))
-- fix\(deps\): update dependency httpx to v0.24.1 [\#25](https://github.com/T-Systems-MMS/fortilib/pull/25) ([renovate[bot]](https://github.com/apps/renovate))
-
-## [0.1.6](https://github.com/T-Systems-MMS/fortilib/tree/0.1.6) (2023-05-04)
-
-[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.5...0.1.6)
-
-## [0.1.5](https://github.com/T-Systems-MMS/fortilib/tree/0.1.5) (2023-03-21)
-
-[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.4...0.1.5)
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.6...0.1.7)
 
 **Merged pull requests:**
 
-- set VIP Port default values [\#22](https://github.com/T-Systems-MMS/fortilib/pull/22) ([DanielZinke](https://github.com/DanielZinke))
+- chore\(deps\): update dependency pytest to v7.4.0 [\#33](https://github.com/telekom-mms/fortilib/pull/33) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.6.3 [\#32](https://github.com/telekom-mms/fortilib/pull/32) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest to v7.3.2 [\#31](https://github.com/telekom-mms/fortilib/pull/31) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx-rtd-theme to v1.2.2 [\#30](https://github.com/telekom-mms/fortilib/pull/30) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.6.0 [\#29](https://github.com/telekom-mms/fortilib/pull/29) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest-cov to v4.1.0 [\#28](https://github.com/telekom-mms/fortilib/pull/28) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.2.7 [\#27](https://github.com/telekom-mms/fortilib/pull/27) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx-rtd-theme to v1.2.1 [\#26](https://github.com/telekom-mms/fortilib/pull/26) ([renovate[bot]](https://github.com/apps/renovate))
+- fix\(deps\): update dependency httpx to v0.24.1 [\#25](https://github.com/telekom-mms/fortilib/pull/25) ([renovate[bot]](https://github.com/apps/renovate))
 
-## [0.1.4](https://github.com/T-Systems-MMS/fortilib/tree/0.1.4) (2023-03-20)
+## [0.1.6](https://github.com/telekom-mms/fortilib/tree/0.1.6) (2023-05-04)
 
-[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.3...0.1.4)
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.5...0.1.6)
+
+## [0.1.5](https://github.com/telekom-mms/fortilib/tree/0.1.5) (2023-03-21)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.4...0.1.5)
 
 **Merged pull requests:**
 
-- VIP Object hashable + repr func [\#21](https://github.com/T-Systems-MMS/fortilib/pull/21) ([DanielZinke](https://github.com/DanielZinke))
-- chore\(deps\): update dependency tox to v4 [\#10](https://github.com/T-Systems-MMS/fortilib/pull/10) ([renovate[bot]](https://github.com/apps/renovate))
+- set VIP Port default values [\#22](https://github.com/telekom-mms/fortilib/pull/22) ([DanielZinke](https://github.com/DanielZinke))
 
-## [0.1.3](https://github.com/T-Systems-MMS/fortilib/tree/0.1.3) (2023-02-06)
+## [0.1.4](https://github.com/telekom-mms/fortilib/tree/0.1.4) (2023-03-20)
 
-[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.2...0.1.3)
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.3...0.1.4)
 
 **Merged pull requests:**
 
-- feat: move proxy policy [\#13](https://github.com/T-Systems-MMS/fortilib/pull/13) ([DanielZinke](https://github.com/DanielZinke))
-- Feature/python3.11 [\#8](https://github.com/T-Systems-MMS/fortilib/pull/8) ([neubi4](https://github.com/neubi4))
-- chore\(deps\): update dependency pytest-cov to v4 [\#6](https://github.com/T-Systems-MMS/fortilib/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
+- VIP Object hashable + repr func [\#21](https://github.com/telekom-mms/fortilib/pull/21) ([DanielZinke](https://github.com/DanielZinke))
+- chore\(deps\): update dependency tox to v4 [\#10](https://github.com/telekom-mms/fortilib/pull/10) ([renovate[bot]](https://github.com/apps/renovate))
 
-## [0.1.2](https://github.com/T-Systems-MMS/fortilib/tree/0.1.2) (2022-08-19)
+## [0.1.3](https://github.com/telekom-mms/fortilib/tree/0.1.3) (2023-02-06)
 
-[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.1...0.1.2)
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.2...0.1.3)
+
+**Merged pull requests:**
+
+- feat: move proxy policy [\#13](https://github.com/telekom-mms/fortilib/pull/13) ([DanielZinke](https://github.com/DanielZinke))
+- Feature/python3.11 [\#8](https://github.com/telekom-mms/fortilib/pull/8) ([neubi4](https://github.com/neubi4))
+- chore\(deps\): update dependency pytest-cov to v4 [\#6](https://github.com/telekom-mms/fortilib/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.1.2](https://github.com/telekom-mms/fortilib/tree/0.1.2) (2022-08-19)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.1...0.1.2)
 
 **Fixed bugs:**
 
-- Bugfix/missing methods [\#5](https://github.com/T-Systems-MMS/fortilib/pull/5) ([neubi4](https://github.com/neubi4))
+- Bugfix/missing methods [\#5](https://github.com/telekom-mms/fortilib/pull/5) ([neubi4](https://github.com/neubi4))
 
-## [0.1.1](https://github.com/T-Systems-MMS/fortilib/tree/0.1.1) (2022-08-17)
+## [0.1.1](https://github.com/telekom-mms/fortilib/tree/0.1.1) (2022-08-17)
 
-[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/0.1.0...0.1.1)
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.0...0.1.1)
 
 **Merged pull requests:**
 
-- fix typo [\#3](https://github.com/T-Systems-MMS/fortilib/pull/3) ([rndmh3ro](https://github.com/rndmh3ro))
-- Configure Renovate [\#2](https://github.com/T-Systems-MMS/fortilib/pull/2) ([renovate[bot]](https://github.com/apps/renovate))
+- fix typo [\#3](https://github.com/telekom-mms/fortilib/pull/3) ([rndmh3ro](https://github.com/rndmh3ro))
+- Configure Renovate [\#2](https://github.com/telekom-mms/fortilib/pull/2) ([renovate[bot]](https://github.com/apps/renovate))
 
-## [0.1.0](https://github.com/T-Systems-MMS/fortilib/tree/0.1.0) (2022-08-17)
+## [0.1.0](https://github.com/telekom-mms/fortilib/tree/0.1.0) (2022-08-17)
 
-[Full Changelog](https://github.com/T-Systems-MMS/fortilib/compare/433995dd2defe4bdcbb81736135cfe5517b35982...0.1.0)
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/433995dd2defe4bdcbb81736135cfe5517b35982...0.1.0)
 
 
 
