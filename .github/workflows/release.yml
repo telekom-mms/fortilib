@@ -52,8 +52,8 @@ jobs:
           commit-message: 'update version'
           force-add: 'true'
           files: pyproject.toml fortilib/__init__.py docs/source/conf.py CHANGELOG.md
-          name: T-Systems MMS
-          email: frage@t-systems-mms.com
+          name: Deutsche Telekom MMS GmbH
+          email: mms@telekom.de
           rebase: true
 
       - uses: actions/checkout@v3
