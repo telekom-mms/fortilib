@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.8](https://github.com/telekom-mms/fortilib/tree/0.1.8) (2023-06-26)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.7...0.1.8)
+
 ## [0.1.7](https://github.com/telekom-mms/fortilib/tree/0.1.7) (2023-06-26)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.6...0.1.7)
