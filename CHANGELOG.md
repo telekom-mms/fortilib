@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.9](https://github.com/telekom-mms/fortilib/tree/0.1.9) (2023-07-07)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.8...0.1.9)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency tox to v4.6.4 [\#34](https://github.com/telekom-mms/fortilib/pull/34) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.1.8](https://github.com/telekom-mms/fortilib/tree/0.1.8) (2023-06-26)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.7...0.1.8)
