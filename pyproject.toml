@@ -4,11 +4,11 @@ version = "0.1.9"
 description = "fortilib - a Python Library to interact with Fortigate Firewalls"
 readme = "README.md"
 authors = [
-    "Daniel Zinke <Daniel.Zinke@t-systems.com>",
-    "Benjamin Böhm <Benjamin.Boehm@t-systems.com>",
-    "Philipp Funk <Philipp.Funk@t-systems.com>",
-    "André Ellguth <Andre.Ellguth@t-systems.com>",
-    "Martin Neubert <Martin.Neubert@t-systems.com>"
+    "Daniel Zinke <Daniel.Zinke@telekom.de>",
+    "Benjamin Böhm <Benjamin.Boehm@telekom.de>",
+    "Philipp Funk <Philipp.Funk@telekom.de>",
+    "André Ellguth <Andre.Ellguth@telekom.de>",
+    "Martin Neubert <Martin.Neubert@telekom.de>"
 ]
 license = "GPL-3.0-only"
 homepage = "https://github.com/telekom-mms/fortilib"
