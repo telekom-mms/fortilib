@@ -1,11 +1,12 @@
 # Changelog
 
-## [0.1.9](https://github.com/telekom-mms/fortilib/tree/0.1.9) (2023-08-22)
+## [0.1.9](https://github.com/telekom-mms/fortilib/tree/0.1.9) (2023-08-30)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.8...0.1.9)
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency tox to v4.11.0 [\#42](https://github.com/telekom-mms/fortilib/pull/42) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency sphinx to v7 [\#41](https://github.com/telekom-mms/fortilib/pull/41) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency sphinx-rtd-theme to v1.3.0 [\#40](https://github.com/telekom-mms/fortilib/pull/40) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.10.0 [\#39](https://github.com/telekom-mms/fortilib/pull/39) ([renovate[bot]](https://github.com/apps/renovate))
