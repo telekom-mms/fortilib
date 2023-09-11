@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency black to v23.9.1 [\#48](https://github.com/telekom-mms/fortilib/pull/48) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.11.3 [\#47](https://github.com/telekom-mms/fortilib/pull/47) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.3.1 [\#46](https://github.com/telekom-mms/fortilib/pull/46) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update actions/checkout action to v4 [\#45](https://github.com/telekom-mms/fortilib/pull/45) ([renovate[bot]](https://github.com/apps/renovate))
