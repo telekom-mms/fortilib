@@ -3,6 +3,7 @@ from enum import Enum
 from typing import (
     Dict,
     List,
+    Optional,
     Union,
 )
 
@@ -41,18 +42,22 @@ class FortigateFirewallApi:
     def __init__(
         self,
         ipaddr: str,
-        username: str,
-        password: str,
         vdom: str,
+        username: Optional[str] = None,
+        password: Optional[str] = None,
         timeout: int = 10,
         read_only: bool = False,
+        access_token: Optional[str] = None,
+        port: int = 443,
     ):
         self.ipaddr = ipaddr
         self.username = username
         self.password = password
+        self.access_token = access_token
         self.vdom = vdom
         self.timeout = timeout
         self.read_only: bool = read_only
+        self.port = port
 
         self.fortigate: FortiGateApi
 
@@ -62,9 +67,11 @@ class FortigateFirewallApi:
             ipaddr=self.ipaddr,
             username=self.username,
             password=self.password,
+            access_token=self.access_token,
             vdom=self.vdom,
             timeout=self.timeout,
             read_only=self.read_only,
+            port=str(self.port),
         )
         self.fortigate.login()
 
@@ -552,16 +559,21 @@ class FortiGateApi:
     def __init__(
         self,
         ipaddr: str,
-        username: str,
-        password: str,
+        username: Optional[str] = None,
+        password: Optional[str] = None,
+        access_token: Optional[str] = None,
         timeout: int = 10,
         vdom: str = "root",
         port: str = "443",
         read_only: bool = False,
     ):
+        if not any([username, password, access_token]):
+            raise InternalErrorException("No Login Method given!")
+
         self.ipaddr: str = ipaddr
         self.username: str = username
         self.password: str = password
+        self.access_token: str = access_token
         self.port: str = port
         self.urlbase: str = f"https://{self.ipaddr}:{self.port}/"
         self.timeout: int = timeout
@@ -572,11 +584,25 @@ class FortiGateApi:
         self.operations: List[FortiGateOperation] = []
 
     def login(self):
-        """Login via Fortigate API.
+        """Login via Username or Access Token.
         Get CSRF Token and use it for active session.
         """
         self.client = httpx.Client(verify=False, timeout=self.timeout)
 
+        # access token? then use is
+        if self.access_token:
+            self.login_with_access_token()
+        else:  # no token? then use username and password login
+            self.login_with_username()
+
+        # Check whether login was successful
+        login_check = self.client.get(self.urlbase + "api/v2/cmdb/system/vdom")
+        self.check_response_code(login_check)
+
+    def login_with_username(self):
+        """Login via Fortigate API.
+        Get CSRF Token and use it for active session.
+        """
         url = self.urlbase + "logincheck"
         response = self.client.post(
             url,
@@ -590,16 +616,19 @@ class FortiGateApi:
             csrftoken = response.cookies["ccsrftoken"][1:-1]
             self.client.headers.update({"X-CSRFTOKEN": csrftoken})
 
-        # Check whether login was successful
-        login_check = self.client.get(self.urlbase + "api/v2/cmdb/system/vdom")
-        self.check_response_code(login_check)
+    def login_with_access_token(self):
+        self.client.headers.update(
+            {"Authorization": f"Bearer {self.access_token}"}
+        )
 
     def logout(self):
         """Logout via Fortigate API.
         Logout the active session.
         """
-        url = self.urlbase + "logout"
-        self.client.get(url)
+
+        if not self.access_token:
+            url = self.urlbase + "logout"
+            self.client.get(url)
 
     def does_exist(self, object_url: str) -> bool:
         response = self.client.get(

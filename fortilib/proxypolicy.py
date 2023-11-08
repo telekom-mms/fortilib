@@ -244,7 +244,6 @@ class FortigateProxyPolicy(FortigateNamedObject):
         address: FortigateAddress,
         existing_addresses: List[FortigateAddress],
     ) -> bool:
-
         # bisher keine addressen? dann ists ok
         if len(existing_addresses) < 1:
             return True
