@@ -1,11 +1,12 @@
 # Changelog
 
-## [0.1.9](https://github.com/telekom-mms/fortilib/tree/0.1.9) (2023-11-08)
+## [1.0.0](https://github.com/telekom-mms/fortilib/tree/1.0.0) (2023-11-09)
 
-[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.8...0.1.9)
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.8...1.0.0)
 
 **Merged pull requests:**
 
+- feat: added access token login method [\#57](https://github.com/telekom-mms/fortilib/pull/57) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency black to v23.11.0 [\#56](https://github.com/telekom-mms/fortilib/pull/56) ([renovate[bot]](https://github.com/apps/renovate))
 - fix\(deps\): update dependency httpx to v0.25.1 [\#55](https://github.com/telekom-mms/fortilib/pull/55) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v7.4.3 [\#54](https://github.com/telekom-mms/fortilib/pull/54) ([renovate[bot]](https://github.com/apps/renovate))
