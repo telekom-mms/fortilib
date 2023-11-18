@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/telekom-mms/fortilib/tree/1.0.1) (2023-11-18)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.0...1.0.1)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency pytest-order to v1.2.0 [\#58](https://github.com/telekom-mms/fortilib/pull/58) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.0.0](https://github.com/telekom-mms/fortilib/tree/1.0.0) (2023-11-09)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/0.1.8...1.0.0)
