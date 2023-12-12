@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency black to v23.12.0 [\#65](https://github.com/telekom-mms/fortilib/pull/65) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency isort to v5.13.1 [\#64](https://github.com/telekom-mms/fortilib/pull/64) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency isort to v5.13.0 [\#63](https://github.com/telekom-mms/fortilib/pull/63) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update actions/setup-python action to v5 [\#62](https://github.com/telekom-mms/fortilib/pull/62) ([renovate[bot]](https://github.com/apps/renovate))
