@@ -1,11 +1,12 @@
 # Changelog
 
-## [1.0.1](https://github.com/telekom-mms/fortilib/tree/1.0.1) (2023-12-12)
+## [1.0.1](https://github.com/telekom-mms/fortilib/tree/1.0.1) (2023-12-14)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.0...1.0.1)
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency isort to v5.13.2 [\#66](https://github.com/telekom-mms/fortilib/pull/66) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency black to v23.12.0 [\#65](https://github.com/telekom-mms/fortilib/pull/65) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency isort to v5.13.1 [\#64](https://github.com/telekom-mms/fortilib/pull/64) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency isort to v5.13.0 [\#63](https://github.com/telekom-mms/fortilib/pull/63) ([renovate[bot]](https://github.com/apps/renovate))
