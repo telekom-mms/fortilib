@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency coverage to v7.3.4 [\#69](https://github.com/telekom-mms/fortilib/pull/69) ([renovate[bot]](https://github.com/apps/renovate))
 - fix\(deps\): update dependency httpx to v0.26.0 [\#68](https://github.com/telekom-mms/fortilib/pull/68) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.3.3 [\#67](https://github.com/telekom-mms/fortilib/pull/67) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency isort to v5.13.2 [\#66](https://github.com/telekom-mms/fortilib/pull/66) ([renovate[bot]](https://github.com/apps/renovate))
