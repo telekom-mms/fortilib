@@ -24,7 +24,7 @@ class FortigateService(FortigateNamedObject):
         super().populate(object_data)
 
         self.protocol = object_data["protocol"]
-        self.visibility = object_data["visibility"]
+        self.visibility = object_data.get("visibility", self.visibility)
 
 
 class FortigateTCPUDPService(FortigateService):
