@@ -19,6 +19,7 @@
 - chore\(deps\): update dependency isort to v5.13.1 [\#64](https://github.com/telekom-mms/fortilib/pull/64) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency isort to v5.13.0 [\#63](https://github.com/telekom-mms/fortilib/pull/63) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update actions/setup-python action to v5 [\#62](https://github.com/telekom-mms/fortilib/pull/62) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx-rtd-theme to v2 [\#61](https://github.com/telekom-mms/fortilib/pull/61) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.11.4 [\#60](https://github.com/telekom-mms/fortilib/pull/60) ([renovate[bot]](https://github.com/apps/renovate))
 - fix\(deps\): update dependency httpx to v0.25.2 [\#59](https://github.com/telekom-mms/fortilib/pull/59) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest-order to v1.2.0 [\#58](https://github.com/telekom-mms/fortilib/pull/58) ([renovate[bot]](https://github.com/apps/renovate))
