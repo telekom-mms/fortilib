@@ -1,11 +1,12 @@
 # Changelog
 
-## [1.0.1](https://github.com/telekom-mms/fortilib/tree/1.0.1) (2024-01-12)
+## [1.0.1](https://github.com/telekom-mms/fortilib/tree/1.0.1) (2024-01-16)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.0...1.0.1)
 
 **Merged pull requests:**
 
+- fix: there is no visibility key on services in fortigate \> 7.0 [\#74](https://github.com/telekom-mms/fortilib/pull/74) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency tox to v4.12.0 [\#73](https://github.com/telekom-mms/fortilib/pull/73) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v7.4.4 [\#72](https://github.com/telekom-mms/fortilib/pull/72) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.4.0 [\#71](https://github.com/telekom-mms/fortilib/pull/71) ([renovate[bot]](https://github.com/apps/renovate))
