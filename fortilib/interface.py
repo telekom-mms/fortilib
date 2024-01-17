@@ -29,11 +29,11 @@ class FortigateInterface(FortigateNamedObject):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.alias = object_data["alias"]
+        self.alias = object_data.get("alias", self.alias)
         self.ip = ipaddress.ip_interface(
             "{}/{}".format(
-                object_data["ip"].split()[0],
-                object_data["ip"].split()[1],
+                object_data.get("ip", "0.0.0.0/0").split()[0],
+                object_data.get("ip", "0.0.0.0/0").split()[1],
             )
         )
 

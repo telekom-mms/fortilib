@@ -24,7 +24,7 @@ class FortigateServiceGroup(FortigateNamedObject, FortigateGroupMixin):
 
         super().populate(object_data)
 
-        self.comment = object_data["comment"]
+        self.comment = object_data.get("comment", self.comment)
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.

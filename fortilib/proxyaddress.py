@@ -24,7 +24,7 @@ class FortigateProxyAddressHostRegex(FortigateProxyAddress):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.host_regex = object_data["host-regex"]
+        self.host_regex = object_data.get("host-regex", self.host_regex)
 
     def render(self) -> dict:
         return {
@@ -45,7 +45,7 @@ class FortigateProxyAddressURL(FortigateProxyAddress):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.path = object_data["path"]
+        self.path = object_data.get("path", self.path)
 
     def render(self) -> dict:
         return {
@@ -61,7 +61,7 @@ class FortigateProxyAddressURL(FortigateProxyAddress):
         hosts: List[Union[FortigateAddress, FortigateProxyAddressHostRegex]],
     ):
         for host in hosts:
-            if host.name == self.object_data["host"] and isinstance(
+            if host.name == self.object_data.get("host") and isinstance(
                 host, FortigateProxyAddressHostRegex
             ):
                 self.host = host

@@ -36,19 +36,21 @@ class FortigateStaticRoute(FortigateObject, FortigateInterfaceMixin):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.status = object_data["status"]
-        self.seq_num = object_data["seq-num"]
+        self.status = object_data.get("status", self.status)
+        self.seq_num = object_data.get("seq-num", self.seq_num)
         self.dst = ipaddress.ip_network(
             "{}/{}".format(
-                object_data["dst"].split()[0],
-                object_data["dst"].split()[1],
+                object_data.get("dst", "0.0.0.0/0").split()[0],
+                object_data.get("dst", "0.0.0.0/0").split()[1],
             )
         )
-        self.gateway = ipaddress.IPv4Address(object_data["gateway"])
+        self.gateway = ipaddress.IPv4Address(
+            object_data.get("gateway", self.gateway)
+        )
 
-        self.distance = object_data["distance"]
-        self.weight = object_data["weight"]
-        self.priority = object_data["priority"]
+        self.distance = object_data.get("distance", self.distance)
+        self.weight = object_data.get("weight", self.weight)
+        self.priority = object_data.get("priority", self.priority)
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.

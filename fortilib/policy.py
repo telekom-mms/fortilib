@@ -74,27 +74,32 @@ class FortigatePolicy(FortigateNamedObject):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.policyid = object_data["policyid"]
-        self.action = FortigatePolicyAction[object_data["action"].upper()]
-        self.nat = object_data["nat"]
-        self.ippool = object_data["ippool"]
+        self.policyid = object_data.get("policyid", self.policyid)
+        self.action = FortigatePolicyAction[
+            object_data.get(
+                "action", FortigatePolicyAction.ACCEPT.value
+            ).upper()
+        ]
+        self.nat = object_data.get("nat", self.nat)
+        self.ippool = object_data.get("ippool", self.ippool)
 
-        self.schedule = object_data["schedule"]
+        self.schedule = object_data.get("schedule", self.schedule)
 
-        if "logtraffic" in object_data:
-            self.logtraffic = FortigatePolicyLogTraffic[
-                object_data["logtraffic"].upper()
-            ]
+        self.logtraffic = FortigatePolicyLogTraffic[
+            object_data.get(
+                "logtraffic", FortigatePolicyLogTraffic.ALL.value
+            ).upper()
+        ]
 
-        self.comment = object_data["comments"]
+        self.comment = object_data.get("comments", self.comment)
 
     def find_interfaces(self, interfaces: List[FortigateInterface]):
         self.srcintf = self.find_interface_for(
-            self.object_data["srcintf"],
+            self.object_data.get("srcintf"),
             interfaces,
         )
         self.dstintf = self.find_interface_for(
-            self.object_data["dstintf"],
+            self.object_data.get("dstintf"),
             interfaces,
         )
 
@@ -117,11 +122,11 @@ class FortigatePolicy(FortigateNamedObject):
 
     def find_addresses(self, addresses: List[List[FortigateAddress]]):
         self.srcaddr = self.find_addresses_for(
-            self.object_data["srcaddr"],
+            self.object_data.get("srcaddr"),
             addresses,
         )
         self.dstaddr = self.find_addresses_for(
-            self.object_data["dstaddr"],
+            self.object_data.get("dstaddr"),
             addresses,
         )
 
@@ -153,7 +158,7 @@ class FortigatePolicy(FortigateNamedObject):
             Union[List[FortigateService], List[FortigateServiceGroup]]
         ],
     ):
-        for service_dict in self.object_data["service"]:
+        for service_dict in self.object_data.get("service", []):
             service = None
             for search_list in all_services:
                 service = get_by("name", service_dict["name"], search_list)
@@ -167,7 +172,7 @@ class FortigatePolicy(FortigateNamedObject):
             self.service.append(service)
 
     def find_ippools(self, all_ippools: List[FortigateIPPool]):
-        for ippool_dict in self.object_data["poolname"]:
+        for ippool_dict in self.object_data.get("poolname", []):
             ippool = get_by("name", ippool_dict["name"], all_ippools)
             if ippool is None:
                 raise Exception(

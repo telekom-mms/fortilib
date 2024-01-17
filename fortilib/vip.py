@@ -41,8 +41,8 @@ class FortigateVIP(FortigateAddress, FortigateInterfaceMixin):
 
         super().populate(object_data)
 
-        extip_split = object_data["extip"].split("-")
-        mappedip_split = object_data["mappedip"][0]["range"].split("-")
+        extip_split = object_data.get("extip").split("-")
+        mappedip_split = object_data.get("mappedip")[0]["range"].split("-")
 
         self.extip = ipaddress.ip_address(
             extip_split[0],
@@ -59,11 +59,11 @@ class FortigateVIP(FortigateAddress, FortigateInterfaceMixin):
                 mappedip_split[1],
             )
 
-        self.extport = object_data["extport"]
-        self.mappedport = object_data["mappedport"]
-        self.protocol = object_data["protocol"]
-        self.portforward = object_data["portforward"]
-        self.type = object_data["type"]
+        self.extport = object_data.get("extport", self.extport)
+        self.mappedport = object_data.get("mappedport", self.mappedport)
+        self.protocol = object_data.get("protocol", self.protocol)
+        self.portforward = object_data.get("portforward", self.portforward)
+        self.type = object_data.get("type", self.type)
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.

@@ -27,9 +27,7 @@ class FortigateObject:
         """
 
         self.object_data = object_data
-        self.comment = (
-            object_data["comment"] if "comment" in object_data else ""
-        )
+        self.comment = object_data.get("comment", self.comment)
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.
@@ -60,7 +58,7 @@ class FortigateNamedObject(FortigateObject):
     def populate(self, object_data: dict):
         """Generate dict with all object arguments for fortigate api call."""
         super().populate(object_data)
-        self.name = object_data["name"]
+        self.name = object_data.get("name", self.name)
 
     def __eq__(self, other):
         if isinstance(other, FortigateNamedObject):
