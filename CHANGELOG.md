@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- fix: do not access object\_data direct for future compatibility [\#76](https://github.com/telekom-mms/fortilib/pull/76) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency tox to v4.12.1 [\#75](https://github.com/telekom-mms/fortilib/pull/75) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [1.0.1](https://github.com/telekom-mms/fortilib/tree/1.0.1) (2024-01-16)
