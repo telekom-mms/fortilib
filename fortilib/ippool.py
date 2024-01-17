@@ -30,14 +30,18 @@ class FortigateIPPool(FortigateNamedObject):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.comment = object_data["comments"]
-        self.type = object_data["type"]
-        self.startip = ipaddress.ip_address(object_data["startip"])
-        self.endip = ipaddress.ip_address(object_data["endip"])
-        self.source_startip = ipaddress.ip_address(
-            object_data["source-startip"]
+        self.comment = object_data.get("comments", self.comment)
+        self.type = object_data.get("type", self.type)
+        self.startip = ipaddress.ip_address(
+            object_data.get("startip", self.startip)
         )
-        self.source_endip = ipaddress.ip_address(object_data["source-endip"])
+        self.endip = ipaddress.ip_address(object_data.get("endip", self.endip))
+        self.source_startip = ipaddress.ip_address(
+            object_data.get("source-startip", "0.0.0.0")
+        )
+        self.source_endip = ipaddress.ip_address(
+            object_data.get("source-endip", "0.0.0.0")
+        )
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.

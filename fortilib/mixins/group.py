@@ -5,7 +5,7 @@ from fortilib import get_by
 
 class FortigateGroupMixin:
     def find_member(self, search_lists: List[List]):
-        for member_raw in self.object_data["member"]:
+        for member_raw in self.object_data.get("member", []):
             member = None
             for search_list in search_lists:
                 member = get_by("name", member_raw["name"], search_list)

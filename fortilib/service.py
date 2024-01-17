@@ -23,7 +23,7 @@ class FortigateService(FortigateNamedObject):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.protocol = object_data["protocol"]
+        self.protocol = object_data.get("protocol", self.protocol)
         self.visibility = object_data.get("visibility", self.visibility)
 
 
@@ -45,11 +45,11 @@ class FortigateTCPUDPService(FortigateService):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.tcp_portrange = object_data["tcp-portrange"]
-        self.udp_portrange = (
-            object_data["udp-portrange"]
-            if "udp-portrange" in object_data
-            else ""
+        self.tcp_portrange = object_data.get(
+            "tcp-portrange", self.tcp_portrange
+        )
+        self.udp_portrange = object_data.get(
+            "udp-portrange", self.udp_portrange
         )
 
     def render(self) -> dict:
@@ -94,10 +94,8 @@ class FortigateICMPService(FortigateService):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.icmptype = object_data["icmptype"]
-        self.icmpcode = (
-            object_data["icmpcode"] if "icmpcode" in object_data else ""
-        )
+        self.icmptype = object_data.get("icmptype", self.icmptype)
+        self.icmpcode = object_data.get("icmpcode", self.icmpcode)
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.
@@ -172,7 +170,9 @@ class FortigateIPService(FortigateService):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.protocol_number = object_data["protocol-number"]
+        self.protocol_number = object_data.get(
+            "protocol-number", self.protocol_number
+        )
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.
@@ -214,8 +214,10 @@ class FortigateProxyService(FortigateService):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.proxy = object_data["proxy"]
-        self.tcp_portrange = object_data["tcp-portrange"]
+        self.proxy = object_data.get("proxy", self.proxy)
+        self.tcp_portrange = object_data.get(
+            "tcp-portrange", self.tcp_portrange
+        )
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.

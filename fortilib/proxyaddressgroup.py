@@ -23,7 +23,7 @@ class FortigateProxyAddressGroup(FortigateProxyAddress, FortigateGroupMixin):
     # TODO mabye not needed because super-element FortigateNamedObject implements it already -> delete?!
     def populate(self, object_data: dict):
         super().populate(object_data)
-        self.type = object_data["type"]
+        self.type = object_data.get("type", self.type)
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.

@@ -52,25 +52,27 @@ class FortigateProxyPolicy(FortigateNamedObject):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.policyid = object_data["policyid"]
-        self.action = object_data["action"]
-        self.status = object_data["status"]
+        self.policyid = object_data.get("policyid", self.policyid)
+        self.action = object_data.get("action", self.action)
+        self.status = object_data.get("status", self.status)
 
-        self.schedule = object_data["schedule"]
-        self.proxy = object_data["proxy"]
-        self.logtraffic = object_data["logtraffic"]
-        self.utm_status = object_data["utm-status"]
-        self.profile_type = object_data["profile-type"]
-        self.profile_group = object_data["profile-group"]
-        self.comment = object_data["comments"]
+        self.schedule = object_data.get("schedule", self.schedule)
+        self.proxy = object_data.get("proxy", self.proxy)
+        self.logtraffic = object_data.get("logtraffic", self.logtraffic)
+        self.utm_status = object_data.get("utm-status", self.utm_status)
+        self.profile_type = object_data.get("profile-type", self.profile_type)
+        self.profile_group = object_data.get(
+            "profile-group", self.profile_group
+        )
+        self.comment = object_data.get("comments", self.comment)
 
     def find_interfaces(self, interfaces: List[FortigateInterface]):
         self.srcintf = self.find_interface_for(
-            self.object_data["srcintf"],
+            self.object_data.get("srcintf"),
             interfaces,
         )
         self.dstintf = self.find_interface_for(
-            self.object_data["dstintf"],
+            self.object_data.get("dstintf"),
             interfaces,
         )
 
@@ -96,11 +98,11 @@ class FortigateProxyPolicy(FortigateNamedObject):
         addresses: List[List[Union[FortigateAddress, FortigateProxyAddress]]],
     ):
         self.srcaddr = self.find_addresses_for(
-            self.object_data["srcaddr"],
+            self.object_data.get("srcaddr"),
             addresses,
         )
         self.dstaddr = self.find_addresses_for(
-            self.object_data["dstaddr"],
+            self.object_data.get("dstaddr"),
             addresses,
         )
 
@@ -135,7 +137,7 @@ class FortigateProxyPolicy(FortigateNamedObject):
             Union[List[FortigateService], List[FortigateServiceGroup]]
         ],
     ):
-        for service_dict in self.object_data["service"]:
+        for service_dict in self.object_data.get("service", []):
             service = None
             for search_list in all_services:
                 service = get_by("name", service_dict["name"], search_list)

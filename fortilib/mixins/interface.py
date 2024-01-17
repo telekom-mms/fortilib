@@ -7,14 +7,12 @@ class FortigateInterfaceMixin:
     interface_attribute: str = "interface"
 
     def find_interface(self, interfaces: List[FortigateInterface]):
-        if (
-            self.interface_attribute not in self.object_data
-            or self.object_data[self.interface_attribute] == ""
-            or self.object_data[self.interface_attribute] == "any"
-        ):
+        if self.object_data.get(self.interface_attribute, "") in ("", "any"):
             return
 
         for interface in interfaces:
-            if interface.name == self.object_data[self.interface_attribute]:
+            if interface.name == self.object_data.get(
+                self.interface_attribute
+            ):
                 self.interface = interface
                 break

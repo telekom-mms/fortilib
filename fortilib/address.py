@@ -21,7 +21,7 @@ class FortigateAddress(FortigateNamedObject, FortigateInterfaceMixin):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.color = object_data["color"]
+        self.color = object_data.get("color", self.color)
 
 
 class FortigateIpMask(FortigateAddress):
@@ -40,8 +40,8 @@ class FortigateIpMask(FortigateAddress):
 
         self.subnet = ipaddress.ip_network(
             "{}/{}".format(
-                object_data["subnet"].split()[0],
-                object_data["subnet"].split()[1],
+                object_data.get("subnet", "0.0.0.0/0").split()[0],
+                object_data.get("subnet", "0.0.0.0/0").split()[1],
             )
         )
 
@@ -85,8 +85,12 @@ class FortigateIpRange(FortigateAddress):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.ip_start = ipaddress.ip_address(object_data["start-ip"])
-        self.ip_end = ipaddress.ip_address(object_data["end-ip"])
+        self.ip_start = ipaddress.ip_address(
+            object_data.get("start-ip", self.ip_start)
+        )
+        self.ip_end = ipaddress.ip_address(
+            object_data.get("end-ip", self.ip_end)
+        )
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.
@@ -129,7 +133,7 @@ class FortigateFQDN(FortigateAddress):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
-        self.fqdn = object_data["fqdn"]
+        self.fqdn = object_data.get("fqdn", self.fqdn)
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.

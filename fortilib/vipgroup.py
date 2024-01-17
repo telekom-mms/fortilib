@@ -29,7 +29,7 @@ class FortigateVIPGroup(
         """
         super().populate(object_data)
 
-        self.comment = object_data["comments"]
+        self.comment = object_data.get("comments", self.comment)
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.
