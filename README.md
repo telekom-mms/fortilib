@@ -37,10 +37,11 @@ from fortilib.address import FortigateIpMask
 
 
 api = FortigateFirewallApi(
-    "127.0.0.1", # firewall ip
-    "username",
-    "password",
-    "vdom", # use "root" if you dont have vdoms activated
+    ipaddr="127.0.0.1", # firewall ip
+    vdom="vdom", # use "root" if you dont have vdoms activated
+    access_token="token",
+    # username="username", #  alternative login with username
+    # password="password", #  and password
 )
 firewall = FortigateFirewall("fw01", api)
 firewall.login()
