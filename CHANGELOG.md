@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency tox to v4.14.1 [\#92](https://github.com/telekom-mms/fortilib/pull/92) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.14.0 [\#91](https://github.com/telekom-mms/fortilib/pull/91) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v8.1.0 [\#90](https://github.com/telekom-mms/fortilib/pull/90) ([renovate[bot]](https://github.com/apps/renovate))
 - chore: fix readme example [\#89](https://github.com/telekom-mms/fortilib/pull/89) ([neubi4](https://github.com/neubi4))
