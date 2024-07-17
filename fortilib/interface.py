@@ -30,12 +30,13 @@ class FortigateInterface(FortigateNamedObject):
         super().populate(object_data)
 
         self.alias = object_data.get("alias", self.alias)
-        self.ip = ipaddress.ip_interface(
-            "{}/{}".format(
-                object_data.get("ip", "0.0.0.0/0").split()[0],
-                object_data.get("ip", "0.0.0.0/0").split()[1],
+        if "ip" in object_data:
+            self.ip = ipaddress.ip_interface(
+                "{}/{}".format(
+                    object_data.get("ip", "0.0.0.0/0").split()[0],
+                    object_data.get("ip", "0.0.0.0/0").split()[1],
+                )
             )
-        )
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.
