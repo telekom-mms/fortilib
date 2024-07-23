@@ -20,7 +20,7 @@ keywords = ["firewall", "fortinet", "fortigate"]
 Changelog = "https://github.com/telekom-mms/fortilib/blob/master/CHANGELOG.md"
 
 [tool.poetry.dependencies]
-python = ">=3.8,<4.0"
+python = ">=3.9,<4.0"
 httpx = ">=0.23.0"
 
 [tool.poetry.dev-dependencies]
@@ -32,9 +32,8 @@ coverage = ">=6.4.2"
 pytest-integration = ">=0.2.2"
 pytest-cov = ">=4.0.0"
 pytest-order = ">=1.0.1"
-Sphinx = ">=5.1.1"
-flake8 = ">=5.0.4"
-flake8-gl-codeclimate = ">=0.1.6"
+Sphinx = "^7.4.7"
+flake8 = "^7.0.0"
 sphinx-rtd-theme = ">=1.0.0"
 
 [build-system]

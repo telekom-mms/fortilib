@@ -232,7 +232,9 @@ class FortigateFirewall:
         """Query Fortigate API for interfaces
         :class:`fortilib.interface.FortigateInterface` and create list.
         """
-        interfaces: List[FortigateInterface] = [FortigateInterface.from_dict({"name": "any"})]
+        interfaces: List[FortigateInterface] = [
+            FortigateInterface.from_dict({"name": "any"})
+        ]
         for raw in self.fortigate.get_firewall_interface():
             interface = FortigateInterface.from_dict(raw)
             interfaces.append(interface)

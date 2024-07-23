@@ -19,6 +19,12 @@ class FortigateAddressGroup(FortigateAddress, FortigateGroupMixin):
     def populate(self, object_data: dict):
         super().populate(object_data)
 
+    def __eq__(self, other):
+        if isinstance(other, FortigateAddressGroup):
+            return self.name == other.name and self.member == other.member
+
+        return False
+
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.
 
