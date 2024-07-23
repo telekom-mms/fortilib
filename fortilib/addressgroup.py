@@ -21,10 +21,7 @@ class FortigateAddressGroup(FortigateAddress, FortigateGroupMixin):
 
     def __eq__(self, other):
         if isinstance(other, FortigateAddressGroup):
-            return (
-                    self.name == other.name
-                    and self.member == other.member
-            )
+            return self.name == other.name and self.member == other.member
 
         return False
 
