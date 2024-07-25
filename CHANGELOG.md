@@ -1,12 +1,20 @@
 # Changelog
 
-## [1.0.3](https://github.com/telekom-mms/fortilib/tree/1.0.3) (2024-07-23)
+## [1.0.4](https://github.com/telekom-mms/fortilib/tree/1.0.4) (2024-07-25)
 
-[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.2...1.0.3)
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.3...1.0.4)
 
 **Closed issues:**
 
 - Dependency Dashboard [\#4](https://github.com/telekom-mms/fortilib/issues/4)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency pytest to v8.3.2 [\#118](https://github.com/telekom-mms/fortilib/pull/118) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [1.0.3](https://github.com/telekom-mms/fortilib/tree/1.0.3) (2024-07-23)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.2...1.0.3)
 
 **Merged pull requests:**
 
