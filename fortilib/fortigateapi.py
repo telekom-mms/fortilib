@@ -545,6 +545,41 @@ class FortigateFirewallApi:
         """
         return self.fortigate.delete_firewall_phase1_interface(name)
 
+    def get_firewall_phase2_interface(self):
+        """Get phase2 interfaces via Fortigate API"""
+        return self.fortigate.get_firewall_phase2_interface()
+
+    def create_firewall_phase2_interface(
+        self, name: str, phase2_interface_object: Dict
+    ):
+        """Create phase2 interface via Fortigate API
+
+        :param name: Name of phase2 interface on firewall
+        :param phase2_interface_object: Dict representation of phase2 interface
+        """
+        return self.fortigate.create_firewall_phase2_interface(
+            name, phase2_interface_object
+        )
+
+    def update_firewall_phase2_interface(
+        self, name: str, phase2_interface_object: Dict
+    ):
+        """Update phase2 interface via Fortigate API
+
+        :param name: Name of phase2 interface on firewall
+        :param phase2_interface_object: Dict representation of phase2 interface
+        """
+        return self.fortigate.update_firewall_phase2_interface(
+            name, phase2_interface_object
+        )
+
+    def delete_firewall_phase2_interface(self, name: str):
+        """Delete phase2 interfacevia Fortigate API
+
+        :param name: Name of phase2 interface on firewall
+        """
+        return self.fortigate.delete_firewall_phase2_interface(name)
+
 
 class FortiGateQueryType(Enum):
     GET = 1
@@ -576,6 +611,9 @@ class FortiGateApi:
     ENDPOINT_FIREWALL_INTERFACE = "api/v2/cmdb/system/interface/"
     ENDPOINT_FIREWALL_PHASE1_INTERFACE = (
         "api/v2/cmdb/vpn.ipsec/phase1-interface/"
+    )
+    ENDPOINT_FIREWALL_PHASE2_INTERFACE = (
+        "api/v2/cmdb/vpn.ipsec/phase2-interface/"
     )
     ENDPOINT_FIREWALL_IPPOOL = "api/v2/cmdb/firewall/ippool/"
     ENDPOINT_FIREWALL_VIP = "api/v2/cmdb/firewall/vip/"
@@ -1159,4 +1197,24 @@ class FortiGateApi:
     def delete_firewall_phase1_interface(self, name: str):
         return self.query_api_delete(
             FortiGateApi.ENDPOINT_FIREWALL_PHASE1_INTERFACE, name
+        )
+
+    def get_firewall_phase2_interface(self, specific=False, filters=False):
+        return self.query_api_get(
+            FortiGateApi.ENDPOINT_FIREWALL_PHASE2_INTERFACE, specific, filters
+        )
+
+    def create_firewall_phase2_interface(self, name: str, data: Dict):
+        return self.query_api_create(
+            FortiGateApi.ENDPOINT_FIREWALL_PHASE2_INTERFACE, name, data
+        )
+
+    def update_firewall_phase2_interface(self, name: str, data: Dict):
+        return self.query_api_update(
+            FortiGateApi.ENDPOINT_FIREWALL_PHASE2_INTERFACE, name, data
+        )
+
+    def delete_firewall_phase2_interface(self, name: str):
+        return self.query_api_delete(
+            FortiGateApi.ENDPOINT_FIREWALL_PHASE2_INTERFACE, name
         )

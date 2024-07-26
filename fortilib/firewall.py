@@ -18,6 +18,7 @@ from fortilib.fortigateapi import (
 from fortilib.interface import FortigateInterface
 from fortilib.ippool import FortigateIPPool
 from fortilib.phase1interface import FortigatePhase1Interface
+from fortilib.phase2interface import FortigatePhase2Interface
 from fortilib.policy import FortigatePolicy
 from fortilib.proxyaddress import (
     FortigateProxyAddress,
@@ -84,6 +85,7 @@ class FortigateFirewall:
             Union[FortigateAddress, FortigateProxyAddress]
         ]
         self.phase1_interfaces: List[FortigatePhase1Interface] = []
+        self.phase2_interfaces: List[FortigatePhase2Interface] = []
 
     def login(self):
         """Login into Fortigate API with :meth:`fortilib.fortigateapi.FortigateFirewallApi.login`."""
@@ -109,6 +111,7 @@ class FortigateFirewall:
         - Service Groups
         - IPPools
         - Phase1 Interfaces
+        - Phase2 Interfaces
         - Policies
         - Proxy Addresses
         - Proxy Address Groups
@@ -134,6 +137,7 @@ class FortigateFirewall:
         self.proxy_policies = self.get_proxy_policies()
         self.all_addresses = self.get_all_addresses()
         self.phase1_interfaces = self.get_phase1_interfaces()
+        self.phase2_interfaces = self.get_phase2_interfaces()
 
     def get_addresses(self) -> List[FortigateAddress]:
         """Query Fortigate API for addresses
@@ -773,6 +777,45 @@ class FortigateFirewall:
             phase1_interface.name
         )
         self.phase1_interfaces.remove(phase1_interface)
+        return status
+
+    def get_phase2_interfaces(self) -> List[FortigatePhase2Interface]:
+        """Query Fortigate API for phase2 interfaces
+        :class:`fortilib.phase2interface.FortigatePhase2Interface` and create list.
+        """
+        phase2_interfaces: List[FortigatePhase2Interface] = []
+        for raw in self.fortigate.get_firewall_phase2_interface():
+            phase2_interface = FortigatePhase2Interface.from_dict(raw)
+            phase2_interfaces.append(phase2_interface)
+
+        return phase2_interfaces
+
+    def create_firewall_phase2_interface(
+        self, phase2_interface: FortigatePhase2Interface
+    ):
+        """Create phase2 interface on fortigate with given :obj:`fortilib.phase2interface.FortigatePhase2Interface`."""
+        status = self.fortigate.create_firewall_phase2_interface(
+            phase2_interface.name, phase2_interface.render()
+        )
+        self.phase2_interfaces.append(phase2_interface)
+        return status
+
+    def update_firewall_phase2_interface(
+        self, phase2_interface: FortigatePhase2Interface
+    ):
+        """Update phase2 interface on fortigate with given :obj:`fortilib.phase2interface.FortigatePhase2Interface`."""
+        return self.fortigate.update_firewall_phase2_interface(
+            phase2_interface.name, phase2_interface.render()
+        )
+
+    def delete_firewall_phase2_interface(
+        self, phase2_interface: FortigatePhase2Interface
+    ):
+        """Delete phase2 interface on fortigate with given :obj:`fortilib.phase2interface.FortigatePhase2Interface`."""
+        status = self.fortigate.delete_firewall_phase2_interface(
+            phase2_interface.name
+        )
+        self.phase2_interfaces.remove(phase2_interface)
         return status
 
     def get_object_by_name(
