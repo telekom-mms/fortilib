@@ -484,7 +484,7 @@ class FortigateFirewallApi:
     ):
         """Create proxy policy via Fortigate API
 
-        :param policy_id: Name of proxy policy on firewall
+        :param policy_id: ID of proxy policy on firewall
         :param proxy_policy_object: Dict representation of proxy policy
         """
         return self.fortigate.create_firewall_proxy_policy(
@@ -496,7 +496,7 @@ class FortigateFirewallApi:
     ):
         """Update policy via Fortigate API
 
-        :param policy_id: Name of proxy policy on firewall
+        :param policy_id: ID of proxy policy on firewall
         :param proxy_policy_object: Dict representation of proxy policy
         """
         return self.fortigate.update_firewall_proxy_policy(
@@ -506,9 +506,44 @@ class FortigateFirewallApi:
     def delete_firewall_proxy_policies(self, policy_id: int):
         """Delete proxy policy via Fortigate API
 
-        :param policy_id: Name of proxy policy on firewall
+        :param policy_id: ID of proxy policy on firewall
         """
         return self.fortigate.delete_firewall_proxy_policy(str(policy_id))
+
+    def get_firewall_phase1_interface(self):
+        """Get phase1 interfaces via Fortigate API"""
+        return self.fortigate.get_firewall_phase1_interface()
+
+    def create_firewall_phase1_interface(
+        self, name: str, phase1_interface_object: Dict
+    ):
+        """Create phase1 interface via Fortigate API
+
+        :param name: Name of phase1 interface on firewall
+        :param phase1_interface_object: Dict representation of phase1 interface
+        """
+        return self.fortigate.create_firewall_phase1_interface(
+            name, phase1_interface_object
+        )
+
+    def update_firewall_phase1_interface(
+        self, name: str, phase1_interface_object: Dict
+    ):
+        """Update phase1 interface via Fortigate API
+
+        :param name: Name of phase1 interface on firewall
+        :param phase1_interface_object: Dict representation of phase1 interface
+        """
+        return self.fortigate.update_firewall_phase1_interface(
+            name, phase1_interface_object
+        )
+
+    def delete_firewall_phase1_interface(self, name: str):
+        """Delete phase1 interfacevia Fortigate API
+
+        :param name: Name of phase1 interface on firewall
+        """
+        return self.fortigate.delete_firewall_phase1_interface(name)
 
 
 class FortiGateQueryType(Enum):
@@ -539,6 +574,9 @@ class FortiGateOperation:
 
 class FortiGateApi:
     ENDPOINT_FIREWALL_INTERFACE = "api/v2/cmdb/system/interface/"
+    ENDPOINT_FIREWALL_PHASE1_INTERFACE = (
+        "api/v2/cmdb/vpn.ipsec/phase1-interface/"
+    )
     ENDPOINT_FIREWALL_IPPOOL = "api/v2/cmdb/firewall/ippool/"
     ENDPOINT_FIREWALL_VIP = "api/v2/cmdb/firewall/vip/"
     ENDPOINT_FIREWALL_VIP_GROUP = "api/v2/cmdb/firewall/vipgrp/"
@@ -1102,3 +1140,23 @@ class FortiGateApi:
                 filtered.append(operation)
 
         return filtered
+
+    def get_firewall_phase1_interface(self, specific=False, filters=False):
+        return self.query_api_get(
+            FortiGateApi.ENDPOINT_FIREWALL_PHASE1_INTERFACE, specific, filters
+        )
+
+    def create_firewall_phase1_interface(self, name: str, data: Dict):
+        return self.query_api_create(
+            FortiGateApi.ENDPOINT_FIREWALL_PHASE1_INTERFACE, name, data
+        )
+
+    def update_firewall_phase1_interface(self, name: str, data: Dict):
+        return self.query_api_update(
+            FortiGateApi.ENDPOINT_FIREWALL_PHASE1_INTERFACE, name, data
+        )
+
+    def delete_firewall_phase1_interface(self, name: str):
+        return self.query_api_delete(
+            FortiGateApi.ENDPOINT_FIREWALL_PHASE1_INTERFACE, name
+        )
