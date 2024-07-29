@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.6](https://github.com/telekom-mms/fortilib/tree/1.0.6) (2024-07-29)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.5...1.0.6)
+
+**Merged pull requests:**
+
+- fix: dealing with different address types in phase2 interfaces [\#121](https://github.com/telekom-mms/fortilib/pull/121) ([BenjaminBoehm](https://github.com/BenjaminBoehm))
+
 ## [1.0.5](https://github.com/telekom-mms/fortilib/tree/1.0.5) (2024-07-29)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.4...1.0.5)
