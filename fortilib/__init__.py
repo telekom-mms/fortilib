@@ -6,6 +6,10 @@ from typing import (
 )
 
 
+class FortilibSettings:
+    strict_address_group_member_matching: bool = True
+
+
 def get_by(attrname, attrvalue, haystack):
     for o in haystack:
         if attrvalue == getattr(o, attrname):
