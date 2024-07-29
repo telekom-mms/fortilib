@@ -34,6 +34,12 @@ def get_fw_mocked(mock_fw_api) -> FortigateFirewall:
     mock_fw_api.get_firewall_proxy_address_group = MagicMock(
         return_value=data.proxy_address_groups
     )
+    mock_fw_api.get_firewall_phase1_interface = MagicMock(
+        return_value=data.phase1_interfaces
+    )
+    mock_fw_api.get_firewall_phase2_interface = MagicMock(
+        return_value=data.phase2_interfaces
+    )
 
     mock_fw_api.login = MagicMock()
 
@@ -85,6 +91,14 @@ def get_fw_mocked(mock_fw_api) -> FortigateFirewall:
     mock_fw_api.create_firewall_proxy_policy = MagicMock()
     mock_fw_api.update_firewall_proxy_policy = MagicMock()
     mock_fw_api.delete_firewall_proxy_policy = MagicMock()
+
+    mock_fw_api.create_firewall_phase1_interface = MagicMock()
+    mock_fw_api.update_firewall_phase1_interface = MagicMock()
+    mock_fw_api.delete_firewall_phase1_interface = MagicMock()
+
+    mock_fw_api.create_firewall_phase2_interface = MagicMock()
+    mock_fw_api.update_firewall_phase2_interface = MagicMock()
+    mock_fw_api.delete_firewall_phase2_interface = MagicMock()
 
     fw = FortigateFirewall("test", mock_fw_api)
     fw.login()
