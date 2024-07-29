@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.4](https://github.com/telekom-mms/fortilib/tree/1.0.4) (2024-07-25)
+## [1.0.4](https://github.com/telekom-mms/fortilib/tree/1.0.4) (2024-07-29)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.3...1.0.4)
 
@@ -10,6 +10,7 @@
 
 **Merged pull requests:**
 
+- fix: made new strict group address member matching optional [\#120](https://github.com/telekom-mms/fortilib/pull/120) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency pytest to v8.3.2 [\#118](https://github.com/telekom-mms/fortilib/pull/118) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [1.0.3](https://github.com/telekom-mms/fortilib/tree/1.0.3) (2024-07-23)
