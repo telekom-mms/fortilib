@@ -26,7 +26,9 @@ class TestFortilibFirewall(FortigateTest):
             {
                 "name": "vpn_phase2",
                 "phase1name": "vpn_phase1",
+                "dst-addr-type": "subnet",
                 "dst-subnet": "192.168.100.0/24",
+                "src-addr-type": "subnet",
                 "src-subnet": "10.0.0.0/8",
                 "dhgrp": "20",
                 "pfs": "enable",
@@ -34,7 +36,6 @@ class TestFortilibFirewall(FortigateTest):
                 "keepalive": "enable",
                 "auto-negotiate": "disable",
                 "keylifeseconds": 14400,
-                "keylifekbs": None,
                 "keylife-type": "seconds",
                 "proposal": "chacha20poly1305 aes256gcm",
                 "comments": "test phase2",
@@ -57,7 +58,9 @@ class TestFortilibFirewall(FortigateTest):
             {
                 "name": "vpn_phase2",
                 "phase1name": "vpn_phase1",
+                "dst-addr-type": "subnet",
                 "dst-subnet": "192.168.200.0/24",
+                "src-addr-type": "subnet",
                 "src-subnet": "10.0.0.0/8",
                 "dhgrp": "20",
                 "pfs": "enable",

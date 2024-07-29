@@ -29,3 +29,7 @@ def get_fortigate_member_array(source: List, attrname="name") -> List[Dict]:
         )
 
     return ret
+
+
+def remove_empty_dict_values(source: dict):
+    return {k: v for k, v in source.items() if v}
