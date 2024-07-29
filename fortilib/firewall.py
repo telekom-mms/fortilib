@@ -62,6 +62,8 @@ class FortigateFirewall:
     :ivar proxy_address_groups: List of :class:`fortilib.proxyaddressgroup.FortigateProxyAddressGroup` (default: [])
     :ivar proxy_policies: List of :class:`fortilib.proxypolicies.FortigateProxyPolicy` (default: [])
     :ivar all_addresses: List of :class:`fortilib.proxyaddresses.FortigateProxyAddress` and :class:`fortilib.address.FortigateAddress` (default: [])
+    :ivar phase1_interfaces: List of :class:`fortilib.phase1interface.FortigatePhase1Interface` (default: [])
+    :ivar phase2_interfaces: List of :class:`fortilib.phase2interface.FortigatePhase2Interface`` (default: [])
     """
 
     def __init__(self, name: str, fortigateapi: FortigateFirewallApi):
