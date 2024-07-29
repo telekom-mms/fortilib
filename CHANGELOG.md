@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.5](https://github.com/telekom-mms/fortilib/tree/1.0.5) (2024-07-29)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.4...1.0.5)
+
+**Merged pull requests:**
+
+- add support for ipsec vpn [\#119](https://github.com/telekom-mms/fortilib/pull/119) ([BenjaminBoehm](https://github.com/BenjaminBoehm))
+
 ## [1.0.4](https://github.com/telekom-mms/fortilib/tree/1.0.4) (2024-07-29)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.3...1.0.4)
