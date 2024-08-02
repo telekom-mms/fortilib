@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.7](https://github.com/telekom-mms/fortilib/tree/1.0.7) (2024-08-02)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.6...1.0.7)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency black to v24.8.0 [\#123](https://github.com/telekom-mms/fortilib/pull/123) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.0.6](https://github.com/telekom-mms/fortilib/tree/1.0.6) (2024-07-29)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.5...1.0.6)
@@ -19,10 +27,6 @@
 ## [1.0.4](https://github.com/telekom-mms/fortilib/tree/1.0.4) (2024-07-29)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.3...1.0.4)
-
-**Closed issues:**
-
-- Dependency Dashboard [\#4](https://github.com/telekom-mms/fortilib/issues/4)
 
 **Merged pull requests:**
 
