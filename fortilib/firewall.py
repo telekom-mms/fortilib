@@ -269,7 +269,7 @@ class FortigateFirewall:
                 service = FortigateICMPService.from_dict(raw)
             if raw["protocol"] == "ICMP6":
                 service = FortigateICMP6Service.from_dict(raw)
-            elif raw["protocol"] in "TCP/UDP/SCTP":
+            elif raw["protocol"].startswith("TCP/UDP"):
                 service = FortigateTCPUDPService.from_dict(raw)
             elif raw["protocol"] == "IP":
                 service = FortigateIPService.from_dict(raw)
