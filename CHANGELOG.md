@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.10](https://github.com/telekom-mms/fortilib/tree/1.0.10) (2024-08-06)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.9...1.0.10)
+
+**Merged pull requests:**
+
+- fix: publish release with ubuntu-24.04 [\#130](https://github.com/telekom-mms/fortilib/pull/130) ([neubi4](https://github.com/neubi4))
+
 ## [1.0.9](https://github.com/telekom-mms/fortilib/tree/1.0.9) (2024-08-06)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.8...1.0.9)
