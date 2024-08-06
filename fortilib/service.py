@@ -1,3 +1,4 @@
+from fortilib import FortilibSettings
 from fortilib.base import FortigateNamedObject
 
 
@@ -38,7 +39,7 @@ class FortigateTCPUDPService(FortigateService):
     def __init__(self):
         super().__init__()
 
-        self.protocol = "TCP/UDP/SCTP"
+        self.protocol = str(FortilibSettings.tcp_udp_service_protocol)
         self.tcp_portrange: str = ""
         self.udp_portrange: str = ""
 

@@ -1,13 +1,20 @@
 __version__ = "1.0.7"
 
+from enum import StrEnum
 from typing import (
     Dict,
     List,
 )
 
 
+class FortigateTCPUDPServiceProtocol(StrEnum):
+    TCP_UDP_SCTP = "TCP/UDP/SCTP"
+    TCP_UDP_UDP_Lite_SCTP = "TCP/UDP/UDP-Lite/SCTP"
+
+
 class FortilibSettings:
     strict_address_group_member_matching: bool = True
+    tcp_udp_service_protocol = FortigateTCPUDPServiceProtocol.TCP_UDP_SCTP
 
 
 def get_by(attrname, attrvalue, haystack):
