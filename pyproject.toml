@@ -20,7 +20,7 @@ keywords = ["firewall", "fortinet", "fortigate"]
 Changelog = "https://github.com/telekom-mms/fortilib/blob/master/CHANGELOG.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<4.0"
+python = ">=3.11,<4.0"
 httpx = ">=0.23.0"
 
 [tool.poetry.dev-dependencies]
