@@ -1,11 +1,12 @@
 # Changelog
 
-## [1.0.11](https://github.com/telekom-mms/fortilib/tree/1.0.11) (2024-08-22)
+## [1.0.11](https://github.com/telekom-mms/fortilib/tree/1.0.11) (2024-08-27)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.10...1.0.11)
 
 **Merged pull requests:**
 
+- fix\(deps\): update dependency httpx to v0.27.2 [\#134](https://github.com/telekom-mms/fortilib/pull/134) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest-order to v1.3.0 [\#133](https://github.com/telekom-mms/fortilib/pull/133) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.18.0 [\#132](https://github.com/telekom-mms/fortilib/pull/132) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.17.1 [\#131](https://github.com/telekom-mms/fortilib/pull/131) ([renovate[bot]](https://github.com/apps/renovate))
