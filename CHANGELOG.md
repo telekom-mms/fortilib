@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency sphinx-rtd-theme to v3.0.1 [\#145](https://github.com/telekom-mms/fortilib/pull/145) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.6.2 [\#144](https://github.com/telekom-mms/fortilib/pull/144) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency black to v24.10.0 [\#143](https://github.com/telekom-mms/fortilib/pull/143) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency sphinx-rtd-theme to v3 [\#142](https://github.com/telekom-mms/fortilib/pull/142) ([renovate[bot]](https://github.com/apps/renovate))
