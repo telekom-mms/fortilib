@@ -1,11 +1,12 @@
 # Changelog
 
-## [1.0.11](https://github.com/telekom-mms/fortilib/tree/1.0.11) (2024-11-15)
+## [1.0.11](https://github.com/telekom-mms/fortilib/tree/1.0.11) (2024-11-24)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.10...1.0.11)
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency coverage to v7.6.8 [\#156](https://github.com/telekom-mms/fortilib/pull/156) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.6.7 [\#155](https://github.com/telekom-mms/fortilib/pull/155) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.6.5 [\#154](https://github.com/telekom-mms/fortilib/pull/154) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency sphinx-rtd-theme to v3.0.2 [\#153](https://github.com/telekom-mms/fortilib/pull/153) ([renovate[bot]](https://github.com/apps/renovate))
