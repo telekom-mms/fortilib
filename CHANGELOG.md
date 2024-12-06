@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- fix\(deps\): update dependency httpx to v0.28.1 [\#160](https://github.com/telekom-mms/fortilib/pull/160) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.6.9 [\#159](https://github.com/telekom-mms/fortilib/pull/159) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v8.3.4 [\#158](https://github.com/telekom-mms/fortilib/pull/158) ([renovate[bot]](https://github.com/apps/renovate))
 - fix\(deps\): update dependency httpx to v0.28.0 [\#157](https://github.com/telekom-mms/fortilib/pull/157) ([renovate[bot]](https://github.com/apps/renovate))
