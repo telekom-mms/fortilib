@@ -15,7 +15,10 @@ from fortilib.fortigateapi import (
     FortiGateApiPolicyDirection,
     FortigateFirewallApi,
 )
-from fortilib.interface import FortigateInterface
+from fortilib.interface import (
+    FortigateInterface,
+    FortigateZone,
+)
 from fortilib.ippool import FortigateIPPool
 from fortilib.phase1interface import FortigatePhase1Interface
 from fortilib.phase2interface import FortigatePhase2Interface
@@ -49,6 +52,7 @@ class FortigateFirewall:
     :ivar name: Name of fortigate firewall
     :ivar fortigate: Fortigate API object (:class:`fortilib.fortigateapi.FortigateFirewallApi`) for API Querys
     :ivar interfaces: List of :class:`fortilib.interface.FortigateInterface` (default: [])
+    :ivar zones: List of :class:`fortilib.zone.FortigateZone` (default: [])
     :ivar static_routes: List of :class:`fortilib.routes.FortigateStaticRoute` (default: [])
     :ivar addresses: List of :class:`fortilib.address.FortigateAddress` (default: [])
     :ivar address_groups: List of :class:`fortilib.addressgroup.FortigateAddressGroup` (default: [])
@@ -71,6 +75,7 @@ class FortigateFirewall:
         self.fortigate = fortigateapi
 
         self.interfaces: List[FortigateInterface] = []
+        self.zones: List[FortigateZone] = []
         self.static_routes: List[FortigateStaticRoute] = []
         self.addresses: List[FortigateAddress] = []
         self.address_groups: List[FortigateAddressGroup] = []
@@ -104,6 +109,7 @@ class FortigateFirewall:
         """Query Fortigate API for all firewall objects of the following list.
 
         - Interfaces
+        - Zone
         - Static Routes
         - Addresses
         - Address Groups
@@ -121,6 +127,8 @@ class FortigateFirewall:
         - Addresses and Proxy Addresses
         """
         self.interfaces = self.get_interfaces()
+        self.zones = self.get_zones()
+        self.add_interfaces_zones() # ajoute les zones comme de possibles interfaces
         self.static_routes = self.get_static_routes()
         self.addresses = self.get_addresses()
         self.address_groups = self.get_address_groups()
@@ -250,6 +258,25 @@ class FortigateFirewall:
             interfaces.append(interface)
 
         return interfaces
+
+    def get_zones(self) -> List[FortigateZone]:
+        """Query Fortigate API for zones
+        :class:`fortilib.zone.FortigateZone` and create list.
+        """
+        zones: List[FortigateZone] = [
+        ]
+        r = self.fortigate.get_firewall_zone()
+        for raw in self.fortigate.get_firewall_zone():
+            zone = FortigateZone.from_dict(raw)
+            zone.find_interfaces(self.interfaces)
+            zones.append(zone)
+
+        return zones
+
+    def add_interfaces_zones(self):
+        for z in self.zones:
+            intf = FortigateInterface.add_zone(z)
+            self.interfaces.append(intf)
 
     def get_services(self) -> List[FortigateService]:
         """Query Fortigate API for vips :class:`fortilib.service.FortigateService` and
