@@ -54,6 +54,7 @@ class FortigateInterface(FortigateNamedObject):
     @staticmethod
     def add_zone(zone: FortigateZone) -> FortigateInterface:
         intf = FortigateInterface.from_dict({"name": zone.name, "type": "zone", "zone": zone})
+        zone.intf = intf
         return intf
 
     def render(self) -> dict:
@@ -82,8 +83,6 @@ class FortigateInterface(FortigateNamedObject):
         return f"{self.__class__.__name__} {self.name} IP: {self.ip} Alias: {self.alias} Type: {self.type}"
 
 
-
-
 class FortigateZone(FortigateNamedObject):
     """Fortigate object for zones.
 
@@ -94,13 +93,15 @@ class FortigateZone(FortigateNamedObject):
     def __init__(self):
         super().__init__()
 
-        self.intf: List[FortigateInterface] = []
+        self.members: List[FortigateInterface] = []
+        self.intf: FortigateInterface = None
 
     def __eq__(self, other):
         if isinstance(other, FortigateZone):
             return (
                 self.name == other.name
                 and self.alias == other.alias
+                and self.members == other.members
                 and self.intf == other.intf
             )
 
@@ -110,16 +111,16 @@ class FortigateZone(FortigateNamedObject):
         super().populate(object_data)
 
     def find_interfaces(self, all_interfaces: List[FortigateInterface]) -> List[FortigateInterface]:
-        intf_arr: List[Dict] = self.object_data.get("interface")
-        for intf_dict in intf_arr:
-            name = intf_dict["interface-name"]
+        members_arr: List[Dict] = self.object_data.get("interface")
+        for members_dict in members_arr:
+            name = members_dict["interface-name"]
             interface = get_by("name", name, all_interfaces)
             if interface is None:
                 raise Exception(
                     f"no interface found "
                     f"with name {name}"
                 )
-            self.intf.append(interface)
+            self.members.append(interface)
 
     def render(self) -> dict:
         """Generate dict with all object arguments for fortigate api call.
@@ -129,14 +130,14 @@ class FortigateZone(FortigateNamedObject):
 
                 {
                     "name": "Internet_zone",
-                    "intf": ["eth0",],
+                    "members": ["eth0",],
                 }
         """
         return {
             "name": self.name,
-            "intf": self.intf,
+            "members": self.members,
         }
 
     def __repr__(self):
-        return f"{self.__class__.__name__} {self.name} Intf: {self.intf}"
+        return f"{self.__class__.__name__} {self.name} Members: {self.members}"
 
