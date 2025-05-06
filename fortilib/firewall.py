@@ -128,7 +128,7 @@ class FortigateFirewall:
         """
         self.interfaces = self.get_interfaces()
         self.zones = self.get_zones()
-        self.add_interfaces_zones() # ajoute les zones comme de possibles interfaces
+        self.interfaces = self.interfaces + self.zones
         self.static_routes = self.get_static_routes()
         self.addresses = self.get_addresses()
         self.address_groups = self.get_address_groups()
