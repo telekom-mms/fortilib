@@ -214,6 +214,10 @@ class FortigateFirewallApi:
         """Get interfaces via Fortigate API"""
         return self.fortigate.get_firewall_interface()
 
+    def get_firewall_zone(self):
+        """Get zones via Fortigate API"""
+        return self.fortigate.get_firewall_zone()
+
     def get_firewall_route_static(self):
         """Get static routes via Fortigate API"""
         return self.fortigate.get_firewall_route_static()
@@ -615,6 +619,7 @@ class FortiGateApi:
     ENDPOINT_FIREWALL_PHASE2_INTERFACE = (
         "api/v2/cmdb/vpn.ipsec/phase2-interface/"
     )
+    ENDPOINT_FIREWALL_ZONE = "api/v2/cmdb/system/zone/"
     ENDPOINT_FIREWALL_IPPOOL = "api/v2/cmdb/firewall/ippool/"
     ENDPOINT_FIREWALL_VIP = "api/v2/cmdb/firewall/vip/"
     ENDPOINT_FIREWALL_VIP_GROUP = "api/v2/cmdb/firewall/vipgrp/"
@@ -890,6 +895,12 @@ class FortiGateApi:
     def get_firewall_interface(self, specific=False, filters=False):
         return self.query_api_get(
             FortiGateApi.ENDPOINT_FIREWALL_INTERFACE, specific, filters
+        )
+
+    # Firewall Interface Methods
+    def get_firewall_zone(self, specific=False, filters=False):
+        return self.query_api_get(
+            FortiGateApi.ENDPOINT_FIREWALL_ZONE, specific, filters
         )
 
     def get_ipsec_vpn(self, specific=False, filters=False):
