@@ -19,7 +19,7 @@ class TestFortilibFirewall(FortigateTest):
                 "name": "NET_198.141.216.0_22",
                 "subnet": "198.141.216.0 255.255.252.0",
                 "comment": "",
-                "interface": "",
+                "associated-interface": "",
                 "color": 0,
             },
         )
@@ -36,7 +36,7 @@ class TestFortilibFirewall(FortigateTest):
                 "name": "NET_199.40.1.0_24",
                 "subnet": "199.40.1.0 255.255.255.0",
                 "comment": "test comment",
-                "interface": "port4",
+                "associated-interface": "port4",
                 "color": 0,
             },
         )
@@ -60,7 +60,7 @@ class TestFortilibFirewall(FortigateTest):
                 "start-ip": "10.188.128.106",
                 "end-ip": "10.188.128.108",
                 "comment": "snke 20200122 DPDHL 2020012170002501",
-                "interface": "",
+                "associated-interface": "",
                 "color": 0,
             },
         )
@@ -79,7 +79,7 @@ class TestFortilibFirewall(FortigateTest):
                 "name": "FQDN_aadcdn.msauth.net",
                 "fqdn": "aadcdn.msauth.net",
                 "comment": "",
-                "interface": "",
+                "associated-interface": "",
                 "color": 19,
             },
         )
