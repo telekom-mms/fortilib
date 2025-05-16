@@ -6,6 +6,8 @@ from fortilib.mixins.interface import FortigateInterfaceMixin
 
 
 class FortigateAddress(FortigateNamedObject, FortigateInterfaceMixin):
+    interface_attribute = "associated-interface"
+
     """Fortigate object for addresses.
 
     :ivar interface: Interface the address is connected to
@@ -55,7 +57,7 @@ class FortigateIpMask(FortigateAddress):
                     "name": "Test_address",
                     "type": "ipmask",
                     "subnet": "10.10.10.1 255.255.255.255",
-                    "interface": "port4",
+                    "associated-interface": "port4",
                     "comments": "Test comment",
                 }
         """
@@ -64,7 +66,7 @@ class FortigateIpMask(FortigateAddress):
             "type": "ipmask",
             "subnet": f"{self.subnet.network_address} {self.subnet.netmask}",
             "comment": self.comment,
-            "interface": self.interface.name if self.interface else "",
+            "associated-interface": self.interface.name if self.interface else "",
             "color": self.color,
         }
 
@@ -103,7 +105,7 @@ class FortigateIpRange(FortigateAddress):
                     "type": "iprange",
                     "start-ip": "10.10.10.1",
                     "end-ip": "10.10.10.15",
-                    "interface": "port4",
+                    "associated-interface": "port4",
                     "comments": "Test comment",
                 }
         """
@@ -113,7 +115,7 @@ class FortigateIpRange(FortigateAddress):
             "start-ip": str(self.ip_start),
             "end-ip": str(self.ip_end),
             "comment": self.comment,
-            "interface": self.interface.name if self.interface else "",
+            "associated-interface": self.interface.name if self.interface else "",
             "color": self.color,
         }
 
@@ -145,7 +147,7 @@ class FortigateFQDN(FortigateAddress):
                     "name": "Test_fqdn",
                     "type": "fqdn",
                     "fqdn": "kernel.org",
-                    "interface": "port4",
+                    "associated-interface": "port4",
                     "comments": "Test comment",
                 }
         """
@@ -154,6 +156,6 @@ class FortigateFQDN(FortigateAddress):
             "type": "fqdn",
             "fqdn": self.fqdn,
             "comment": self.comment,
-            "interface": self.interface.name if self.interface else "",
+            "associated-interface": self.interface.name if self.interface else "",
             "color": self.color,
         }

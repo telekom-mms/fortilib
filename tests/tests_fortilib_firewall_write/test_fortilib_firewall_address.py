@@ -25,7 +25,7 @@ class TestFortilibFirewall(FortigateTest):
                 "type": "ipmask",
                 "subnet": "10.0.0.0 255.255.255.0",
                 "comment": "Kommentar",
-                "interface": "",
+                "associated-interface": "",
                 "color": 0,
             },
         )
@@ -54,7 +54,7 @@ class TestFortilibFirewall(FortigateTest):
                 "name": "NET_198.141.216.0_22",
                 "subnet": "198.141.216.0 255.255.255.0",
                 "comment": "Kommentar",
-                "interface": "",
+                "associated-interface": "",
                 "color": 0,
             },
         )

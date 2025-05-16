@@ -9,6 +9,8 @@ from fortilib.vip import FortigateVIP
 class FortigateVIPGroup(
     FortigateAddress, FortigateInterfaceMixin, FortigateGroupMixin
 ):
+    interface_attribute = "interface"
+
     """Fortigate object for VIP groups.
 
     :ivar member: Collection of vip objects of :class:`fortilib.vip.FortigateVIP`
