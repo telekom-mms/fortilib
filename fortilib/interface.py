@@ -1,17 +1,14 @@
-#from __future__ import annotations
-
 from typing import (
     Dict,
     List,
-    Union,
 )
 import ipaddress
 
 from fortilib import (
     get_by,
-    get_fortigate_member_array,
 )
 from fortilib.base import FortigateNamedObject
+
 
 class FortigateInterface(FortigateNamedObject):
     """Fortigate object for interfaces.
@@ -132,4 +129,3 @@ class FortigateZone(FortigateInterface):
 
     def __repr__(self):
         return f"{self.__class__.__name__} {self.name} Members: {self.members}"
-

@@ -265,7 +265,6 @@ class FortigateFirewall:
         """
         zones: List[FortigateZone] = [
         ]
-        r = self.fortigate.get_firewall_zone()
         for raw in self.fortigate.get_firewall_zone():
             zone = FortigateZone.from_dict(raw)
             zone.find_interfaces(self.interfaces)
