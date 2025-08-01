@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- fix: fixing not working fortigate api filters on get requests [\#195](https://github.com/telekom-mms/fortilib/pull/195) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency tox to v4.28.4 [\#194](https://github.com/telekom-mms/fortilib/pull/194) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.10.1 [\#193](https://github.com/telekom-mms/fortilib/pull/193) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.28.3 [\#192](https://github.com/telekom-mms/fortilib/pull/192) ([renovate[bot]](https://github.com/apps/renovate))
