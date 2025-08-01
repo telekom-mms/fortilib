@@ -715,10 +715,13 @@ class FortiGateApi:
             return True
         return False
 
-    def get(self, url):
+    def get(self, url, params: Optional[dict] = None):
+        params = params or dict()
+        params.update(vdom=self.vdom)
+
         return self.client.get(
             url,
-            params=f"vdom={self.vdom}",
+            params=params,
         )
 
     def put(self, url, data: Dict):
@@ -771,16 +774,18 @@ class FortiGateApi:
         self, uri: str, specific=False, filters=False
     ) -> Union[dict, int]:
         api_url = self.urlbase + uri
+        params = dict()
+
         if specific:
             api_url += specific
         if filters:
-            api_url += "?filter=" + filters
+            params.update(filter=filters)
 
         self.operations.append(
             FortiGateOperation(api_url, FortiGateQueryType.GET, "", "")
         )
 
-        result = self.get(api_url)
+        result = self.get(api_url, params)
         self.check_response_code(result)
         return result.json()["results"]
 
