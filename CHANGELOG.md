@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency tox to v4.29.0 [\#202](https://github.com/telekom-mms/fortilib/pull/202) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.10.6 [\#201](https://github.com/telekom-mms/fortilib/pull/201) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.10.5 [\#200](https://github.com/telekom-mms/fortilib/pull/200) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.10.4 [\#199](https://github.com/telekom-mms/fortilib/pull/199) ([renovate[bot]](https://github.com/apps/renovate))
