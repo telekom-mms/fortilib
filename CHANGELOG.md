@@ -1,11 +1,12 @@
 # Changelog
 
-## [1.0.13](https://github.com/telekom-mms/fortilib/tree/1.0.13) (2025-08-28)
+## [1.0.13](https://github.com/telekom-mms/fortilib/tree/1.0.13) (2025-08-31)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.12...1.0.13)
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency coverage to v7.10.6 [\#201](https://github.com/telekom-mms/fortilib/pull/201) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.10.5 [\#200](https://github.com/telekom-mms/fortilib/pull/200) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.10.4 [\#199](https://github.com/telekom-mms/fortilib/pull/199) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update actions/checkout action to v5 [\#198](https://github.com/telekom-mms/fortilib/pull/198) ([renovate[bot]](https://github.com/apps/renovate))
