@@ -1,5 +1,12 @@
+from typing import (
+    Dict,
+    List,
+)
 import ipaddress
 
+from fortilib import (
+    get_by,
+)
 from fortilib.base import FortigateNamedObject
 
 
@@ -15,6 +22,7 @@ class FortigateInterface(FortigateNamedObject):
 
         self.alias: str = ""
         self.ip: ipaddress.IPv4Interface = None
+        self.zone: FortigateZone = None
 
     def __eq__(self, other):
         if isinstance(other, FortigateInterface):
@@ -25,6 +33,9 @@ class FortigateInterface(FortigateNamedObject):
             )
 
         return False
+
+    def type(self):
+        return "physical"
 
     def populate(self, object_data: dict):
         super().populate(object_data)
@@ -60,3 +71,61 @@ class FortigateInterface(FortigateNamedObject):
 
     def __repr__(self):
         return f"{self.__class__.__name__} {self.name} IP: {self.ip} Alias: {self.alias}"
+
+
+class FortigateZone(FortigateInterface):
+    """Fortigate object for zones.
+
+    :ivar members: List of interfaces in the zone
+    """
+
+    def __init__(self):
+        super().__init__()
+
+        self.members: List[FortigateInterface] = []
+
+    def __eq__(self, other):
+        if isinstance(other, FortigateZone):
+            return (
+                super().__eq__(other)
+                and self.members == other.members
+            )
+
+        return False
+
+    def type(self):
+        return "zone"
+
+    def populate(self, object_data: dict):
+        super().populate(object_data)
+
+    def find_interfaces(self, all_interfaces: List[FortigateInterface]) -> List[FortigateInterface]:
+        members_arr: List[Dict] = self.object_data.get("interface")
+        for members_dict in members_arr:
+            name = members_dict["interface-name"]
+            interface = get_by("name", name, all_interfaces)
+            if interface is None:
+                raise Exception(
+                    f"no interface found "
+                    f"with name {name}"
+                )
+            self.members.append(interface)
+
+    def render(self) -> dict:
+        """Generate dict with all object arguments for fortigate api call.
+
+        :example:
+            .. code-block:: json
+
+                {
+                    "name": "Internet_zone",
+                    "members": ["eth0",],
+                }
+        """
+        return {
+            "name": self.name,
+            "members": self.members,
+        }
+
+    def __repr__(self):
+        return f"{self.__class__.__name__} {self.name} Members: {self.members}"
