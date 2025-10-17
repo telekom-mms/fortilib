@@ -1,8 +1,14 @@
 from unittest.mock import MagicMock
 
 from fortilib import get_by
-from fortilib.proxypolicy import FortigateProxyPolicy, FortiproxyPolicy
-from tests import FortigateTest, FortiproxyTest
+from fortilib.proxypolicy import (
+    FortigateProxyPolicy,
+    FortiproxyPolicy,
+)
+from tests import (
+    FortigateTest,
+    FortiproxyTest,
+)
 from tests.test_data import (
     data_policy_missing_address,
     data_policy_missing_interface,
@@ -97,6 +103,7 @@ class TestFortilibFirewall(FortigateTest):
             "service with name missing_object not found",
         )
 
+
 class TestFortilibFortiProxy(FortiproxyTest):
     def test_fortiproxy_firewall_proxy_base_policy(self):
         policy: FortiproxyPolicy = get_by(
@@ -136,7 +143,7 @@ class TestFortilibFortiProxy(FortiproxyTest):
                 ],
                 "action": "accept",
                 "status": "enable",
-                'schedule': {'q_origin_key': 'always'},
+                "schedule": {"q_origin_key": "always"},
                 "logtraffic": "all",
                 "utm-status": "enable",
                 "profile-type": "group",

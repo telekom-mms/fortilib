@@ -3,8 +3,14 @@ from fortilib.exceptions import (
     AddressTypeMismatchException,
     InterfaceMismatchException,
 )
-from fortilib.proxypolicy import FortigateProxyPolicy, FortiproxyPolicy
-from tests import FortigateTest, FortiproxyTest
+from fortilib.proxypolicy import (
+    FortigateProxyPolicy,
+    FortiproxyPolicy,
+)
+from tests import (
+    FortigateTest,
+    FortiproxyTest,
+)
 
 
 class TestFortilibFirewall(FortigateTest):
@@ -373,7 +379,8 @@ class TestFortilibFirewall(FortigateTest):
                 )
             )
 
-class TestFortilibFirewall(FortiproxyTest):
+
+class TestFortilibProxy(FortiproxyTest):
     def test_fortiproxy_firewall_base_proxy_policy_create(self):
         policy = FortiproxyPolicy()
         policy.name = "test proxypolicy"
@@ -445,9 +452,7 @@ class TestFortilibFirewall(FortiproxyTest):
         self.assertTrue(policy in self.prx.policies)
 
     def test_fortiproxy_firewall_base_proxy_policy_update(self):
-        policy: FortiproxyPolicy = get_by(
-            "policyid", 815, self.prx.policies
-        )
+        policy: FortiproxyPolicy = get_by("policyid", 815, self.prx.policies)
 
         self.assertIsInstance(policy, FortiproxyPolicy)
 
@@ -491,7 +496,7 @@ class TestFortilibFirewall(FortiproxyTest):
                 ],
                 "action": "accept",
                 "status": "enable",
-                'schedule': {'q_origin_key': 'always'},
+                "schedule": {"q_origin_key": "always"},
                 "logtraffic": "all",
                 "utm-status": "enable",
                 "profile-type": "group",
@@ -501,21 +506,17 @@ class TestFortilibFirewall(FortiproxyTest):
         )
 
     def test_fortiproxy_firewall_base_proxy_policy_delete(self):
-        policy: FortiproxyPolicy = get_by(
-            "policyid", 815, self.prx.policies
-        )
+        policy: FortiproxyPolicy = get_by("policyid", 815, self.prx.policies)
 
         self.prx.delete_firewall_policy(policy)
         self.prx.fortigate.delete_firewall_policy.assert_called_once()
-        self.prx.fortigate.delete_firewall_policy.assert_called_with(
-            815
-        )
+        self.prx.fortigate.delete_firewall_policy.assert_called_with(815)
         self.assertTrue(policy not in self.prx.policies)
 
-    def test_fortiproxy_firewall_base_proxy_policy_update_wrong_address_interface(self):
-        policy: FortiproxyPolicy = get_by(
-            "policyid", 815, self.prx.policies
-        )
+    def test_fortiproxy_firewall_base_proxy_policy_update_wrong_address_interface(
+        self,
+    ):
+        policy: FortiproxyPolicy = get_by("policyid", 815, self.prx.policies)
 
         self.assertIsInstance(policy, FortiproxyPolicy)
 
@@ -524,10 +525,10 @@ class TestFortilibFirewall(FortiproxyTest):
                 get_by("name", "FQDN_golem.de", self.prx.all_addresses)
             )
 
-    def test_fortiproxy_firewall_base_proxy_policy_update_wrong_source_address(self):
-        policy: FortiproxyPolicy = get_by(
-            "policyid", 815, self.prx.policies
-        )
+    def test_fortiproxy_firewall_base_proxy_policy_update_wrong_source_address(
+        self,
+    ):
+        policy: FortiproxyPolicy = get_by("policyid", 815, self.prx.policies)
 
         self.assertIsInstance(policy, FortiproxyPolicy)
 
@@ -536,7 +537,9 @@ class TestFortilibFirewall(FortiproxyTest):
                 get_by("name", "http.kali.org", self.prx.all_addresses)
             )
 
-    def test_fortiproxy_firewall_base_proxy_policy_update_add_wrong_interface(self):
+    def test_fortiproxy_firewall_base_proxy_policy_update_add_wrong_interface(
+        self,
+    ):
         policy = FortiproxyPolicy()
 
         policy.service.append(get_by("name", "proxy-https", self.prx.services))
@@ -566,9 +569,7 @@ class TestFortilibFirewall(FortiproxyTest):
             )
 
     def test_fortiproxy_firewall_base_proxy_policy_remove_address(self):
-        policy: FortiproxyPolicy = get_by(
-            "policyid", 815, self.prx.policies
-        )
+        policy: FortiproxyPolicy = get_by("policyid", 815, self.prx.policies)
 
         self.assertEqual(1, len(policy.srcaddr))
         self.assertEqual(1, len(policy.dstaddr))
@@ -585,9 +586,7 @@ class TestFortilibFirewall(FortiproxyTest):
         )
 
     def test_fortiproxy_firewall_base_proxy_policy_remove_interfaces(self):
-        policy: FortiproxyPolicy = get_by(
-            "policyid", 815, self.prx.policies
-        )
+        policy: FortiproxyPolicy = get_by("policyid", 815, self.prx.policies)
 
         self.assertEqual(1, len(policy.srcintf))
         self.assertEqual(1, len(policy.dstintf))
@@ -602,7 +601,9 @@ class TestFortilibFirewall(FortiproxyTest):
         self.assertEqual(0, len(policy.srcintf))
         self.assertEqual(0, len(policy.dstintf))
 
-    def test_fortiproxy_firewall_base_proxy_policy_update_multiple_interface(self):
+    def test_fortiproxy_firewall_base_proxy_policy_update_multiple_interface(
+        self,
+    ):
         policy = FortiproxyPolicy()
 
         policy.service.append(get_by("name", "proxy-https", self.prx.services))
@@ -628,7 +629,9 @@ class TestFortilibFirewall(FortiproxyTest):
                 )
             )
 
-    def test_fortiproxy_firewall_base_proxy_policy_vip_address_mixed_address(self):
+    def test_fortiproxy_firewall_base_proxy_policy_vip_address_mixed_address(
+        self,
+    ):
         policy = FortiproxyPolicy()
 
         policy.service.append(get_by("name", "proxy-https", self.prx.services))

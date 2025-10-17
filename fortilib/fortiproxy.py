@@ -1,10 +1,12 @@
 from typing import List
+
+from fortilib.firewall import FortigateFirewall
 from fortilib.fortigateapi import (
     FortiGateApiPolicyDirection,
     FortigateFirewallApi,
 )
-from fortilib.firewall import FortigateFirewall
 from fortilib.proxypolicy import FortiproxyPolicy
+
 
 class Fortiproxy(FortigateFirewall):
     """Fortigate Firewall object.
@@ -39,7 +41,7 @@ class Fortiproxy(FortigateFirewall):
         self.proxy_policies = None
         self.phase1_interfaces = None
         self.phase2_interfaces = None
-    
+
     def get_all_objects(self):
         """Query Fortiproxy API for all firewall objects of the following list.
 
@@ -99,7 +101,7 @@ class Fortiproxy(FortigateFirewall):
             policies.append(policy)
 
         return policies
-    
+
     def create_firewall_policy(self, policy: FortiproxyPolicy):
         """Create policy on fortigate with given :obj:`fortilib.proxypolicy.FortiproxyPolicy`."""
         status = self.fortigate.create_firewall_policy(
@@ -138,38 +140,85 @@ class Fortiproxy(FortigateFirewall):
         )
 
     def get_proxy_policies(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.get_proxy_policies.__name__}" ,obj=Fortiproxy, name=f"{self.get_proxy_policies.__name__}")
-    
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.get_proxy_policies.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.get_proxy_policies.__name__}",
+        )
+
     def update_firewall_proxy_policy(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.update_firewall_proxy_policy.__name__}" ,obj=Fortiproxy, name=f"{self.update_firewall_proxy_policy.__name__}")
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.update_firewall_proxy_policy.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.update_firewall_proxy_policy.__name__}",
+        )
 
     def delete_firewall_proxy_policy(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.delete_firewall_proxy_policy.__name__}" ,obj=Fortiproxy, name=f"{self.delete_firewall_proxy_policy.__name__}")
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.delete_firewall_proxy_policy.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.delete_firewall_proxy_policy.__name__}",
+        )
 
     def move_firewall_proxy_policy(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.move_firewall_proxy_policy.__name__}" ,obj=Fortiproxy, name=f"{self.move_firewall_proxy_policy.__name__}")
-    
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.move_firewall_proxy_policy.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.move_firewall_proxy_policy.__name__}",
+        )
+
     def get_phase1_interfaces(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.get_phase1_interfaces.__name__}" ,obj=Fortiproxy, name=f"{self.get_phase1_interfaces.__name__}")
-    
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.get_phase1_interfaces.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.get_phase1_interfaces.__name__}",
+        )
+
     def create_firewall_phase1_interface(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.create_firewall_phase1_interface.__name__}" ,obj=Fortiproxy, name=f"{self.create_firewall_phase1_interface.__name__}")
-    
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.create_firewall_phase1_interface.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.create_firewall_phase1_interface.__name__}",
+        )
+
     def update_firewall_phase1_interface(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.update_firewall_phase1_interface.__name__}" ,obj=Fortiproxy, name=f"{self.update_firewall_phase1_interface.__name__}")
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.update_firewall_phase1_interface.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.update_firewall_phase1_interface.__name__}",
+        )
 
     def delete_firewall_phase1_interface(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.delete_firewall_phase1_interface.__name__}" ,obj=Fortiproxy, name=f"{self.delete_firewall_phase1_interface.__name__}")
-    
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.delete_firewall_phase1_interface.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.delete_firewall_phase1_interface.__name__}",
+        )
+
     def get_phase2_interfaces(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.get_phase2_interfaces.__name__}" ,obj=Fortiproxy, name=f"{self.get_phase2_interfaces.__name__}")
-    
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.get_phase2_interfaces.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.get_phase2_interfaces.__name__}",
+        )
+
     def create_firewall_phase2_interface(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.create_firewall_phase2_interface.__name__}" ,obj=Fortiproxy, name=f"{self.create_firewall_phase2_interface.__name__}")
-    
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.create_firewall_phase2_interface.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.create_firewall_phase2_interface.__name__}",
+        )
+
     def update_firewall_phase2_interface(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.update_firewall_phase2_interface.__name__}" ,obj=Fortiproxy, name=f"{self.update_firewall_phase2_interface.__name__}")
-    
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.update_firewall_phase2_interface.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.update_firewall_phase2_interface.__name__}",
+        )
+
     def delete_firewall_phase2_interface(self):
-        raise AttributeError(f"{Fortiproxy} has no Method {self.delete_firewall_phase2_interface.__name__}" ,obj=Fortiproxy, name=f"{self.delete_firewall_phase2_interface.__name__}")
-    
+        raise AttributeError(
+            f"{Fortiproxy} has no Method {self.delete_firewall_phase2_interface.__name__}",
+            obj=Fortiproxy,
+            name=f"{self.delete_firewall_phase2_interface.__name__}",
+        )

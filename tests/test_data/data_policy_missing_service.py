@@ -243,9 +243,7 @@ forti_proxy_policies = [
         "srcaddr6": [],
         "dstaddr6": [],
         "action": "accept",
-        "schedule": {
-        "q_origin_key": "always"
-        },
+        "schedule": {"q_origin_key": "always"},
         "service": [
             {"name": "missing_object", "q_origin_key": "missing_object"}
         ],
@@ -294,9 +292,7 @@ forti_proxy_policies = [
         "decrypted-traffic-mirror": "",
         "max-session-per-user": 0,
         "profile-type": "group",
-        "profile-group": {
-        "q_origin_key": "proxy_log"
-        },
+        "profile-group": {"q_origin_key": "proxy_log"},
         "av-profile": "",
         "ia-profile": "",
         "webfilter-profile": "",

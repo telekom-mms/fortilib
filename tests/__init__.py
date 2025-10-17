@@ -106,9 +106,12 @@ def get_fw_mocked(mock_fw_api) -> FortigateFirewall:
 
     return fw
 
+
 def get_prx_mocked(mock_prx_api) -> Fortiproxy:
     mock_prx_api.get_firewall_address = MagicMock(return_value=data.addresses)
-    mock_prx_api.get_firewall_route_static = MagicMock(return_value=data.routes)
+    mock_prx_api.get_firewall_route_static = MagicMock(
+        return_value=data.routes
+    )
     mock_prx_api.get_firewall_interface = MagicMock(
         return_value=data.interfaces
     )
@@ -124,7 +127,9 @@ def get_prx_mocked(mock_prx_api) -> Fortiproxy:
         return_value=data.service_groups
     )
     mock_prx_api.get_firewall_ippool = MagicMock(return_value=data.ippools)
-    mock_prx_api.get_firewall_policies = MagicMock(return_value=data.forti_proxy_policies)
+    mock_prx_api.get_firewall_policies = MagicMock(
+        return_value=data.forti_proxy_policies
+    )
     mock_prx_api.get_firewall_proxy_address = MagicMock(
         return_value=data.proxy_addresses
     )
@@ -184,11 +189,13 @@ def get_prx_mocked(mock_prx_api) -> Fortiproxy:
 
     return prx
 
+
 class FortigateTest(unittest.TestCase):
     @mock.patch("fortilib.fortigateapi.FortigateFirewallApi")
     def setUp(self, mock_fw_api):
         self.fw = get_fw_mocked(mock_fw_api)
         self.fw.get_all_objects()
+
 
 class FortiproxyTest(unittest.TestCase):
     @mock.patch("fortilib.fortigateapi.FortigateFirewallApi")

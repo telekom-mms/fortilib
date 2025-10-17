@@ -2171,9 +2171,7 @@ forti_proxy_policies = [
         "srcaddr6": [],
         "dstaddr6": [],
         "action": "accept",
-        "schedule": {
-        "q_origin_key": "always"
-        },
+        "schedule": {"q_origin_key": "always"},
         "service": [{"name": "proxy_https"}],
         "explicit-web-proxy": "",
         "transparent": "disable",
@@ -2220,9 +2218,7 @@ forti_proxy_policies = [
         "decrypted-traffic-mirror": "",
         "max-session-per-user": 0,
         "profile-type": "group",
-        "profile-group": {
-        "q_origin_key": "proxy_log"
-        },
+        "profile-group": {"q_origin_key": "proxy_log"},
         "av-profile": "",
         "ia-profile": "",
         "webfilter-profile": "",
