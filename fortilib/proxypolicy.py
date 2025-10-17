@@ -295,3 +295,48 @@ class FortigateProxyPolicy(FortigateNamedObject):
             "profile-group": self.profile_group,
             "comments": self.comment,
         }
+
+
+class FortiproxyPolicy(FortigateProxyPolicy):
+    def __init__(self):
+        super().__init__()
+
+        self.proxy = None
+        self.type = "transparent"
+
+    def populate(self, object_data: dict):
+        super().populate(object_data)
+
+        self.policyid = object_data.get("policyid", self.policyid)
+        self.action = object_data.get("action", self.action)
+        self.status = object_data.get("status", self.status)
+
+        self.schedule = object_data.get("schedule", self.schedule)
+        self.type = object_data.get("type", self.type)
+        self.logtraffic = object_data.get("logtraffic", self.logtraffic)
+        self.utm_status = object_data.get("utm-status", self.utm_status)
+        self.profile_type = object_data.get("profile-type", self.profile_type)
+        self.profile_group = object_data.get(
+            "profile-group", self.profile_group
+        )
+        self.comment = object_data.get("comments", self.comment)
+
+    def render(self) -> dict:
+        return {
+            "policyid": self.policyid,
+            "name": self.name,
+            "type": self.type,
+            "srcintf": get_fortigate_member_array(self.srcintf),
+            "dstintf": get_fortigate_member_array(self.dstintf),
+            "srcaddr": get_fortigate_member_array(self.srcaddr),
+            "dstaddr": get_fortigate_member_array(self.dstaddr),
+            "service": get_fortigate_member_array(self.service),
+            "action": self.action,
+            "status": self.status,
+            "schedule": self.schedule,
+            "logtraffic": self.logtraffic,
+            "utm-status": self.utm_status,
+            "profile-type": self.profile_type,
+            "profile-group": self.profile_group,
+            "comments": self.comment,
+        }
