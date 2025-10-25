@@ -1,11 +1,12 @@
 # Changelog
 
-## [1.0.13](https://github.com/telekom-mms/fortilib/tree/1.0.13) (2025-10-15)
+## [1.0.13](https://github.com/telekom-mms/fortilib/tree/1.0.13) (2025-10-25)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.12...1.0.13)
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency tox to v4.32.0 [\#216](https://github.com/telekom-mms/fortilib/pull/216) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.11.0 [\#214](https://github.com/telekom-mms/fortilib/pull/214) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.31.0 [\#212](https://github.com/telekom-mms/fortilib/pull/212) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency python to 3.14 [\#211](https://github.com/telekom-mms/fortilib/pull/211) ([renovate[bot]](https://github.com/apps/renovate))
@@ -303,7 +304,7 @@
 
 **Merged pull requests:**
 
-- set VIP Port default values [\#22](https://github.com/telekom-mms/fortilib/pull/22) ([DanielZinke](https://github.com/DanielZinke))
+- set VIP Port default values [\#22](https://github.com/telekom-mms/fortilib/pull/22) ([da-z97](https://github.com/da-z97))
 
 ## [0.1.4](https://github.com/telekom-mms/fortilib/tree/0.1.4) (2023-03-20)
 
@@ -311,7 +312,7 @@
 
 **Merged pull requests:**
 
-- VIP Object hashable + repr func [\#21](https://github.com/telekom-mms/fortilib/pull/21) ([DanielZinke](https://github.com/DanielZinke))
+- VIP Object hashable + repr func [\#21](https://github.com/telekom-mms/fortilib/pull/21) ([da-z97](https://github.com/da-z97))
 - chore\(deps\): update dependency tox to v4 [\#10](https://github.com/telekom-mms/fortilib/pull/10) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [0.1.3](https://github.com/telekom-mms/fortilib/tree/0.1.3) (2023-02-06)
@@ -320,7 +321,7 @@
 
 **Merged pull requests:**
 
-- feat: move proxy policy [\#13](https://github.com/telekom-mms/fortilib/pull/13) ([DanielZinke](https://github.com/DanielZinke))
+- feat: move proxy policy [\#13](https://github.com/telekom-mms/fortilib/pull/13) ([da-z97](https://github.com/da-z97))
 - Feature/python3.11 [\#8](https://github.com/telekom-mms/fortilib/pull/8) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency pytest-cov to v4 [\#6](https://github.com/telekom-mms/fortilib/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
 
