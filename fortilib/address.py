@@ -66,7 +66,9 @@ class FortigateIpMask(FortigateAddress):
             "type": "ipmask",
             "subnet": f"{self.subnet.network_address} {self.subnet.netmask}",
             "comment": self.comment,
-            "associated-interface": self.interface.name if self.interface else "",
+            "associated-interface": (
+                self.interface.name if self.interface else ""
+            ),
             "color": self.color,
         }
 
@@ -115,7 +117,9 @@ class FortigateIpRange(FortigateAddress):
             "start-ip": str(self.ip_start),
             "end-ip": str(self.ip_end),
             "comment": self.comment,
-            "associated-interface": self.interface.name if self.interface else "",
+            "associated-interface": (
+                self.interface.name if self.interface else ""
+            ),
             "color": self.color,
         }
 
@@ -156,6 +160,8 @@ class FortigateFQDN(FortigateAddress):
             "type": "fqdn",
             "fqdn": self.fqdn,
             "comment": self.comment,
-            "associated-interface": self.interface.name if self.interface else "",
+            "associated-interface": (
+                self.interface.name if self.interface else ""
+            ),
             "color": self.color,
         }
