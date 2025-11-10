@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency black to v25.11.0 [\#221](https://github.com/telekom-mms/fortilib/pull/221) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.11.3 [\#220](https://github.com/telekom-mms/fortilib/pull/220) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.11.2 [\#219](https://github.com/telekom-mms/fortilib/pull/219) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.11.1 [\#217](https://github.com/telekom-mms/fortilib/pull/217) ([renovate[bot]](https://github.com/apps/renovate))
