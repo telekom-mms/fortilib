@@ -54,6 +54,6 @@ class TestFortilibFirewall(FortigateTest):
 
         fortigate_api.client.get.assert_called_once_with(
             "https://127.0.0.1:443/api/v2/cmdb/firewall/policy/1/",
-            params={'filter': 'skip=1', 'vdom': 'root'},
+            params={"filter": "skip=1", "vdom": "root"},
         )
         self.assertEqual("test result", result)
