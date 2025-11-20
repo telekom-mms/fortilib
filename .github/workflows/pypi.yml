@@ -11,7 +11,7 @@ jobs:
   deploy:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install poetry
         run: sudo apt update && sudo apt install -y pipx && pipx install poetry
