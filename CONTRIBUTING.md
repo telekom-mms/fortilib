@@ -13,7 +13,7 @@ Setting up the local enviroment is done with [python poetry](https://python-poet
 After making code changes, please run the linters and fix all errors:
 
 ```
-> poetry run tox --elinter
+> poetry run tox -elinter
 ```
 
 ### Auto formatting code
@@ -21,7 +21,7 @@ After making code changes, please run the linters and fix all errors:
 After making code changes, please run code formatters:
 
 ```
-> poetry runtox --eformatter
+> poetry run tox -eformatter
 ```
 
 
