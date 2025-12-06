@@ -7,6 +7,7 @@
 **Merged pull requests:**
 
 - chore\(deps\): update actions/checkout action to v6 [\#223](https://github.com/telekom-mms/fortilib/pull/223) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest to v9 [\#218](https://github.com/telekom-mms/fortilib/pull/218) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [1.0.13](https://github.com/telekom-mms/fortilib/tree/1.0.13) (2025-11-25)
 
