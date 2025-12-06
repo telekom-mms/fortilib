@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.14](https://github.com/telekom-mms/fortilib/tree/1.0.14) (2025-12-06)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.13...1.0.14)
+
+**Merged pull requests:**
+
+- chore\(deps\): update actions/checkout action to v6 [\#223](https://github.com/telekom-mms/fortilib/pull/223) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.0.13](https://github.com/telekom-mms/fortilib/tree/1.0.13) (2025-11-25)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.12...1.0.13)
