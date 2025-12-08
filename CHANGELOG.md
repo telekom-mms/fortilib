@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency coverage to v7.13.0 [\#227](https://github.com/telekom-mms/fortilib/pull/227) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency black to v25.12.0 [\#226](https://github.com/telekom-mms/fortilib/pull/226) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v9.0.2 [\#225](https://github.com/telekom-mms/fortilib/pull/225) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update actions/checkout action to v6 [\#223](https://github.com/telekom-mms/fortilib/pull/223) ([renovate[bot]](https://github.com/apps/renovate))
