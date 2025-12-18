@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.14](https://github.com/telekom-mms/fortilib/tree/1.0.14) (2025-12-08)
+## [1.0.14](https://github.com/telekom-mms/fortilib/tree/1.0.14) (2025-12-18)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.13...1.0.14)
 
@@ -11,6 +11,7 @@
 - chore\(deps\): update dependency pytest to v9.0.2 [\#225](https://github.com/telekom-mms/fortilib/pull/225) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update actions/checkout action to v6 [\#223](https://github.com/telekom-mms/fortilib/pull/223) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v9 [\#218](https://github.com/telekom-mms/fortilib/pull/218) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency isort to v7 [\#213](https://github.com/telekom-mms/fortilib/pull/213) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [1.0.13](https://github.com/telekom-mms/fortilib/tree/1.0.13) (2025-11-25)
 
