@@ -32,7 +32,7 @@ coverage = ">=6.4.2"
 pytest-integration = ">=0.2.2"
 pytest-cov = ">=4.0.0"
 pytest-order = ">=1.0.1"
-Sphinx = "^7.4.7"
+Sphinx = "^9.0.0"
 flake8 = "^7.0.0"
 sphinx-rtd-theme = ">=1.0.0"
 
