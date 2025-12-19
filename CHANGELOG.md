@@ -1,14 +1,19 @@
 # Changelog
 
-## [1.0.14](https://github.com/telekom-mms/fortilib/tree/1.0.14) (2025-12-18)
+## [1.0.14](https://github.com/telekom-mms/fortilib/tree/1.0.14) (2025-12-19)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.13...1.0.14)
+
+**Closed issues:**
+
+- Dependency Dashboard [\#4](https://github.com/telekom-mms/fortilib/issues/4)
 
 **Merged pull requests:**
 
 - chore\(deps\): update dependency coverage to v7.13.0 [\#227](https://github.com/telekom-mms/fortilib/pull/227) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency black to v25.12.0 [\#226](https://github.com/telekom-mms/fortilib/pull/226) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v9.0.2 [\#225](https://github.com/telekom-mms/fortilib/pull/225) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx to v9 [\#224](https://github.com/telekom-mms/fortilib/pull/224) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update actions/checkout action to v6 [\#223](https://github.com/telekom-mms/fortilib/pull/223) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v9 [\#218](https://github.com/telekom-mms/fortilib/pull/218) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency isort to v7 [\#213](https://github.com/telekom-mms/fortilib/pull/213) ([renovate[bot]](https://github.com/apps/renovate))
