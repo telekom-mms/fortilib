@@ -1,10 +1,8 @@
-from typing import List
-
 from fortilib import get_by
 
 
 class FortigateGroupMixin:
-    def find_member(self, search_lists: List[List]):
+    def find_member(self, search_lists: list[list]):
         for member_raw in self.object_data.get("member", []):
             member = None
             for search_list in search_lists:

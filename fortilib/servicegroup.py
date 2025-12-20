@@ -1,5 +1,3 @@
-from typing import List
-
 from fortilib.base import FortigateNamedObject
 from fortilib.mixins.group import FortigateGroupMixin
 from fortilib.service import FortigateService
@@ -14,7 +12,7 @@ class FortigateServiceGroup(FortigateNamedObject, FortigateGroupMixin):
     def __init__(self):
         super().__init__()
 
-        self.member: List[FortigateService, FortigateServiceGroup] = []
+        self.member: list[FortigateService, FortigateServiceGroup] = []
 
     def populate(self, object_data: dict):
         """Parse raw dict data to service group object.

@@ -1,5 +1,3 @@
-from typing import List
-
 from fortilib import FortilibSettings
 from fortilib.address import FortigateAddress
 from fortilib.mixins.group import FortigateGroupMixin
@@ -14,7 +12,7 @@ class FortigateAddressGroup(FortigateAddress, FortigateGroupMixin):
     def __init__(self):
         super().__init__()
 
-        self.member: List[FortigateAddress, FortigateAddressGroup] = []
+        self.member: list[FortigateAddress | FortigateAddressGroup] = []
 
     # TODO mabye not need because super-element FortigateNamedObject implements it already -> delete?!
     def populate(self, object_data: dict):

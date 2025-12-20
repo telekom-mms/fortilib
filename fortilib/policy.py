@@ -1,9 +1,4 @@
 from enum import Enum
-from typing import (
-    Dict,
-    List,
-    Union,
-)
 
 from fortilib import (
     get_by,
@@ -41,17 +36,17 @@ class FortigatePolicy(FortigateNamedObject):
         self.policyid: int = 0
         self.action: FortigatePolicyAction = FortigatePolicyAction.ACCEPT
 
-        self.srcintf: List[FortigateInterface] = []
-        self.dstintf: List[FortigateInterface] = []
+        self.srcintf: list[FortigateInterface] = []
+        self.dstintf: list[FortigateInterface] = []
 
-        self.srcaddr: List[FortigateAddress] = []
-        self.dstaddr: List[FortigateAddress] = []
+        self.srcaddr: list[FortigateAddress] = []
+        self.dstaddr: list[FortigateAddress] = []
 
-        self.service: List[FortigateService] = []
+        self.service: list[FortigateService] = []
 
         self.nat: str = "disable"
         self.ippool: str = "disable"
-        self.poolname: List[FortigateIPPool] = []
+        self.poolname: list[FortigateIPPool] = []
         self.schedule: str = "always"
         self.logtraffic: FortigatePolicyLogTraffic = (
             FortigatePolicyLogTraffic.ALL
@@ -93,7 +88,7 @@ class FortigatePolicy(FortigateNamedObject):
 
         self.comment = object_data.get("comments", self.comment)
 
-    def find_interfaces(self, interfaces: List[FortigateInterface]):
+    def find_interfaces(self, interfaces: list[FortigateInterface]):
         self.srcintf = self.find_interface_for(
             self.object_data.get("srcintf"),
             interfaces,
@@ -105,10 +100,10 @@ class FortigatePolicy(FortigateNamedObject):
 
     @staticmethod
     def find_interface_for(
-        interface_arr: List[Dict],
-        all_interfaces: List[FortigateInterface],
-    ) -> List[FortigateInterface]:
-        interfaces: List[FortigateInterface] = []
+        interface_arr: list[dict],
+        all_interfaces: list[FortigateInterface],
+    ) -> list[FortigateInterface]:
+        interfaces: list[FortigateInterface] = []
         for interface_dict in interface_arr:
             interface = get_by("name", interface_dict["name"], all_interfaces)
             if interface is None:
@@ -120,7 +115,7 @@ class FortigatePolicy(FortigateNamedObject):
 
         return interfaces
 
-    def find_addresses(self, addresses: List[List[FortigateAddress]]):
+    def find_addresses(self, addresses: list[list[FortigateAddress]]):
         self.srcaddr = self.find_addresses_for(
             self.object_data.get("srcaddr"),
             addresses,
@@ -132,9 +127,9 @@ class FortigatePolicy(FortigateNamedObject):
 
     @staticmethod
     def find_addresses_for(
-        address_arr: List[Dict], all_addresses: List[List[FortigateAddress]]
-    ) -> List[FortigateAddress]:
-        addresses: List[FortigateAddress] = []
+        address_arr: list[dict], all_addresses: list[list[FortigateAddress]]
+    ) -> list[FortigateAddress]:
+        addresses: list[FortigateAddress] = []
         for address_dict in address_arr:
             address = None
             for search_list in all_addresses:
@@ -154,8 +149,8 @@ class FortigatePolicy(FortigateNamedObject):
 
     def find_services(
         self,
-        all_services: List[
-            Union[List[FortigateService], List[FortigateServiceGroup]]
+        all_services: list[
+            list[FortigateService] | list[FortigateServiceGroup]
         ],
     ):
         for service_dict in self.object_data.get("service", []):
@@ -171,7 +166,7 @@ class FortigatePolicy(FortigateNamedObject):
 
             self.service.append(service)
 
-    def find_ippools(self, all_ippools: List[FortigateIPPool]):
+    def find_ippools(self, all_ippools: list[FortigateIPPool]):
         for ippool_dict in self.object_data.get("poolname", []):
             ippool = get_by("name", ippool_dict["name"], all_ippools)
             if ippool is None:
@@ -190,7 +185,7 @@ class FortigatePolicy(FortigateNamedObject):
             self.dstintf.append(interface)
 
     def check_addresses_interface(
-        self, interface: FortigateInterface, addresses: List[FortigateAddress]
+        self, interface: FortigateInterface, addresses: list[FortigateAddress]
     ) -> bool:
         for address in addresses:
             if address.interface and address.interface != interface:
@@ -222,7 +217,7 @@ class FortigatePolicy(FortigateNamedObject):
             self.dstaddr.append(address)
 
     def check_interface_address(
-        self, address: FortigateAddress, interfaces: List[FortigateInterface]
+        self, address: FortigateAddress, interfaces: list[FortigateInterface]
     ) -> bool:
         # policy hat mehr als 1 interface, aber addressobject hat ein interface
         # fest gesetzt
@@ -250,7 +245,7 @@ class FortigatePolicy(FortigateNamedObject):
     def check_address_type(
         self,
         address: FortigateAddress,
-        existing_addresses: List[FortigateAddress],
+        existing_addresses: list[FortigateAddress],
     ) -> bool:
         # bisher keine addressen? dann ists ok
         if len(existing_addresses) < 1:

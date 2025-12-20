@@ -1,8 +1,3 @@
-from typing import (
-    List,
-    Union,
-)
-
 from fortilib.address import FortigateAddress
 from fortilib.base import FortigateNamedObject
 
@@ -58,7 +53,7 @@ class FortigateProxyAddressURL(FortigateProxyAddress):
 
     def find_host(
         self,
-        hosts: List[Union[FortigateAddress, FortigateProxyAddressHostRegex]],
+        hosts: list[FortigateAddress | FortigateProxyAddressHostRegex],
     ):
         for host in hosts:
             if host.name == self.object_data.get("host") and isinstance(
