@@ -51,7 +51,7 @@ jobs:
           push-branch: 'master'
           commit-message: 'update version'
           force-add: 'true'
-          files: pyproject.toml src/fortilib/__init__.py docs/source/conf.py CHANGELOG.md
+          files: pyproject.toml uv.lock src/fortilib/__init__.py docs/source/conf.py CHANGELOG.md
           name: Deutsche Telekom MMS GmbH
           email: mms@telekom.de
           rebase: true
