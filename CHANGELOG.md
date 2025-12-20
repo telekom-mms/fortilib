@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- fix: set correct project name in docs [\#234](https://github.com/telekom-mms/fortilib/pull/234) ([neubi4](https://github.com/neubi4))
 - chore: fix build errors [\#233](https://github.com/telekom-mms/fortilib/pull/233) ([neubi4](https://github.com/neubi4))
 - chore: migrate to uv [\#231](https://github.com/telekom-mms/fortilib/pull/231) ([neubi4](https://github.com/neubi4))
 - fix: update code to not use python typing package [\#230](https://github.com/telekom-mms/fortilib/pull/230) ([neubi4](https://github.com/neubi4))
