@@ -33,7 +33,7 @@ jobs:
         run: uv version ${{ steps.version.outputs.next-version }}
 
       - name: Update Version in init
-        run: sed -i "s/^__version__ = \".*\"/__version__ = \"${{ steps.version.outputs.next-version }}\"/g" fortilib/__init__.py
+        run: sed -i "s/^__version__ = \".*\"/__version__ = \"${{ steps.version.outputs.next-version }}\"/g" src/fortilib/__init__.py
 
       - name: Update Version in docs
         run: sed -i "s/^release = \".*\"/release = \"${{ steps.version.outputs.next-version }}\"/g" docs/source/conf.py
@@ -51,7 +51,7 @@ jobs:
           push-branch: 'master'
           commit-message: 'update version'
           force-add: 'true'
-          files: pyproject.toml fortilib/__init__.py docs/source/conf.py CHANGELOG.md
+          files: pyproject.toml src/fortilib/__init__.py docs/source/conf.py CHANGELOG.md
           name: Deutsche Telekom MMS GmbH
           email: mms@telekom.de
           rebase: true
