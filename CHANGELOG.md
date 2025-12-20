@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore: uv.lock must be commited after version update [\#235](https://github.com/telekom-mms/fortilib/pull/235) ([neubi4](https://github.com/neubi4))
 - fix: set correct project name in docs [\#234](https://github.com/telekom-mms/fortilib/pull/234) ([neubi4](https://github.com/neubi4))
 - chore: fix build errors [\#233](https://github.com/telekom-mms/fortilib/pull/233) ([neubi4](https://github.com/neubi4))
 - chore: migrate to uv [\#231](https://github.com/telekom-mms/fortilib/pull/231) ([neubi4](https://github.com/neubi4))
