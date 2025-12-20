@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.15](https://github.com/telekom-mms/fortilib/tree/1.0.15) (2025-12-20)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.14...1.0.15)
+
+**Merged pull requests:**
+
+- fix: update code to not use python typing package [\#230](https://github.com/telekom-mms/fortilib/pull/230) ([neubi4](https://github.com/neubi4))
+
 ## [1.0.14](https://github.com/telekom-mms/fortilib/tree/1.0.14) (2025-12-20)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.13...1.0.14)
