@@ -1,10 +1,6 @@
 __version__ = "1.0.14"
 
 from enum import StrEnum
-from typing import (
-    Dict,
-    List,
-)
 
 
 class FortigateTCPUDPServiceProtocol(StrEnum):
@@ -24,7 +20,7 @@ def get_by(attrname, attrvalue, haystack):
     return None
 
 
-def get_fortigate_member_array(source: List, attrname="name") -> List[Dict]:
+def get_fortigate_member_array(source: list, attrname="name") -> list[dict]:
     ret = []
     for member in sorted(
         source, key=lambda _source: getattr(_source, attrname)

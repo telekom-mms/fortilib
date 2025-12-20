@@ -1,5 +1,3 @@
-from typing import List
-
 from fortilib.firewall import FortigateFirewall
 from fortilib.fortigateapi import (
     FortiGateApiPolicyDirection,
@@ -15,20 +13,20 @@ class Fortiproxy(FortigateFirewall):
     :param fortigateapi: Fortigate API object (:class:`fortilib.fortigateapi.FortigateFirewallApi`) for API Querys
     :ivar name: Name of fortigate firewall
     :ivar fortigate: Fortigate API object (:class:`fortilib.fortigateapi.FortigateFirewallApi`) for API Querys
-    :ivar interfaces: List of :class:`fortilib.interface.FortigateInterface` (default: [])
-    :ivar static_routes: List of :class:`fortilib.routes.FortigateStaticRoute` (default: [])
-    :ivar addresses: List of :class:`fortilib.address.FortigateAddress` (default: [])
-    :ivar address_groups: List of :class:`fortilib.addressgroup.FortigateAddressGroup` (default: [])
-    :ivar vips: List of :class:`fortilib.vip.FortigateVIP` (default: [])
-    :ivar vip_groups: List of :class:`fortilib.vipgroup.FortigateVIPGroup` (default: [])
-    :ivar services: List of :class:`fortilib.service.FortigateService` (default: [])
-    :ivar service_groups: List of :class:`fortilib.servicegroup.FortigateServiceGroup` (default: [])
-    :ivar ippools: List of :class:`fortilib.ippool.FortigateIPPool` (default: [])
-    :ivar policies: List of :class:`fortilib.policy.FortigatePolicy` (default: [])
-    :ivar proxy_addresses: List of :class:`fortilib.proxyaddresses.FortigateProxyAddress` (default: [])
-    :ivar proxy_address_groups: List of :class:`fortilib.proxyaddressgroup.FortigateProxyAddressGroup` (default: [])
+    :ivar interfaces: list of :class:`fortilib.interface.FortigateInterface` (default: [])
+    :ivar static_routes: list of :class:`fortilib.routes.FortigateStaticRoute` (default: [])
+    :ivar addresses: list of :class:`fortilib.address.FortigateAddress` (default: [])
+    :ivar address_groups: list of :class:`fortilib.addressgroup.FortigateAddressGroup` (default: [])
+    :ivar vips: list of :class:`fortilib.vip.FortigateVIP` (default: [])
+    :ivar vip_groups: list of :class:`fortilib.vipgroup.FortigateVIPGroup` (default: [])
+    :ivar services: list of :class:`fortilib.service.FortigateService` (default: [])
+    :ivar service_groups: list of :class:`fortilib.servicegroup.FortigateServiceGroup` (default: [])
+    :ivar ippools: list of :class:`fortilib.ippool.FortigateIPPool` (default: [])
+    :ivar policies: list of :class:`fortilib.policy.FortigatePolicy` (default: [])
+    :ivar proxy_addresses: list of :class:`fortilib.proxyaddresses.FortigateProxyAddress` (default: [])
+    :ivar proxy_address_groups: list of :class:`fortilib.proxyaddressgroup.FortigateProxyAddressGroup` (default: [])
     :ivar proxy_policies: None
-    :ivar all_addresses: List of :class:`fortilib.proxyaddresses.FortigateProxyAddress` and :class:`fortilib.address.FortigateAddress` (default: [])
+    :ivar all_addresses: list of :class:`fortilib.proxyaddresses.FortigateProxyAddress` and :class:`fortilib.address.FortigateAddress` (default: [])
     :ivar phase1_interfaces: None
     :ivar phase2_interfaces: None
     """
@@ -36,7 +34,7 @@ class Fortiproxy(FortigateFirewall):
     def __init__(self, name: str, fortigateapi: FortigateFirewallApi):
         super().__init__(name, fortigateapi)
 
-        self.policies: List[FortiproxyPolicy] = []
+        self.policies: list[FortiproxyPolicy] = []
 
         self.proxy_policies = None
         self.phase1_interfaces = None
@@ -77,11 +75,11 @@ class Fortiproxy(FortigateFirewall):
         self.policies = self.get_policies()
         self.all_addresses = self.get_all_addresses()
 
-    def get_policies(self) -> List[FortiproxyPolicy]:
+    def get_policies(self) -> list[FortiproxyPolicy]:
         """Query Fortiproxy API for policies
         :obj:`fortilib.policy.FortigatePolicy` and create list.
         """
-        policies: List[FortiproxyPolicy] = []
+        policies: list[FortiproxyPolicy] = []
         for raw in self.fortigate.get_firewall_policies():
             policy = FortiproxyPolicy.from_dict(raw)
 

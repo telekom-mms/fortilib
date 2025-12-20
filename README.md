@@ -16,7 +16,7 @@ This Python module contains the ability to get and configure following object on
 * Vip Groups
 
 ## Installation
-Python >= 3.8 is required.
+Python >= 3.11 is required.
 
 Dependencies:
 * [httpx](https://www.python-httpx.org/)

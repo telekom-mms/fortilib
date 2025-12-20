@@ -1,11 +1,5 @@
 import urllib.parse
 from enum import Enum
-from typing import (
-    Dict,
-    List,
-    Optional,
-    Union,
-)
 
 import httpx
 
@@ -43,11 +37,11 @@ class FortigateFirewallApi:
         self,
         ipaddr: str,
         vdom: str,
-        username: Optional[str] = None,
-        password: Optional[str] = None,
+        username: str | None = None,
+        password: str | None = None,
         timeout: int = 10,
         read_only: bool = False,
-        access_token: Optional[str] = None,
+        access_token: str | None = None,
         port: int = 443,
     ):
         self.ipaddr = ipaddr
@@ -83,21 +77,21 @@ class FortigateFirewallApi:
         """Get addresses via Fortigate API"""
         return self.fortigate.get_firewall_address()
 
-    def create_firewall_address(self, address_name: str, address_object: Dict):
+    def create_firewall_address(self, address_name: str, address_object: dict):
         """Create address via Fortigate API
 
         :param address_name: Name of address on firewall
-        :param address_object: Dict representation of address
+        :param address_object: dict representation of address
         """
         return self.fortigate.create_firewall_address(
             address_name, address_object
         )
 
-    def update_firewall_address(self, address_name: str, address_object: Dict):
+    def update_firewall_address(self, address_name: str, address_object: dict):
         """Update address via Fortigate API
 
         :param address_name: Name of address on firewall
-        :param address_object: Dict representation of address
+        :param address_object: dict representation of address
         """
         return self.fortigate.update_firewall_address(
             address_name, address_object
@@ -115,12 +109,12 @@ class FortigateFirewallApi:
         return self.fortigate.get_address_group()
 
     def create_firewall_address_group(
-        self, group_name: str, group_object: Dict
+        self, group_name: str, group_object: dict
     ):
         """Create address group via Fortigate API
 
         :param group_name: Name of address group on firewall
-        :param group_object: Dict representation of address group
+        :param group_object: dict representation of address group
         """
         return self.fortigate.create_address_group(
             group_name,
@@ -128,12 +122,12 @@ class FortigateFirewallApi:
         )
 
     def update_firewall_address_group(
-        self, group_name: str, group_object: Dict
+        self, group_name: str, group_object: dict
     ):
         """Update address group via Fortigate API
 
         :param group_name: Name of address group on firewall
-        :param group_object: Dict representation of address group
+        :param group_object: dict representation of address group
         """
         return self.fortigate.update_address_group(
             group_name,
@@ -151,19 +145,19 @@ class FortigateFirewallApi:
         """Get vips via Fortigate API"""
         return self.fortigate.get_firewall_vip()
 
-    def create_firewall_vip(self, vip_name: str, vip_object: Dict):
+    def create_firewall_vip(self, vip_name: str, vip_object: dict):
         """Create vip via Fortigate API
 
         :param vip_name: Name of vip on firewall
-        :param vip_object: Dict representation of vip
+        :param vip_object: dict representation of vip
         """
         return self.fortigate.create_firewall_vip(vip_name, vip_object)
 
-    def update_firewall_vip(self, vip_name: str, vip_object: Dict):
+    def update_firewall_vip(self, vip_name: str, vip_object: dict):
         """Update vip via Fortigate API
 
         :param vip_name: Name of vip on firewall
-        :param vip_object: Dict representation of vip
+        :param vip_object: dict representation of vip
         """
         return self.fortigate.update_firewall_vip(vip_name, vip_object)
 
@@ -179,24 +173,24 @@ class FortigateFirewallApi:
         return self.fortigate.get_firewall_vip_group()
 
     def create_firewall_vip_group(
-        self, vip_group_name: str, vip_group_object: Dict
+        self, vip_group_name: str, vip_group_object: dict
     ):
         """Create vip group via Fortigate API
 
         :param vip_group_name: Name of vip group on firewall
-        :param vip_group_object: Dict representation of vip group
+        :param vip_group_object: dict representation of vip group
         """
         return self.fortigate.create_firewall_vip_group(
             vip_group_name, vip_group_object
         )
 
     def update_firewall_vip_group(
-        self, vip_group_name: str, vip_group_object: Dict
+        self, vip_group_name: str, vip_group_object: dict
     ):
         """Update vip group via Fortigate API
 
         :param vip_group_name: Name of vip group on firewall
-        :param vip_group_object: Dict representation of vip group
+        :param vip_group_object: dict representation of vip group
         """
         return self.fortigate.update_firewall_vip_group(
             vip_group_name, vip_group_object
@@ -206,7 +200,7 @@ class FortigateFirewallApi:
         """Delete vip group via Fortigate API
 
         :param vip_group_name: Name of vip group on firewall
-        :param vip_group_object: Dict representation of vip group
+        :param vip_group_object: dict representation of vip group
         """
         return self.fortigate.delete_firewall_vip_group(vip_group_name)
 
@@ -218,21 +212,21 @@ class FortigateFirewallApi:
         """Get static routes via Fortigate API"""
         return self.fortigate.get_firewall_route_static()
 
-    def create_firewall_route_static(self, seq_num: str, route_object: Dict):
+    def create_firewall_route_static(self, seq_num: str, route_object: dict):
         """Create static route via Fortigate API
 
         :param seq_num: Sequence number of static route on firewall
-        :param route_object: Dict representation of static route
+        :param route_object: dict representation of static route
         """
         return self.fortigate.create_firewall_route_static(
             seq_num, route_object
         )
 
-    def update_firewall_route_static(self, seq_num: str, route_object: Dict):
+    def update_firewall_route_static(self, seq_num: str, route_object: dict):
         """Update static route via Fortigate API
 
         :param seq_num: Sequence number of static route on firewall
-        :param route_object: Dict representation of static route
+        :param route_object: dict representation of static route
         """
         return self.fortigate.update_firewall_route_static(
             seq_num, route_object
@@ -249,21 +243,21 @@ class FortigateFirewallApi:
         """Get services via Fortigate API"""
         return self.fortigate.get_firewall_service()
 
-    def create_firewall_service(self, service_name: str, service_object: Dict):
+    def create_firewall_service(self, service_name: str, service_object: dict):
         """Create service via Fortigate API
 
         :param service_name: Name of service on firewall
-        :param service_object: Dict representation of service
+        :param service_object: dict representation of service
         """
         return self.fortigate.create_firewall_service(
             service_name, service_object
         )
 
-    def update_firewall_service(self, service_name: str, service_object: Dict):
+    def update_firewall_service(self, service_name: str, service_object: dict):
         """Update service via Fortigate API
 
         :param service_name: Name of service on firewall
-        :param service_object: Dict representation of service
+        :param service_object: dict representation of service
         """
         return self.fortigate.update_firewall_service(
             service_name, service_object
@@ -277,22 +271,22 @@ class FortigateFirewallApi:
         return self.fortigate.delete_firewall_service(service_name)
 
     def create_firewall_service_group(
-        self, group_name: str, group_object: Dict
+        self, group_name: str, group_object: dict
     ):
         """Create service group via Fortigate API
 
         :param group_name: Name of service group on firewall
-        :param group_object: Dict representation of service group
+        :param group_object: dict representation of service group
         """
         return self.fortigate.create_service_group(group_name, group_object)
 
     def update_firewall_service_group(
-        self, group_name: str, group_object: Dict
+        self, group_name: str, group_object: dict
     ):
         """Update service group via Fortigate API
 
         :param group_name: Name of service group on firewall
-        :param group_object: Dict representation of service group
+        :param group_object: dict representation of service group
         """
         return self.fortigate.update_service_group(group_name, group_object)
 
@@ -311,19 +305,19 @@ class FortigateFirewallApi:
         """Get ip pools via Fortigate API"""
         return self.fortigate.get_firewall_ippool()
 
-    def create_firewall_ippool(self, pool_name: str, pool_object: Dict):
+    def create_firewall_ippool(self, pool_name: str, pool_object: dict):
         """Create ip pool via Fortigate API
 
         :param pool_name: Name of ip pool on firewall
-        :param pool_object: Dict representation of ip pool
+        :param pool_object: dict representation of ip pool
         """
         return self.fortigate.create_firewall_ippool(pool_name, pool_object)
 
-    def update_firewall_ippool(self, pool_name: str, pool_object: Dict):
+    def update_firewall_ippool(self, pool_name: str, pool_object: dict):
         """Update ip pool via Fortigate API
 
         :param pool_name: Name of ip pool on firewall
-        :param pool_object: Dict representation of ip pool
+        :param pool_object: dict representation of ip pool
         """
         return self.fortigate.update_firewall_ippool(pool_name, pool_object)
 
@@ -338,21 +332,21 @@ class FortigateFirewallApi:
         """Get policies via Fortigate API"""
         return self.fortigate.get_firewall_policy()
 
-    def create_firewall_policy(self, policy_id: int, policy_object: Dict):
+    def create_firewall_policy(self, policy_id: int, policy_object: dict):
         """Create policy via Fortigate API
 
         :param policy_id: Name of policy on firewall
-        :param policy_object: Dict representation of policy
+        :param policy_object: dict representation of policy
         """
         return self.fortigate.create_firewall_policy(
             str(policy_id), policy_object
         )
 
-    def update_firewall_policy(self, policy_id: int, policy_object: Dict):
+    def update_firewall_policy(self, policy_id: int, policy_object: dict):
         """Update policy via Fortigate API
 
         :param policy_id: Name of policy on firewall
-        :param policy_object: Dict representation of policy
+        :param policy_object: dict representation of policy
         """
         return self.fortigate.update_firewall_policy(
             str(policy_id), policy_object
@@ -408,24 +402,24 @@ class FortigateFirewallApi:
         return self.fortigate.get_firewall_proxy_address()
 
     def create_firewall_proxy_address(
-        self, address_name: str, address_object: Dict
+        self, address_name: str, address_object: dict
     ):
         """Create proxy address via Fortigate API
 
         :param address_name: Name of proxy address on firewall
-        :param address_object: Dict representation of proxy address
+        :param address_object: dict representation of proxy address
         """
         return self.fortigate.create_firewall_proxy_address(
             address_name, address_object
         )
 
     def update_firewall_proxy_address(
-        self, address_name: str, address_object: Dict
+        self, address_name: str, address_object: dict
     ):
         """Update proxy address via Fortigate API
 
         :param address_name: Name of proxy address on firewall
-        :param address_object: Dict representation of proxy address
+        :param address_object: dict representation of proxy address
         """
         return self.fortigate.update_firewall_proxy_address(
             address_name, address_object
@@ -447,12 +441,12 @@ class FortigateFirewallApi:
         return self.fortigate.get_firewall_proxy_address_group()
 
     def create_firewall_proxy_address_group(
-        self, group_name: str, group_object: Dict
+        self, group_name: str, group_object: dict
     ):
         """Create proxy address group via Fortigate API
 
         :param group_name: Name of address group on firewall
-        :param group_object: Dict representation of address group
+        :param group_object: dict representation of address group
         """
         return self.fortigate.create_proxy_address_group(
             group_name,
@@ -460,12 +454,12 @@ class FortigateFirewallApi:
         )
 
     def update_firewall_proxy_address_group(
-        self, group_name: str, group_object: Dict
+        self, group_name: str, group_object: dict
     ):
         """Update proxy address group via Fortigate API
 
         :param group_name: Name of address group on firewall
-        :param group_object: Dict representation of address group
+        :param group_object: dict representation of address group
         """
         return self.fortigate.update_proxy_address_group(
             group_name,
@@ -480,24 +474,24 @@ class FortigateFirewallApi:
         return self.fortigate.delete_proxy_address_group(group_name)
 
     def create_firewall_proxy_policies(
-        self, policy_id: int, proxy_policy_object: Dict
+        self, policy_id: int, proxy_policy_object: dict
     ):
         """Create proxy policy via Fortigate API
 
         :param policy_id: ID of proxy policy on firewall
-        :param proxy_policy_object: Dict representation of proxy policy
+        :param proxy_policy_object: dict representation of proxy policy
         """
         return self.fortigate.create_firewall_proxy_policy(
             str(policy_id), proxy_policy_object
         )
 
     def update_firewall_proxy_policies(
-        self, policy_id: int, proxy_policy_object: Dict
+        self, policy_id: int, proxy_policy_object: dict
     ):
         """Update policy via Fortigate API
 
         :param policy_id: ID of proxy policy on firewall
-        :param proxy_policy_object: Dict representation of proxy policy
+        :param proxy_policy_object: dict representation of proxy policy
         """
         return self.fortigate.update_firewall_proxy_policy(
             str(policy_id), proxy_policy_object
@@ -515,24 +509,24 @@ class FortigateFirewallApi:
         return self.fortigate.get_firewall_phase1_interface()
 
     def create_firewall_phase1_interface(
-        self, name: str, phase1_interface_object: Dict
+        self, name: str, phase1_interface_object: dict
     ):
         """Create phase1 interface via Fortigate API
 
         :param name: Name of phase1 interface on firewall
-        :param phase1_interface_object: Dict representation of phase1 interface
+        :param phase1_interface_object: dict representation of phase1 interface
         """
         return self.fortigate.create_firewall_phase1_interface(
             name, phase1_interface_object
         )
 
     def update_firewall_phase1_interface(
-        self, name: str, phase1_interface_object: Dict
+        self, name: str, phase1_interface_object: dict
     ):
         """Update phase1 interface via Fortigate API
 
         :param name: Name of phase1 interface on firewall
-        :param phase1_interface_object: Dict representation of phase1 interface
+        :param phase1_interface_object: dict representation of phase1 interface
         """
         return self.fortigate.update_firewall_phase1_interface(
             name, phase1_interface_object
@@ -550,24 +544,24 @@ class FortigateFirewallApi:
         return self.fortigate.get_firewall_phase2_interface()
 
     def create_firewall_phase2_interface(
-        self, name: str, phase2_interface_object: Dict
+        self, name: str, phase2_interface_object: dict
     ):
         """Create phase2 interface via Fortigate API
 
         :param name: Name of phase2 interface on firewall
-        :param phase2_interface_object: Dict representation of phase2 interface
+        :param phase2_interface_object: dict representation of phase2 interface
         """
         return self.fortigate.create_firewall_phase2_interface(
             name, phase2_interface_object
         )
 
     def update_firewall_phase2_interface(
-        self, name: str, phase2_interface_object: Dict
+        self, name: str, phase2_interface_object: dict
     ):
         """Update phase2 interface via Fortigate API
 
         :param name: Name of phase2 interface on firewall
-        :param phase2_interface_object: Dict representation of phase2 interface
+        :param phase2_interface_object: dict representation of phase2 interface
         """
         return self.fortigate.update_firewall_phase2_interface(
             name, phase2_interface_object
@@ -639,9 +633,9 @@ class FortiGateApi:
     def __init__(
         self,
         ipaddr: str,
-        username: Optional[str] = None,
-        password: Optional[str] = None,
-        access_token: Optional[str] = None,
+        username: str | None = None,
+        password: str | None = None,
+        access_token: str | None = None,
         timeout: int = 10,
         vdom: str = "root",
         port: str = "443",
@@ -661,7 +655,7 @@ class FortiGateApi:
         self.read_only: bool = read_only
 
         self.client: httpx.Client = None
-        self.operations: List[FortiGateOperation] = []
+        self.operations: list[FortiGateOperation] = []
 
     def login(self):
         """Login via Username or Access Token.
@@ -788,7 +782,7 @@ class FortiGateApi:
 
     def query_api_get(
         self, uri: str, specific=False, filters=False
-    ) -> Union[dict, int]:
+    ) -> dict | int:
         api_url = self.urlbase + uri
         params = dict()
 
@@ -806,8 +800,8 @@ class FortiGateApi:
         return result.json()["results"]
 
     def query_api_create(
-        self, uri: str, identifier: str, data: Dict
-    ) -> Union[dict, int]:
+        self, uri: str, identifier: str, data: dict
+    ) -> dict | int:
         api_url = self.urlbase + uri
         if self.does_exist(api_url + identifier):
             raise ObjectAlreadyExitsException(
@@ -829,8 +823,8 @@ class FortiGateApi:
         self,
         uri: str,
         identifier: str,
-        data: Dict,
-    ) -> Union[dict, int]:
+        data: dict,
+    ) -> dict | int:
         api_url = self.urlbase + uri
         self.operations.append(
             FortiGateOperation(
@@ -851,7 +845,7 @@ class FortiGateApi:
         identifier: str,
         move_direction: FortiGateApiPolicyDirection = None,
         move_identifier: str = None,
-    ) -> Union[dict, int]:
+    ) -> dict | int:
         api_url = self.urlbase + uri
         move_url = f"{api_url}/{identifier}"
         params = {
@@ -879,7 +873,7 @@ class FortiGateApi:
         self.check_response_code(result)
         return result.json()
 
-    def query_api_delete(self, uri: str, identifier: str) -> Union[dict, int]:
+    def query_api_delete(self, uri: str, identifier: str) -> dict | int:
         api_url = self.urlbase + uri
 
         self.operations.append(
@@ -901,12 +895,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_STATIC_ROUTE, specific, filters
         )
 
-    def create_firewall_route_static(self, seq_num: str, data: Dict):
+    def create_firewall_route_static(self, seq_num: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_STATIC_ROUTE, seq_num, data
         )
 
-    def update_firewall_route_static(self, seq_num: str, data: Dict):
+    def update_firewall_route_static(self, seq_num: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_STATIC_ROUTE, seq_num, data
         )
@@ -990,7 +984,7 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_POLICY, specific, filters
         )
 
-    def create_firewall_ippool(self, pool_name: str, data: Dict):
+    def create_firewall_ippool(self, pool_name: str, data: dict):
         """Query Fortigate API to create ip pool.
 
         :param pool_name: Name of ip pool
@@ -1000,7 +994,7 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_IPPOOL, pool_name, data
         )
 
-    def update_firewall_ippool(self, pool_name: str, data: Dict):
+    def update_firewall_ippool(self, pool_name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_IPPOOL, pool_name, data
         )
@@ -1010,12 +1004,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_IPPOOL, pool_name
         )
 
-    def create_firewall_vip(self, vip_name: str, data: Dict):
+    def create_firewall_vip(self, vip_name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_VIP, vip_name, data
         )
 
-    def update_firewall_vip(self, vip_name: str, data: Dict):
+    def update_firewall_vip(self, vip_name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_VIP, vip_name, data
         )
@@ -1025,12 +1019,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_VIP, vip_name
         )
 
-    def create_firewall_vip_group(self, vip_group_name: str, data: Dict):
+    def create_firewall_vip_group(self, vip_group_name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_VIP_GROUP, vip_group_name, data
         )
 
-    def update_firewall_vip_group(self, vip_group_name: str, data: Dict):
+    def update_firewall_vip_group(self, vip_group_name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_VIP_GROUP, vip_group_name, data
         )
@@ -1040,12 +1034,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_VIP_GROUP, vip_group_name
         )
 
-    def create_firewall_address(self, address_name: str, data: Dict):
+    def create_firewall_address(self, address_name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_ADDRESS, address_name, data
         )
 
-    def update_firewall_address(self, address_name: str, data: Dict):
+    def update_firewall_address(self, address_name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_ADDRESS, address_name, data
         )
@@ -1055,12 +1049,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_ADDRESS, address_name
         )
 
-    def create_address_group(self, group_name: str, data: Dict):
+    def create_address_group(self, group_name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_ADDRESS_GROUP, group_name, data
         )
 
-    def update_address_group(self, group_name: str, data: Dict):
+    def update_address_group(self, group_name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_ADDRESS_GROUP, group_name, data
         )
@@ -1070,12 +1064,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_ADDRESS_GROUP, group_name
         )
 
-    def create_firewall_service(self, service_name: str, data: Dict):
+    def create_firewall_service(self, service_name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_SERVICE, service_name, data
         )
 
-    def update_firewall_service(self, service_name: str, data: Dict):
+    def update_firewall_service(self, service_name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_SERVICE, service_name, data
         )
@@ -1085,12 +1079,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_SERVICE, service_name
         )
 
-    def create_service_group(self, group_name: str, data: Dict):
+    def create_service_group(self, group_name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_SERVICE_GROUP, group_name, data
         )
 
-    def update_service_group(self, group_name: str, data: Dict):
+    def update_service_group(self, group_name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_SERVICE_GROUP, group_name, data
         )
@@ -1100,7 +1094,7 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_SERVICE_GROUP, group_name
         )
 
-    def create_firewall_policy(self, policy_id: str, data: Dict):
+    def create_firewall_policy(self, policy_id: str, data: dict):
         ret = self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_POLICY, policy_id, data
         )
@@ -1109,7 +1103,7 @@ class FortiGateApi:
 
         return ret
 
-    def update_firewall_policy(self, policy_id: str, data: Dict):
+    def update_firewall_policy(self, policy_id: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_POLICY, policy_id, data
         )
@@ -1145,12 +1139,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_POLICY, policy_id
         )
 
-    def create_firewall_proxy_address(self, address_name: str, data: Dict):
+    def create_firewall_proxy_address(self, address_name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_ADDRESS, address_name, data
         )
 
-    def update_firewall_proxy_address(self, address_name: str, data: Dict):
+    def update_firewall_proxy_address(self, address_name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_ADDRESS,
             urllib.parse.quote_plus(address_name),
@@ -1163,7 +1157,7 @@ class FortiGateApi:
             urllib.parse.quote_plus(address_name),
         )
 
-    def create_firewall_proxy_policy(self, policy_id: str, data: Dict):
+    def create_firewall_proxy_policy(self, policy_id: str, data: dict):
         ret = self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_POLICY, policy_id, data
         )
@@ -1172,7 +1166,7 @@ class FortiGateApi:
 
         return ret
 
-    def update_firewall_proxy_policy(self, policy_id: str, data: Dict):
+    def update_firewall_proxy_policy(self, policy_id: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_POLICY, policy_id, data
         )
@@ -1182,14 +1176,14 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_POLICY, policy_id
         )
 
-    def create_proxy_address_group(self, group_name: str, data: Dict):
+    def create_proxy_address_group(self, group_name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_ADDRESS_GROUP,
             group_name,
             data,
         )
 
-    def update_proxy_address_group(self, group_name: str, data: Dict):
+    def update_proxy_address_group(self, group_name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_PROXY_ADDRESS_GROUP,
             group_name,
@@ -1202,7 +1196,7 @@ class FortiGateApi:
         )
 
     def get_write_operations(self):
-        filtered: List[FortiGateOperation] = []
+        filtered: list[FortiGateOperation] = []
         for operation in self.operations:
             if operation.query_type != FortiGateQueryType.GET:
                 filtered.append(operation)
@@ -1214,12 +1208,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_PHASE1_INTERFACE, specific, filters
         )
 
-    def create_firewall_phase1_interface(self, name: str, data: Dict):
+    def create_firewall_phase1_interface(self, name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_PHASE1_INTERFACE, name, data
         )
 
-    def update_firewall_phase1_interface(self, name: str, data: Dict):
+    def update_firewall_phase1_interface(self, name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_PHASE1_INTERFACE, name, data
         )
@@ -1234,12 +1228,12 @@ class FortiGateApi:
             FortiGateApi.ENDPOINT_FIREWALL_PHASE2_INTERFACE, specific, filters
         )
 
-    def create_firewall_phase2_interface(self, name: str, data: Dict):
+    def create_firewall_phase2_interface(self, name: str, data: dict):
         return self.query_api_create(
             FortiGateApi.ENDPOINT_FIREWALL_PHASE2_INTERFACE, name, data
         )
 
-    def update_firewall_phase2_interface(self, name: str, data: Dict):
+    def update_firewall_phase2_interface(self, name: str, data: dict):
         return self.query_api_update(
             FortiGateApi.ENDPOINT_FIREWALL_PHASE2_INTERFACE, name, data
         )

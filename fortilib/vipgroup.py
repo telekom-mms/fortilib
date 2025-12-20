@@ -1,5 +1,3 @@
-from typing import List
-
 from fortilib.address import FortigateAddress
 from fortilib.mixins.group import FortigateGroupMixin
 from fortilib.mixins.interface import FortigateInterfaceMixin
@@ -22,7 +20,7 @@ class FortigateVIPGroup(
         """
         super().__init__()
 
-        self.member: List[FortigateVIP, FortigateVIPGroup] = []
+        self.member: list[FortigateVIP, FortigateVIPGroup] = []
 
     def populate(self, object_data: dict):
         """Parse raw dict data to vip group object.

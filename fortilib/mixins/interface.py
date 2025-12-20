@@ -1,12 +1,10 @@
-from typing import List
-
 from fortilib.interface import FortigateInterface
 
 
 class FortigateInterfaceMixin:
     interface_attribute: str = "interface"
 
-    def find_interface(self, interfaces: List[FortigateInterface]):
+    def find_interface(self, interfaces: list[FortigateInterface]):
         if self.object_data.get(self.interface_attribute, "") in ("", "any"):
             return
 

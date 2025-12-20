@@ -1,5 +1,3 @@
-from typing import List
-
 from fortilib.mixins.group import FortigateGroupMixin
 from fortilib.proxyaddress import FortigateProxyAddress
 
@@ -15,7 +13,7 @@ class FortigateProxyAddressGroup(FortigateProxyAddress, FortigateGroupMixin):
     def __init__(self):
         super().__init__()
 
-        self.member: List[
+        self.member: list[
             FortigateProxyAddress, FortigateProxyAddressGroup
         ] = []
         self.type: str = "dst"
