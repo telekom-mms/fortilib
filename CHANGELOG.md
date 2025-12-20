@@ -6,6 +6,8 @@
 
 **Merged pull requests:**
 
+- chore: fix build errors [\#233](https://github.com/telekom-mms/fortilib/pull/233) ([neubi4](https://github.com/neubi4))
+- chore: migrate to uv [\#231](https://github.com/telekom-mms/fortilib/pull/231) ([neubi4](https://github.com/neubi4))
 - fix: update code to not use python typing package [\#230](https://github.com/telekom-mms/fortilib/pull/230) ([neubi4](https://github.com/neubi4))
 
 ## [1.0.14](https://github.com/telekom-mms/fortilib/tree/1.0.14) (2025-12-20)
@@ -15,10 +17,6 @@
 **Fixed bugs:**
 
 - \[Bug\] move\_firewall\_\*policy functions not working with httpx \>= 0.28.0 [\#228](https://github.com/telekom-mms/fortilib/issues/228)
-
-**Closed issues:**
-
-- Dependency Dashboard [\#4](https://github.com/telekom-mms/fortilib/issues/4)
 
 **Merged pull requests:**
 
