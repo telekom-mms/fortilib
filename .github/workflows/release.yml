@@ -26,11 +26,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install poetry
-        run: pip install poetry
+      - name: Install uv
+        run: pip install uv
 
-      - name: Update Version with poetry
-        run: poetry version ${{ steps.version.outputs.next-version }}
+      - name: Update Version with uv
+        run: uv version ${{ steps.version.outputs.next-version }}
 
       - name: Update Version in init
         run: sed -i "s/^__version__ = \".*\"/__version__ = \"${{ steps.version.outputs.next-version }}\"/g" fortilib/__init__.py

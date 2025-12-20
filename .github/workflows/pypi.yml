@@ -13,12 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Install poetry
-        run: sudo apt update && sudo apt install -y pipx && pipx install poetry
+      - name: Install uv
+        run: sudo apt update && sudo apt install -y pipx && pipx install uv
 
       - name: Publish to pypi
         env:
-          POETRY_HTTP_BASIC_PYPI_USERNAME: __token__
-          POETRY_HTTP_BASIC_PYPI_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-          PYTHON_KEYRING_BACKEND: keyring.backends.null.Keyring
-        run: poetry publish --build
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          uv build
+          uv publish
