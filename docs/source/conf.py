@@ -18,7 +18,7 @@ sys.setrecursionlimit(1500)
 
 # -- Project information -----------------------------------------------------
 
-project = "hestia-fw-helper-v2"
+project = "fortilib"
 copyright = "2021, NOC ZED"
 author = "NOC ZED"
 
