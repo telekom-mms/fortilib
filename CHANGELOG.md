@@ -1,8 +1,12 @@
 # Changelog
 
-## [1.0.14](https://github.com/telekom-mms/fortilib/tree/1.0.14) (2025-12-19)
+## [1.0.14](https://github.com/telekom-mms/fortilib/tree/1.0.14) (2025-12-20)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.13...1.0.14)
+
+**Fixed bugs:**
+
+- \[Bug\] move\_firewall\_\*policy functions not working with httpx \>= 0.28.0 [\#228](https://github.com/telekom-mms/fortilib/issues/228)
 
 **Closed issues:**
 
@@ -10,6 +14,7 @@
 
 **Merged pull requests:**
 
+- fix: params should be an dict and not written directly to urls [\#229](https://github.com/telekom-mms/fortilib/pull/229) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency coverage to v7.13.0 [\#227](https://github.com/telekom-mms/fortilib/pull/227) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency black to v25.12.0 [\#226](https://github.com/telekom-mms/fortilib/pull/226) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v9.0.2 [\#225](https://github.com/telekom-mms/fortilib/pull/225) ([renovate[bot]](https://github.com/apps/renovate))
