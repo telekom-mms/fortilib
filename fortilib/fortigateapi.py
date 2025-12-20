@@ -594,12 +594,16 @@ class FortiGateOperation:
         url: str,
         query_type: FortiGateQueryType,
         identifier: str,
-        data: Dict,
+        data: dict | None = None,
+        params: dict | None = None,
     ):
         self.url: str = url
+        if params:
+            self.url = f"{self.url}?{urllib.parse.urlencode(params)}"
+
         self.query_type: FortiGateQueryType = query_type
         self.identifier: str = identifier
-        self.data: Dict = data
+        self.data: dict = data or dict()
 
     def __repr__(self):
         return (
@@ -706,16 +710,19 @@ class FortiGateApi:
             url = self.urlbase + "logout"
             self.client.get(url)
 
-    def does_exist(self, object_url: str) -> bool:
+    def does_exist(self, object_url: str, params: dict | None = None) -> bool:
+        params = params or dict()
+        params.update(vdom=self.vdom)
+
         response = self.client.get(
             object_url,
-            params=f"vdom={self.vdom}",
+            params=params,
         )
         if response.status_code == 200:
             return True
         return False
 
-    def get(self, url, params: Optional[dict] = None):
+    def get(self, url, params: dict | None = None):
         params = params or dict()
         params.update(vdom=self.vdom)
 
@@ -724,24 +731,33 @@ class FortiGateApi:
             params=params,
         )
 
-    def put(self, url, data: Dict):
+    def put(self, url, data: dict | None, params: dict | None = None):
+        params = params or dict()
+        params.update(vdom=self.vdom)
+
         return self.client.put(
             url,
             json=data,
-            params=f"vdom={self.vdom}",
+            params=params,
         )
 
-    def post(self, url, data: Dict):
+    def post(self, url, data: dict, params: dict | None = None):
+        params = params or dict()
+        params.update(vdom=self.vdom)
+
         return self.client.post(
             url,
             json=data,
-            params=f"vdom={self.vdom}",
+            params=params,
         )
 
-    def delete(self, url):
+    def delete(self, url, params: dict | None = None):
+        params = params or dict()
+        params.update(vdom=self.vdom)
+
         return self.client.delete(
             url,
-            params=f"vdom={self.vdom}",
+            params=params,
         )
 
     def check_response_code(self, response: httpx.Response):
@@ -837,10 +853,18 @@ class FortiGateApi:
         move_identifier: str = None,
     ) -> Union[dict, int]:
         api_url = self.urlbase + uri
-        move_url = f"{api_url}/{identifier}?action=move&{move_direction.value}={move_identifier}"
+        move_url = f"{api_url}/{identifier}"
+        params = {
+            "action": "move",
+            move_direction.value: move_identifier,
+        }
         self.operations.append(
             FortiGateOperation(
-                move_url, FortiGateQueryType.PUT, identifier, ""
+                move_url,
+                FortiGateQueryType.PUT,
+                identifier,
+                data=None,
+                params=params,
             )
         )
 
@@ -849,7 +873,8 @@ class FortiGateApi:
 
         result = self.put(
             move_url,
-            None,
+            data=None,
+            params=params,
         )
         self.check_response_code(result)
         return result.json()
