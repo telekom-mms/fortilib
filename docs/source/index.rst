@@ -1,4 +1,4 @@
-.. hestia-fw-helper-v2 documentation master file, created by
+.. fortilib documentation master file, created by
    sphinx-quickstart on Tue Oct 12 15:48:19 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
