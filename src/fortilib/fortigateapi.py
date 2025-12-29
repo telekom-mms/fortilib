@@ -805,7 +805,7 @@ class FortiGateApi:
         api_url = self.urlbase + uri
         if self.does_exist(api_url + identifier):
             raise ObjectAlreadyExitsException(
-                f"object {identifier} " f"already exists"
+                f"object {identifier} already exists"
             )
 
         self.operations.append(
