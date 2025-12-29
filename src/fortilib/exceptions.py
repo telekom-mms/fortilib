@@ -14,8 +14,7 @@ class APIException(Exception):
         if "cli_error" in forti_error_msg:
             forti_error_msg = self.response.json()["cli_error"]
         return repr(
-            f"Response Code: {self.response.status_code} - "
-            f"{forti_error_msg}"
+            f"Response Code: {self.response.status_code} - {forti_error_msg}"
         )
 
 

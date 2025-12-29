@@ -80,8 +80,7 @@ class FortigateProxyPolicy(FortigateNamedObject):
             interface = get_by("name", interface_dict["name"], all_interfaces)
             if interface is None:
                 raise Exception(
-                    f"no interface found "
-                    f"with name {interface_dict['name']}"
+                    f"no interface found with name {interface_dict['name']}"
                 )
             interfaces.append(interface)
 
@@ -137,7 +136,7 @@ class FortigateProxyPolicy(FortigateNamedObject):
                     break
             if service is None:
                 raise Exception(
-                    f"service with name {service_dict['name']} " f"not found"
+                    f"service with name {service_dict['name']} not found"
                 )
 
             self.service.append(service)

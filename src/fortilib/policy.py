@@ -108,8 +108,7 @@ class FortigatePolicy(FortigateNamedObject):
             interface = get_by("name", interface_dict["name"], all_interfaces)
             if interface is None:
                 raise Exception(
-                    f"no interface found "
-                    f"with name {interface_dict['name']}"
+                    f"no interface found with name {interface_dict['name']}"
                 )
             interfaces.append(interface)
 
@@ -171,7 +170,7 @@ class FortigatePolicy(FortigateNamedObject):
             ippool = get_by("name", ippool_dict["name"], all_ippools)
             if ippool is None:
                 raise Exception(
-                    f"ippool with name {ippool_dict['name']} " f"not found"
+                    f"ippool with name {ippool_dict['name']} not found"
                 )
 
             self.poolname.append(ippool)
