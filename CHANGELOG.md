@@ -1,11 +1,16 @@
 # Changelog
 
-## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2025-12-29)
+## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-01-05)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.15...1.0.16)
 
+**Closed issues:**
+
+- Dependency Dashboard [\#4](https://github.com/telekom-mms/fortilib/issues/4)
+
 **Merged pull requests:**
 
+- chore\(deps\): update dependency poethepoet to \>=0.40.0,\<0.41.0 [\#237](https://github.com/telekom-mms/fortilib/pull/237) ([renovate[bot]](https://github.com/apps/renovate))
 - chore: add poethepoet for formatting, add isort to ruff selects [\#236](https://github.com/telekom-mms/fortilib/pull/236) ([neubi4](https://github.com/neubi4))
 
 ## [1.0.15](https://github.com/telekom-mms/fortilib/tree/1.0.15) (2025-12-20)
