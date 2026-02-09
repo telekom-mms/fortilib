@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-02-03)
+## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-02-09)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.15...1.0.16)
 
@@ -10,6 +10,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): update dependency poethepoet to \>=0.41.0,\<0.42.0 [\#239](https://github.com/telekom-mms/fortilib/pull/239) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency ruff to \>=0.15.0,\<0.16.0 [\#238](https://github.com/telekom-mms/fortilib/pull/238) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency poethepoet to \>=0.40.0,\<0.41.0 [\#237](https://github.com/telekom-mms/fortilib/pull/237) ([renovate[bot]](https://github.com/apps/renovate))
 - chore: add poethepoet for formatting, add isort to ruff selects [\#236](https://github.com/telekom-mms/fortilib/pull/236) ([neubi4](https://github.com/neubi4))
