@@ -37,7 +37,7 @@ class FortigateProxyPolicy(FortigateNamedObject):
         self.service: list[FortigateService] = []
 
         self.schedule: str = "always"
-        self.proxy: str = "transparent-web"
+        self.proxy: str | None = "transparent-web"
         self.logtraffic: str = "all"
         self.utm_status: str = "enable"
         self.profile_type: str = "group"
@@ -62,11 +62,11 @@ class FortigateProxyPolicy(FortigateNamedObject):
 
     def find_interfaces(self, interfaces: list[FortigateInterface]):
         self.srcintf = self.find_interface_for(
-            self.object_data.get("srcintf"),
+            self.object_data["srcintf"],
             interfaces,
         )
         self.dstintf = self.find_interface_for(
-            self.object_data.get("dstintf"),
+            self.object_data["dstintf"],
             interfaces,
         )
 
@@ -90,12 +90,17 @@ class FortigateProxyPolicy(FortigateNamedObject):
         self,
         addresses: list[list[FortigateAddress | FortigateProxyAddress]],
     ):
-        self.srcaddr = self.find_addresses_for(
-            self.object_data.get("srcaddr"),
+        src_addresses = self.find_addresses_for(
+            self.object_data["srcaddr"],
             addresses,
         )
+        self.srcaddr = [
+            address
+            for address in src_addresses
+            if isinstance(address, FortigateAddress)
+        ]
         self.dstaddr = self.find_addresses_for(
-            self.object_data.get("dstaddr"),
+            self.object_data["dstaddr"],
             addresses,
         )
 
@@ -150,7 +155,10 @@ class FortigateProxyPolicy(FortigateNamedObject):
             self.dstintf.append(interface)
 
     def check_addresses_interface(
-        self, interface: FortigateInterface, addresses: list[FortigateAddress]
+        self,
+        interface: FortigateInterface,
+        addresses: list[FortigateAddress]
+        | list[FortigateAddress | FortigateProxyAddress],
     ) -> bool:
         for address in addresses:
             if (
@@ -235,7 +243,8 @@ class FortigateProxyPolicy(FortigateNamedObject):
     def check_address_type(
         self,
         address: FortigateAddress,
-        existing_addresses: list[FortigateAddress],
+        existing_addresses: list[FortigateAddress]
+        | list[FortigateAddress | FortigateProxyAddress],
     ) -> bool:
         # bisher keine addressen? dann ists ok
         if len(existing_addresses) < 1:

@@ -1,16 +1,17 @@
 import ipaddress
+from enum import StrEnum
 
 from fortilib import remove_empty_dict_values
 from fortilib.base import FortigateNamedObject
 
 
-class FortigatePhase2KeylifeType:
+class FortigatePhase2KeylifeType(StrEnum):
     SECONDS = "seconds"
     KILOBYTES = "kbs"
     BOTH = "both"
 
 
-class FortigatePhase2AddressType:
+class FortigatePhase2AddressType(StrEnum):
     IP = "ip"
     RANGE = "range"
     SUBNET = "subnet"
@@ -43,12 +44,24 @@ class FortigatePhase2Interface(FortigateNamedObject):
         super().__init__()
 
         self.phase1_name: str = ""
-        self.dst_subnet: ipaddress.IPv4Network = None
-        self.src_subnet: ipaddress.IPv4Network = None
-        self.dst_start_ip: ipaddress.IPv4Address = None
-        self.dst_end_ip: ipaddress.IPv4Address = None
-        self.src_start_ip: ipaddress.IPv4Address = None
-        self.src_end_ip: ipaddress.IPv4Address = None
+        self.dst_subnet: (
+            ipaddress.IPv4Network | ipaddress.IPv6Network | None
+        ) = None
+        self.src_subnet: (
+            ipaddress.IPv4Network | ipaddress.IPv6Network | None
+        ) = None
+        self.dst_start_ip: (
+            ipaddress.IPv4Address | ipaddress.IPv6Address | None
+        ) = None
+        self.dst_end_ip: (
+            ipaddress.IPv4Address | ipaddress.IPv6Address | None
+        ) = None
+        self.src_start_ip: (
+            ipaddress.IPv4Address | ipaddress.IPv6Address | None
+        ) = None
+        self.src_end_ip: (
+            ipaddress.IPv4Address | ipaddress.IPv6Address | None
+        ) = None
         self.dst_addr_type: FortigatePhase2AddressType = (
             FortigatePhase2AddressType.SUBNET
         )

@@ -12,7 +12,7 @@ class FortigateServiceGroup(FortigateNamedObject, FortigateGroupMixin):
     def __init__(self):
         super().__init__()
 
-        self.member: list[FortigateService, FortigateServiceGroup] = []
+        self.member: list[FortigateService | FortigateServiceGroup] = []
 
     def populate(self, object_data: dict):
         """Parse raw dict data to service group object.

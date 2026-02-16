@@ -20,7 +20,7 @@ class FortigateVIPGroup(
         """
         super().__init__()
 
-        self.member: list[FortigateVIP, FortigateVIPGroup] = []
+        self.member: list[FortigateVIP | FortigateVIPGroup] = []
 
     def populate(self, object_data: dict):
         """Parse raw dict data to vip group object.

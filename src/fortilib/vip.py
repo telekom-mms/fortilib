@@ -23,10 +23,16 @@ class FortigateVIP(FortigateAddress, FortigateInterfaceMixin):
     def __init__(self):
         super().__init__()
 
-        self.extip: ipaddress.IPv4Address = None
-        self.extip_end: ipaddress.IPv4Address = None
-        self.mappedip: ipaddress.IPv4Address = None
-        self.mappedip_end: ipaddress.IPv4Address = None
+        self.extip: ipaddress.IPv4Address | ipaddress.IPv6Address | None = None
+        self.extip_end: (
+            ipaddress.IPv4Address | ipaddress.IPv6Address | None
+        ) = None
+        self.mappedip: ipaddress.IPv4Address | ipaddress.IPv6Address | None = (
+            None
+        )
+        self.mappedip_end: (
+            ipaddress.IPv4Address | ipaddress.IPv6Address | None
+        ) = None
         self.extport: str = "0-65535"
         self.mappedport: str = "0-65535"
         self.protocol: str = ""
@@ -41,8 +47,8 @@ class FortigateVIP(FortigateAddress, FortigateInterfaceMixin):
 
         super().populate(object_data)
 
-        extip_split = object_data.get("extip").split("-")
-        mappedip_split = object_data.get("mappedip")[0]["range"].split("-")
+        extip_split = object_data["extip"].split("-")
+        mappedip_split = object_data["mappedip"][0]["range"].split("-")
 
         self.extip = ipaddress.ip_address(
             extip_split[0],

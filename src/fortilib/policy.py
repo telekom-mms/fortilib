@@ -90,11 +90,11 @@ class FortigatePolicy(FortigateNamedObject):
 
     def find_interfaces(self, interfaces: list[FortigateInterface]):
         self.srcintf = self.find_interface_for(
-            self.object_data.get("srcintf"),
+            self.object_data["srcintf"],
             interfaces,
         )
         self.dstintf = self.find_interface_for(
-            self.object_data.get("dstintf"),
+            self.object_data["dstintf"],
             interfaces,
         )
 
@@ -116,11 +116,11 @@ class FortigatePolicy(FortigateNamedObject):
 
     def find_addresses(self, addresses: list[list[FortigateAddress]]):
         self.srcaddr = self.find_addresses_for(
-            self.object_data.get("srcaddr"),
+            self.object_data["srcaddr"],
             addresses,
         )
         self.dstaddr = self.find_addresses_for(
-            self.object_data.get("dstaddr"),
+            self.object_data["dstaddr"],
             addresses,
         )
 

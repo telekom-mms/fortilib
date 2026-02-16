@@ -25,18 +25,18 @@ class FortigatePhase1Interface(FortigateNamedObject, FortigateInterfaceMixin):
     def __init__(self):
         super().__init__()
 
-        self.default_gw: ipaddress.IPv4Network = None
+        self.default_gw: ipaddress.IPv4Address | None = None
         self.dhgrp: str = ""
         self.dpd: str = ""
         self.ike_version: str = "2"
-        self.interface: FortigateInterface = None
+        self.interface: FortigateInterface | None = None
         self.keepalive: int = None
         self.keylife: int = None
         self.nattraversal: str = ""
         self.localid: str = ""
         self.proposal: str = ""
         self.psksecret: str = ""
-        self.remote_gw: ipaddress.IPv4Network = None
+        self.remote_gw: ipaddress.IPv4Address | None = None
 
     def __eq__(self, other):
         if isinstance(other, FortigatePhase1Interface):

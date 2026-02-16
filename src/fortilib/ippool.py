@@ -18,13 +18,15 @@ class FortigateIPPool(FortigateNamedObject):
         super().__init__()
 
         self.type: str = "overload"
-        self.startip: ipaddress.IPv4Address = None
-        self.endip: ipaddress.IPv4Address = None
-        self.source_startip: ipaddress.IPv4Address = ipaddress.ip_address(
-            "0.0.0.0"
+        self.startip: ipaddress.IPv4Address | ipaddress.IPv6Address | None = (
+            None
         )
-        self.source_endip: ipaddress.IPv4Address = ipaddress.ip_address(
-            "0.0.0.0"
+        self.endip: ipaddress.IPv4Address | ipaddress.IPv6Address | None = None
+        self.source_startip: ipaddress.IPv4Address | ipaddress.IPv6Address = (
+            ipaddress.ip_address("0.0.0.0")
+        )
+        self.source_endip: ipaddress.IPv4Address | ipaddress.IPv6Address = (
+            ipaddress.ip_address("0.0.0.0")
         )
 
     def populate(self, object_data: dict):
@@ -62,9 +64,13 @@ class FortigateIPPool(FortigateNamedObject):
         return {
             "name": self.name,
             "type": self.type,
-            "startip": str(self.startip),
-            "endip": str(self.endip),
-            "source-startip": str(self.source_startip),
-            "source-endip": str(self.source_endip),
+            "startip": self.startip.compressed if self.startip else "",
+            "endip": self.endip.compressed if self.endip else "",
+            "source-startip": self.source_startip.compressed
+            if self.source_startip
+            else "",
+            "source-endip": self.source_endip.compressed
+            if self.source_endip
+            else "",
             "comments": self.comment,
         }

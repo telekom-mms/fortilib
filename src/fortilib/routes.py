@@ -26,12 +26,12 @@ class FortigateStaticRoute(FortigateObject, FortigateInterfaceMixin):
 
         self.status = "enable"
         self.seq_num: int = 0
-        self.dst: ipaddress.IPv4Network = None
-        self.gateway: ipaddress.IPv4Address = None
+        self.dst: ipaddress.IPv4Network | ipaddress.IPv6Network | None = None
+        self.gateway: ipaddress.IPv4Address | None = None
         self.distance: int = 10
         self.weight: int = 0
         self.priority: int = 1
-        self.interface: FortigateInterface = None
+        self.interface: FortigateInterface | None = None
 
     def populate(self, object_data: dict):
         super().populate(object_data)
@@ -73,8 +73,10 @@ class FortigateStaticRoute(FortigateObject, FortigateInterfaceMixin):
         return {
             "status": self.status,
             "seq-num": self.seq_num,
-            "dst": f"{self.dst.network_address} {self.dst.netmask}",
-            "gateway": str(self.gateway),
+            "dst": f"{self.dst.network_address} {self.dst.netmask}"
+            if self.dst
+            else "",
+            "gateway": self.gateway.compressed if self.gateway else "",
             "distance": self.distance,
             "weight": self.weight,
             "priority": self.priority,

@@ -14,7 +14,7 @@ class FortigateProxyAddressGroup(FortigateProxyAddress, FortigateGroupMixin):
         super().__init__()
 
         self.member: list[
-            FortigateProxyAddress, FortigateProxyAddressGroup
+            FortigateProxyAddress | FortigateProxyAddressGroup
         ] = []
         self.type: str = "dst"
 

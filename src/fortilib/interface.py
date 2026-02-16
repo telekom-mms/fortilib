@@ -14,7 +14,9 @@ class FortigateInterface(FortigateNamedObject):
         super().__init__()
 
         self.alias: str = ""
-        self.ip: ipaddress.IPv4Interface = None
+        self.ip: ipaddress.IPv4Interface | ipaddress.IPv6Interface | None = (
+            None
+        )
 
     def __eq__(self, other):
         if isinstance(other, FortigateInterface):
@@ -54,7 +56,7 @@ class FortigateInterface(FortigateNamedObject):
         return {
             "name": self.name,
             "alias": self.alias,
-            "ip": f"{self.ip.ip} {self.ip.netmask}",
+            "ip": f"{self.ip.ip} {self.ip.netmask}" if self.ip else "",
             "comment": self.comment,
         }
 

@@ -35,7 +35,7 @@ class FortigateIpMask(FortigateAddress):
 
     def __init__(self):
         super().__init__()
-        self.subnet: ipaddress.IPv4Network = None
+        self.subnet: ipaddress.IPv4Network | ipaddress.IPv6Network = None
 
     def populate(self, object_data: dict):
         super().populate(object_data)
@@ -83,8 +83,8 @@ class FortigateIpRange(FortigateAddress):
 
     def __init__(self):
         super().__init__()
-        self.ip_start: ipaddress.IPv4Address = None
-        self.ip_end: ipaddress.IPv4Address = None
+        self.ip_start: ipaddress.IPv4Address | ipaddress.IPv6Address = None
+        self.ip_end: ipaddress.IPv4Address | ipaddress.IPv6Address = None
 
     def populate(self, object_data: dict):
         super().populate(object_data)

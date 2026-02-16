@@ -8,6 +8,7 @@ from fortilib.exceptions import (
     BadRequestExeption,
     FailedDependencyException,
     ForbiddenException,
+    FortilibException,
     InternalErrorException,
     MethodNotAllowedException,
     NotAuthorizedException,
@@ -642,7 +643,7 @@ class FortiGateApi:
         read_only: bool = False,
     ):
         if not any([username, password, access_token]):
-            raise InternalErrorException("No Login Method given!")
+            raise FortilibException("No Login Method given!")
 
         self.ipaddr: str = ipaddr
         self.username: str = username
@@ -792,7 +793,7 @@ class FortiGateApi:
             params.update(filter=filters)
 
         self.operations.append(
-            FortiGateOperation(api_url, FortiGateQueryType.GET, "", "")
+            FortiGateOperation(api_url, FortiGateQueryType.GET, "")
         )
 
         result = self.get(api_url, params)
@@ -843,8 +844,8 @@ class FortiGateApi:
         self,
         uri: str,
         identifier: str,
-        move_direction: FortiGateApiPolicyDirection = None,
-        move_identifier: str = None,
+        move_direction: FortiGateApiPolicyDirection,
+        move_identifier: str,
     ) -> dict | int:
         api_url = self.urlbase + uri
         move_url = f"{api_url}/{identifier}"
@@ -877,9 +878,7 @@ class FortiGateApi:
         api_url = self.urlbase + uri
 
         self.operations.append(
-            FortiGateOperation(
-                api_url, FortiGateQueryType.DELETE, identifier, ""
-            )
+            FortiGateOperation(api_url, FortiGateQueryType.DELETE, identifier)
         )
 
         if self.read_only:
