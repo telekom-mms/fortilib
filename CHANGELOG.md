@@ -1,11 +1,16 @@
 # Changelog
 
-## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-03-24)
+## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-04-03)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.15...1.0.16)
 
+**Closed issues:**
+
+- Dependency Dashboard [\#4](https://github.com/telekom-mms/fortilib/issues/4)
+
 **Merged pull requests:**
 
+- chore\(deps\): update dependency poethepoet to \>=0.43.0,\<0.44.0 [\#242](https://github.com/telekom-mms/fortilib/pull/242) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update release-drafter/release-drafter action to v7 [\#241](https://github.com/telekom-mms/fortilib/pull/241) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency poethepoet to \>=0.42.0,\<0.43.0 [\#240](https://github.com/telekom-mms/fortilib/pull/240) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency poethepoet to \>=0.41.0,\<0.42.0 [\#239](https://github.com/telekom-mms/fortilib/pull/239) ([renovate[bot]](https://github.com/apps/renovate))
