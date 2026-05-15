@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-04-29)
+## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-05-15)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.15...1.0.16)
 
@@ -10,6 +10,7 @@
 
 **Merged pull requests:**
 
+- Update dependency poethepoet to \>=0.46.0,\<0.47.0 [\#245](https://github.com/telekom-mms/fortilib/pull/245) ([renovate[bot]](https://github.com/apps/renovate))
 - Update dependency poethepoet to \>=0.45.0,\<0.46.0 [\#244](https://github.com/telekom-mms/fortilib/pull/244) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency poethepoet to \>=0.44.0,\<0.45.0 [\#243](https://github.com/telekom-mms/fortilib/pull/243) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency poethepoet to \>=0.43.0,\<0.44.0 [\#242](https://github.com/telekom-mms/fortilib/pull/242) ([renovate[bot]](https://github.com/apps/renovate))
@@ -43,9 +44,13 @@
 **Merged pull requests:**
 
 - fix: params should be an dict and not written directly to urls [\#229](https://github.com/telekom-mms/fortilib/pull/229) ([neubi4](https://github.com/neubi4))
+- chore\(deps\): update dependency coverage to v7.13.0 [\#227](https://github.com/telekom-mms/fortilib/pull/227) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v25.12.0 [\#226](https://github.com/telekom-mms/fortilib/pull/226) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest to v9.0.2 [\#225](https://github.com/telekom-mms/fortilib/pull/225) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency sphinx to v9 [\#224](https://github.com/telekom-mms/fortilib/pull/224) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update actions/checkout action to v6 [\#223](https://github.com/telekom-mms/fortilib/pull/223) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v9 [\#218](https://github.com/telekom-mms/fortilib/pull/218) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency isort to v7 [\#213](https://github.com/telekom-mms/fortilib/pull/213) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [1.0.13](https://github.com/telekom-mms/fortilib/tree/1.0.13) (2025-11-25)
 
@@ -60,10 +65,12 @@
 - chore\(deps\): update dependency coverage to v7.11.1 [\#217](https://github.com/telekom-mms/fortilib/pull/217) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.32.0 [\#216](https://github.com/telekom-mms/fortilib/pull/216) ([renovate[bot]](https://github.com/apps/renovate))
 - feat: add basic fortiproxy functionality [\#215](https://github.com/telekom-mms/fortilib/pull/215) ([da-z97](https://github.com/da-z97))
+- chore\(deps\): update dependency coverage to v7.11.0 [\#214](https://github.com/telekom-mms/fortilib/pull/214) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.31.0 [\#212](https://github.com/telekom-mms/fortilib/pull/212) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency python to 3.14 [\#211](https://github.com/telekom-mms/fortilib/pull/211) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.30.3 [\#210](https://github.com/telekom-mms/fortilib/pull/210) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.10.7 [\#209](https://github.com/telekom-mms/fortilib/pull/209) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v25.9.0 [\#208](https://github.com/telekom-mms/fortilib/pull/208) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest-cov to v7 [\#207](https://github.com/telekom-mms/fortilib/pull/207) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.30.2 [\#206](https://github.com/telekom-mms/fortilib/pull/206) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v8.4.2 [\#205](https://github.com/telekom-mms/fortilib/pull/205) ([renovate[bot]](https://github.com/apps/renovate))
@@ -83,10 +90,13 @@
 
 **Merged pull requests:**
 
+- fix: fixing not working fortigate api filters on get requests [\#195](https://github.com/telekom-mms/fortilib/pull/195) ([neubi4](https://github.com/neubi4))
+- chore\(deps\): update dependency tox to v4.28.4 [\#194](https://github.com/telekom-mms/fortilib/pull/194) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.10.1 [\#193](https://github.com/telekom-mms/fortilib/pull/193) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.28.3 [\#192](https://github.com/telekom-mms/fortilib/pull/192) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.28.2 [\#191](https://github.com/telekom-mms/fortilib/pull/191) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.10.0 [\#190](https://github.com/telekom-mms/fortilib/pull/190) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.28.1 [\#189](https://github.com/telekom-mms/fortilib/pull/189) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.28.0 [\#188](https://github.com/telekom-mms/fortilib/pull/188) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.9.2 [\#187](https://github.com/telekom-mms/fortilib/pull/187) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency flake8 to v7.3.0 [\#186](https://github.com/telekom-mms/fortilib/pull/186) ([renovate[bot]](https://github.com/apps/renovate))
@@ -110,15 +120,41 @@
 - chore\(deps\): update dependency flake8 to v7.2.0 [\#174](https://github.com/telekom-mms/fortilib/pull/174) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.25.0 [\#173](https://github.com/telekom-mms/fortilib/pull/173) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.7.1 [\#172](https://github.com/telekom-mms/fortilib/pull/172) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.7.0 [\#171](https://github.com/telekom-mms/fortilib/pull/171) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency python to 3.13 [\#170](https://github.com/telekom-mms/fortilib/pull/170) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.24.2 [\#169](https://github.com/telekom-mms/fortilib/pull/169) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest to v8.3.5 [\#168](https://github.com/telekom-mms/fortilib/pull/168) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency flake8 to v7.1.2 [\#167](https://github.com/telekom-mms/fortilib/pull/167) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.6.12 [\#166](https://github.com/telekom-mms/fortilib/pull/166) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.6.11 [\#165](https://github.com/telekom-mms/fortilib/pull/165) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v25 [\#164](https://github.com/telekom-mms/fortilib/pull/164) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.24.1 [\#162](https://github.com/telekom-mms/fortilib/pull/162) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.6.10 [\#161](https://github.com/telekom-mms/fortilib/pull/161) ([renovate[bot]](https://github.com/apps/renovate))
+- fix\(deps\): update dependency httpx to v0.28.1 [\#160](https://github.com/telekom-mms/fortilib/pull/160) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.6.9 [\#159](https://github.com/telekom-mms/fortilib/pull/159) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v8.3.4 [\#158](https://github.com/telekom-mms/fortilib/pull/158) ([renovate[bot]](https://github.com/apps/renovate))
 - fix\(deps\): update dependency httpx to v0.28.0 [\#157](https://github.com/telekom-mms/fortilib/pull/157) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.6.8 [\#156](https://github.com/telekom-mms/fortilib/pull/156) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.6.7 [\#155](https://github.com/telekom-mms/fortilib/pull/155) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.6.5 [\#154](https://github.com/telekom-mms/fortilib/pull/154) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency sphinx-rtd-theme to v3.0.2 [\#153](https://github.com/telekom-mms/fortilib/pull/153) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.23.2 [\#151](https://github.com/telekom-mms/fortilib/pull/151) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.23.1 [\#150](https://github.com/telekom-mms/fortilib/pull/150) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.6.4 [\#149](https://github.com/telekom-mms/fortilib/pull/149) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.23.0 [\#148](https://github.com/telekom-mms/fortilib/pull/148) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.22.0 [\#147](https://github.com/telekom-mms/fortilib/pull/147) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.6.3 [\#146](https://github.com/telekom-mms/fortilib/pull/146) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx-rtd-theme to v3.0.1 [\#145](https://github.com/telekom-mms/fortilib/pull/145) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.6.2 [\#144](https://github.com/telekom-mms/fortilib/pull/144) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v24.10.0 [\#143](https://github.com/telekom-mms/fortilib/pull/143) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx-rtd-theme to v3 [\#142](https://github.com/telekom-mms/fortilib/pull/142) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.21.2 [\#141](https://github.com/telekom-mms/fortilib/pull/141) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.21.1 [\#140](https://github.com/telekom-mms/fortilib/pull/140) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.21.0 [\#139](https://github.com/telekom-mms/fortilib/pull/139) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.20.0 [\#138](https://github.com/telekom-mms/fortilib/pull/138) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.19.0 [\#137](https://github.com/telekom-mms/fortilib/pull/137) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest to v8.3.3 [\#136](https://github.com/telekom-mms/fortilib/pull/136) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.18.1 [\#135](https://github.com/telekom-mms/fortilib/pull/135) ([renovate[bot]](https://github.com/apps/renovate))
 - fix\(deps\): update dependency httpx to v0.27.2 [\#134](https://github.com/telekom-mms/fortilib/pull/134) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest-order to v1.3.0 [\#133](https://github.com/telekom-mms/fortilib/pull/133) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.18.0 [\#132](https://github.com/telekom-mms/fortilib/pull/132) ([renovate[bot]](https://github.com/apps/renovate))
@@ -156,18 +192,34 @@
 
 - fix: since fortios 7.6 tcp/udp service protocol is 'TCP/UDP/UDP-Lite/… [\#127](https://github.com/telekom-mms/fortilib/pull/127) ([neubi4](https://github.com/neubi4))
 - chore\(deps\): update dependency tox to v4.17.0 [\#126](https://github.com/telekom-mms/fortilib/pull/126) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency flake8 to v7.1.1 [\#125](https://github.com/telekom-mms/fortilib/pull/125) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.6.1 [\#124](https://github.com/telekom-mms/fortilib/pull/124) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v24.8.0 [\#123](https://github.com/telekom-mms/fortilib/pull/123) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [1.0.6](https://github.com/telekom-mms/fortilib/tree/1.0.6) (2024-07-29)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.5...1.0.6)
 
+**Merged pull requests:**
+
+- fix: dealing with different address types in phase2 interfaces [\#121](https://github.com/telekom-mms/fortilib/pull/121) ([BenjaminBoehm](https://github.com/BenjaminBoehm))
+
 ## [1.0.5](https://github.com/telekom-mms/fortilib/tree/1.0.5) (2024-07-29)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.4...1.0.5)
 
+**Merged pull requests:**
+
+- add support for ipsec vpn [\#119](https://github.com/telekom-mms/fortilib/pull/119) ([BenjaminBoehm](https://github.com/BenjaminBoehm))
+
 ## [1.0.4](https://github.com/telekom-mms/fortilib/tree/1.0.4) (2024-07-29)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.3...1.0.4)
+
+**Merged pull requests:**
+
+- fix: made new strict group address member matching optional [\#120](https://github.com/telekom-mms/fortilib/pull/120) ([neubi4](https://github.com/neubi4))
+- chore\(deps\): update dependency pytest to v8.3.2 [\#118](https://github.com/telekom-mms/fortilib/pull/118) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [1.0.3](https://github.com/telekom-mms/fortilib/tree/1.0.3) (2024-07-23)
 
@@ -175,10 +227,27 @@
 
 **Merged pull requests:**
 
+- Multiple fixes [\#117](https://github.com/telekom-mms/fortilib/pull/117) ([neubi4](https://github.com/neubi4))
+- chore\(deps\): update dependency pytest to v8.3.1 [\#116](https://github.com/telekom-mms/fortilib/pull/116) ([renovate[bot]](https://github.com/apps/renovate))
+- fix: allow 'any' interface [\#115](https://github.com/telekom-mms/fortilib/pull/115) ([neubi4](https://github.com/neubi4))
+- chore\(deps\): update dependency coverage to v7.6.0 [\#114](https://github.com/telekom-mms/fortilib/pull/114) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.16.0 [\#113](https://github.com/telekom-mms/fortilib/pull/113) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.5.4 [\#112](https://github.com/telekom-mms/fortilib/pull/112) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.15.1 [\#111](https://github.com/telekom-mms/fortilib/pull/111) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v8.2.2 [\#110](https://github.com/telekom-mms/fortilib/pull/110) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.5.3 [\#109](https://github.com/telekom-mms/fortilib/pull/109) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.5.2 [\#108](https://github.com/telekom-mms/fortilib/pull/108) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest to v8.2.1 [\#107](https://github.com/telekom-mms/fortilib/pull/107) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.5.1 [\#106](https://github.com/telekom-mms/fortilib/pull/106) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest to v8.2.0 [\#105](https://github.com/telekom-mms/fortilib/pull/105) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.15.0 [\#104](https://github.com/telekom-mms/fortilib/pull/104) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest to v8.1.2 [\#103](https://github.com/telekom-mms/fortilib/pull/103) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v24.4.2 [\#102](https://github.com/telekom-mms/fortilib/pull/102) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v24.4.1 [\#101](https://github.com/telekom-mms/fortilib/pull/101) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.5.0 [\#100](https://github.com/telekom-mms/fortilib/pull/100) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v24.4.0 [\#99](https://github.com/telekom-mms/fortilib/pull/99) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest-order to v1.2.1 [\#98](https://github.com/telekom-mms/fortilib/pull/98) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.14.2 [\#96](https://github.com/telekom-mms/fortilib/pull/96) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency black to v24.3.0 [\#95](https://github.com/telekom-mms/fortilib/pull/95) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.4.4 [\#94](https://github.com/telekom-mms/fortilib/pull/94) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v8.1.1 [\#93](https://github.com/telekom-mms/fortilib/pull/93) ([renovate[bot]](https://github.com/apps/renovate))
@@ -203,6 +272,11 @@
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.1...1.0.2)
 
+**Merged pull requests:**
+
+- fix: do not access object\_data direct for future compatibility [\#76](https://github.com/telekom-mms/fortilib/pull/76) ([neubi4](https://github.com/neubi4))
+- chore\(deps\): update dependency tox to v4.12.1 [\#75](https://github.com/telekom-mms/fortilib/pull/75) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.0.1](https://github.com/telekom-mms/fortilib/tree/1.0.1) (2024-01-16)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.0...1.0.1)
@@ -210,9 +284,22 @@
 **Merged pull requests:**
 
 - fix: there is no visibility key on services in fortigate \> 7.0 [\#74](https://github.com/telekom-mms/fortilib/pull/74) ([neubi4](https://github.com/neubi4))
+- chore\(deps\): update dependency tox to v4.12.0 [\#73](https://github.com/telekom-mms/fortilib/pull/73) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency pytest to v7.4.4 [\#72](https://github.com/telekom-mms/fortilib/pull/72) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency coverage to v7.4.0 [\#71](https://github.com/telekom-mms/fortilib/pull/71) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency black to v23.12.1 [\#70](https://github.com/telekom-mms/fortilib/pull/70) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.3.4 [\#69](https://github.com/telekom-mms/fortilib/pull/69) ([renovate[bot]](https://github.com/apps/renovate))
+- fix\(deps\): update dependency httpx to v0.26.0 [\#68](https://github.com/telekom-mms/fortilib/pull/68) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.3.3 [\#67](https://github.com/telekom-mms/fortilib/pull/67) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency isort to v5.13.2 [\#66](https://github.com/telekom-mms/fortilib/pull/66) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v23.12.0 [\#65](https://github.com/telekom-mms/fortilib/pull/65) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency isort to v5.13.1 [\#64](https://github.com/telekom-mms/fortilib/pull/64) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency isort to v5.13.0 [\#63](https://github.com/telekom-mms/fortilib/pull/63) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/setup-python action to v5 [\#62](https://github.com/telekom-mms/fortilib/pull/62) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx-rtd-theme to v2 [\#61](https://github.com/telekom-mms/fortilib/pull/61) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.11.4 [\#60](https://github.com/telekom-mms/fortilib/pull/60) ([renovate[bot]](https://github.com/apps/renovate))
+- fix\(deps\): update dependency httpx to v0.25.2 [\#59](https://github.com/telekom-mms/fortilib/pull/59) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest-order to v1.2.0 [\#58](https://github.com/telekom-mms/fortilib/pull/58) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [1.0.0](https://github.com/telekom-mms/fortilib/tree/1.0.0) (2023-11-09)
 
@@ -226,6 +313,22 @@
 - chore\(deps\): update dependency pytest to v7.4.3 [\#54](https://github.com/telekom-mms/fortilib/pull/54) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency black to v23.10.1 [\#53](https://github.com/telekom-mms/fortilib/pull/53) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency black to v23.10.0 [\#52](https://github.com/telekom-mms/fortilib/pull/52) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.3.2 [\#51](https://github.com/telekom-mms/fortilib/pull/51) ([renovate[bot]](https://github.com/apps/renovate))
+- automerge minor updates from renovate to save time [\#50](https://github.com/telekom-mms/fortilib/pull/50) ([schurzi](https://github.com/schurzi))
+- fix\(deps\): update dependency httpx to v0.25.0 [\#49](https://github.com/telekom-mms/fortilib/pull/49) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency black to v23.9.1 [\#48](https://github.com/telekom-mms/fortilib/pull/48) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.11.3 [\#47](https://github.com/telekom-mms/fortilib/pull/47) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.3.1 [\#46](https://github.com/telekom-mms/fortilib/pull/46) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/checkout action to v4 [\#45](https://github.com/telekom-mms/fortilib/pull/45) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency pytest to v7.4.2 [\#44](https://github.com/telekom-mms/fortilib/pull/44) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.11.1 [\#43](https://github.com/telekom-mms/fortilib/pull/43) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.11.0 [\#42](https://github.com/telekom-mms/fortilib/pull/42) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx to v7 [\#41](https://github.com/telekom-mms/fortilib/pull/41) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency sphinx-rtd-theme to v1.3.0 [\#40](https://github.com/telekom-mms/fortilib/pull/40) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.10.0 [\#39](https://github.com/telekom-mms/fortilib/pull/39) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency coverage to v7.3.0 [\#38](https://github.com/telekom-mms/fortilib/pull/38) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency tox to v4.7.0 [\#37](https://github.com/telekom-mms/fortilib/pull/37) ([renovate[bot]](https://github.com/apps/renovate))
+- update author emails [\#36](https://github.com/telekom-mms/fortilib/pull/36) ([schurzi](https://github.com/schurzi))
 - chore\(deps\): update dependency black to v23.7.0 [\#35](https://github.com/telekom-mms/fortilib/pull/35) ([renovate[bot]](https://github.com/apps/renovate))
 - chore\(deps\): update dependency tox to v4.6.4 [\#34](https://github.com/telekom-mms/fortilib/pull/34) ([renovate[bot]](https://github.com/apps/renovate))
 
