@@ -1,38 +1,29 @@
 __version__ = "1.0.16"
 
-from enum import StrEnum
+import ipaddress
+from collections.abc import Iterable
 
 
-class FortigateTCPUDPServiceProtocol(StrEnum):
-    TCP_UDP_SCTP = "TCP/UDP/SCTP"
-    TCP_UDP_UDP_Lite_SCTP = "TCP/UDP/UDP-Lite/SCTP"
-
-
-class FortilibSettings:
-    strict_address_group_member_matching: bool = True
-    tcp_udp_service_protocol = FortigateTCPUDPServiceProtocol.TCP_UDP_SCTP
-
-
-def get_by(attrname, attrvalue, haystack):
+def get_by(attrname: str, attrvalue: str, haystack: Iterable):
     for o in haystack:
         if attrvalue == getattr(o, attrname):
             return o
     return None
 
 
-def get_fortigate_member_array(source: list, attrname="name") -> list[dict]:
-    ret = []
-    for member in sorted(
-        source, key=lambda _source: getattr(_source, attrname)
-    ):
-        ret.append(
-            {
-                "name": getattr(member, attrname),
-            }
-        )
-
-    return ret
+def serialise_ipaddress_interface(
+    address: ipaddress.IPv4Interface | None,
+) -> str:
+    if address is None:
+        return ""
+    return f"{address.ip} {address.netmask}"
 
 
-def remove_empty_dict_values(source: dict):
-    return {k: v for k, v in source.items() if v}
+def deserialize_ipaddress_interface(
+    address: str | ipaddress.IPv4Interface,
+) -> ipaddress.IPv4Interface | None:
+    if isinstance(address, ipaddress.IPv4Interface):
+        return address
+
+    ip, netmask = address.split(" ")
+    return ipaddress.IPv4Interface(f"{ip}/{netmask}")
