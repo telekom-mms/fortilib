@@ -27,3 +27,21 @@ def deserialize_ipaddress_interface(
 
     ip, netmask = address.split(" ")
     return ipaddress.IPv4Interface(f"{ip}/{netmask}")
+
+
+def serialise_ipaddress_network(
+    address: ipaddress.IPv4Network | None,
+) -> str:
+    if address is None:
+        return ""
+    return f"{address.network_address} {address.netmask}"
+
+
+def deserialize_ipaddress_network(
+    address: str | ipaddress.IPv4Network,
+) -> ipaddress.IPv4Network | None:
+    if isinstance(address, ipaddress.IPv4Network):
+        return address
+
+    ip, netmask = address.split()
+    return ipaddress.IPv4Network(f"{ip}/{netmask}")

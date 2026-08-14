@@ -23,7 +23,35 @@ class FortigateInterface(FortigateNamedObject, FortigateCommentedObject):
     ] = None
 
 
-class FortigateInterfaceObject(FortigateObject):
-    _interface_alias: str = "interface"
+def serialise_interface_object(interface: FortigateInterface | None) -> str:
+    if isinstance(interface, FortigateInterface):
+        return interface.name
 
-    interface: FortigateInterface | None = Field(alias=_interface_alias)
+    return ""
+
+
+def deserialize_interface_object(
+    interface: str | FortigateInterface,
+) -> FortigateInterface | None:
+    if isinstance(interface, FortigateInterface):
+        return interface
+
+    if not interface:
+        return None
+
+    return FortigateInterface(name=interface)
+
+
+InterfaceObject = Annotated[
+    FortigateInterface | None,
+    PlainSerializer(serialise_interface_object),
+    BeforeValidator(deserialize_interface_object),
+]
+
+
+def interface_field(alias: str = "interface"):
+    return Field(alias=alias, default=None)
+
+
+class FortigateInterfaceObject(FortigateObject):
+    interface: InterfaceObject = interface_field()

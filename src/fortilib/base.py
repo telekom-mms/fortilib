@@ -2,7 +2,9 @@ from pydantic import BaseModel, ConfigDict
 
 
 class FortigateObject(BaseModel):
-    model_config = ConfigDict(serialize_by_alias=True)
+    model_config = ConfigDict(
+        serialize_by_alias=True, validate_by_name=True, validate_by_alias=True
+    )
 
 
 class FortigateCommentedObject(FortigateObject):

@@ -1,11 +1,13 @@
-from typing import TypeVar
-
 import httpx2
 
+from fortilib.address import (
+    FortigateAddress,
+    FortigateFQDNAddress,
+    FortigateIpMaskAddress,
+    FortigateIPRangeAddress,
+)
 from fortilib.base import FortigateObject
 from fortilib.interface import FortigateInterface
-
-FortigateObjectT = TypeVar("FortigateObjectT", bound=FortigateObject)
 
 
 class APIException(Exception):
@@ -47,20 +49,54 @@ class FortigateFirewall:
     def __get(
         self,
         url: str,
-        object_class: type[FortigateObjectT],
-    ) -> list[FortigateObjectT]:
+    ) -> list[dict]:
         response = self.client.get(url)
         self.__check_response(response)
         data = response.json()
-        objects: list[FortigateObjectT] = []
-        for item in data.get("results", []):
-            obj = object_class(**item)
-            objects.append(obj)
-        return objects
+        return data.get("results", [])
 
     def __create(self, url: str, obj: FortigateObject) -> None:
         response = self.client.post(url, json=obj.model_dump())
         self.__check_response(response)
 
+    def __update(
+        self, url: str, identifier: str, obj: FortigateObject
+    ) -> None:
+        response = self.client.put(
+            f"{url}/{identifier}", json=obj.model_dump()
+        )
+        self.__check_response(response)
+
+    def __delete(self, url: str, identifier: str) -> None:
+        response = self.client.delete(f"{url}/{identifier}")
+        self.__check_response(response)
+
     def get_interfaces(self) -> list[FortigateInterface]:
-        return self.__get("/api/v2/cmdb/system/interface", FortigateInterface)
+        results = self.__get("/api/v2/cmdb/system/interface")
+
+        return [FortigateInterface(**result) for result in results]
+
+    def get_addresses(self) -> list[FortigateAddress]:
+        addresses: list[FortigateAddress] = []
+        for address_dict in self.__get("/api/v2/cmdb/firewall/address"):
+            match address_dict.get("type"):
+                case "ipmask":
+                    address = FortigateIpMaskAddress(**address_dict)
+                case "fqdn":
+                    address = FortigateFQDNAddress(**address_dict)
+                case "iprange":
+                    address = FortigateIPRangeAddress(**address_dict)
+                case _:
+                    address = FortigateAddress(**address_dict)
+            addresses.append(address)
+
+        return addresses
+
+    def create_address(self, address: FortigateAddress) -> None:
+        self.__create("/api/v2/cmdb/firewall/address", address)
+
+    def update_address(self, address: FortigateAddress) -> None:
+        self.__update("/api/v2/cmdb/firewall/address", address.name, address)
+
+    def delete_address(self, address: FortigateAddress) -> None:
+        self.__delete("/api/v2/cmdb/firewall/address", address.name)
