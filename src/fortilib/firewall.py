@@ -34,12 +34,14 @@ class FortigateFirewall:
         vdom: str,
         access_token: str,
         timeout: int = 10,
+        verify_tls: bool = True,
     ) -> None:
         self.client = httpx2.Client(
             base_url=url,
             timeout=timeout,
             headers={"Authorization": f"Bearer {access_token}"},
             params={"vdom": vdom},
+            verify=verify_tls,
         )
 
     def __check_response(self, response: httpx2.Response) -> None:
@@ -59,16 +61,14 @@ class FortigateFirewall:
         response = self.client.post(url, json=obj.model_dump())
         self.__check_response(response)
 
-    def __update(
-        self, url: str, identifier: str, obj: FortigateObject
-    ) -> None:
+    def __update(self, url: str, obj: FortigateObject) -> None:
         response = self.client.put(
-            f"{url}/{identifier}", json=obj.model_dump()
+            f"{url}/{obj.identifier}", json=obj.model_dump()
         )
         self.__check_response(response)
 
-    def __delete(self, url: str, identifier: str) -> None:
-        response = self.client.delete(f"{url}/{identifier}")
+    def __delete(self, url: str, obj: FortigateObject) -> None:
+        response = self.client.delete(f"{url}/{obj.identifier}")
         self.__check_response(response)
 
     def get_interfaces(self) -> list[FortigateInterface]:
@@ -96,7 +96,7 @@ class FortigateFirewall:
         self.__create("/api/v2/cmdb/firewall/address", address)
 
     def update_address(self, address: FortigateAddress) -> None:
-        self.__update("/api/v2/cmdb/firewall/address", address.name, address)
+        self.__update("/api/v2/cmdb/firewall/address", address)
 
     def delete_address(self, address: FortigateAddress) -> None:
-        self.__delete("/api/v2/cmdb/firewall/address", address.name)
+        self.__delete("/api/v2/cmdb/firewall/address", address)

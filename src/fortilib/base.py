@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 from pydantic import BaseModel, ConfigDict
 
 
@@ -6,12 +8,20 @@ class FortigateObject(BaseModel):
         serialize_by_alias=True, validate_by_name=True, validate_by_alias=True
     )
 
+    identifier_name: ClassVar[str] = ""
+
+    @property
+    def identifier(self) -> str:
+        return getattr(self, self.identifier_name)
+
 
 class FortigateCommentedObject(FortigateObject):
     comment: str = ""
 
 
-class FortigateNamedObject(FortigateObject):
+class FortigateNameIdentifiedObject(FortigateObject):
+    identifier_name: ClassVar[str] = "name"
+
     name: str
 
 

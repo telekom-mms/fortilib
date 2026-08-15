@@ -7,7 +7,7 @@ from fortilib import deserialize_ipaddress_network, serialise_ipaddress_network
 from fortilib.base import (
     FortigateColoredObject,
     FortigateCommentedObject,
-    FortigateNamedObject,
+    FortigateNameIdentifiedObject,
 )
 from fortilib.interface import (
     FortigateInterfaceObject,
@@ -17,7 +17,7 @@ from fortilib.interface import (
 
 
 class FortigateAddress(
-    FortigateNamedObject,
+    FortigateNameIdentifiedObject,
     FortigateCommentedObject,
     FortigateColoredObject,
     FortigateInterfaceObject,

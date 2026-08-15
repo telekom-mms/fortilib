@@ -1,7 +1,7 @@
 import pytest
 
 from fortilib.firewall import APIException
-from tests import FortigateTest
+from tests.unittests import FortigateTest
 
 
 class TestFortilibFirewall(FortigateTest):

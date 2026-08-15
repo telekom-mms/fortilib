@@ -31,9 +31,11 @@ documentation = "https://github.com/telekom-mms/fortilib"
 [dependency-groups]
 dev = [
     "poethepoet>=0.48.0,<0.49.0",
+    "pydantic-settings>=2.15.0,<3.0.0",
     "pytest>=9.0.2,<10.0.0",
     "pytest-cov>=7.0.0,<8.0.0",
     "pytest-httpx2>=1.0.0,<2.0.0",
+    "pytest-integration>=0.2.3,<0.3.0",
     "pytest-order>=1.3.0,<2.0.0",
     "ruff>=0.16.0,<0.17.0",
     "sphinx>8.0,<9.0",

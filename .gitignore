@@ -13,3 +13,4 @@
 /graphs
 /gl-code-quality-report.json
 /dist
+/.env

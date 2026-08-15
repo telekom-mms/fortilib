@@ -9,7 +9,7 @@ from fortilib.address import (
     FortigateIPRangeAddress,
 )
 from fortilib.interface import FortigateInterface
-from tests import FortigateTest
+from tests.unittests import FortigateTest
 
 
 class TestFortilibFirewall(FortigateTest):

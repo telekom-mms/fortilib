@@ -9,12 +9,14 @@ from fortilib import (
 )
 from fortilib.base import (
     FortigateCommentedObject,
-    FortigateNamedObject,
+    FortigateNameIdentifiedObject,
     FortigateObject,
 )
 
 
-class FortigateInterface(FortigateNamedObject, FortigateCommentedObject):
+class FortigateInterface(
+    FortigateNameIdentifiedObject, FortigateCommentedObject
+):
     alias: str = ""
     address: Annotated[
         ipaddress.IPv4Interface | None,
