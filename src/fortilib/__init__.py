@@ -45,3 +45,7 @@ def deserialize_ipaddress_network(
 
     ip, netmask = address.split()
     return ipaddress.IPv4Network(f"{ip}/{netmask}")
+
+
+class FortigateMemberNotFoundError(Exception):
+    """Raised when a member of a Fortigate object is not found in the search list."""

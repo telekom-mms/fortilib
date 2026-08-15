@@ -27,6 +27,7 @@ class TestIntegrationFirewallAddress(FortigateIntegrationTest):
         self.test_address_fqdn = FortigateFQDNAddress(
             name="test-fqdn",
             fqdn="example.com",
+            interface=self.port1,
         )
 
     @pytest.mark.integration_test

@@ -1,13 +1,13 @@
 [project]
 authors = [
-    {name = "Daniel Zinke", email = "Daniel.Zinke@telekom.de"},
-    {name = "Benjamin Böhm", email = "Benjamin.Boehm@telekom.de"},
-    {name = "Philipp Funk", email = "Philipp.Funk@telekom.de"},
-    {name = "André Ellguth", email = "Andre.Ellguth@telekom.de"},
-    {name = "Martin Neubert", email = "Martin.Neubert@telekom.de"},
+    { name = "Daniel Zinke", email = "Daniel.Zinke@telekom.de" },
+    { name = "Benjamin Böhm", email = "Benjamin.Boehm@telekom.de" },
+    { name = "Philipp Funk", email = "Philipp.Funk@telekom.de" },
+    { name = "André Ellguth", email = "Andre.Ellguth@telekom.de" },
+    { name = "Martin Neubert", email = "Martin.Neubert@telekom.de" },
 ]
-license = {text = "GPL-3.0-only"}
-requires-python = "<4.0,>=3.11"
+license = { text = "GPL-3.0-only" }
+requires-python = "<4.0,>=3.12"
 dependencies = [
     "httpx2>=2.10.0,<3.0.0",
     "pydantic>=2.13.4,<3.0.0",

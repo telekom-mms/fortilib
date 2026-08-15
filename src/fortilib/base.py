@@ -27,3 +27,9 @@ class FortigateNameIdentifiedObject(FortigateObject):
 
 class FortigateColoredObject(FortigateObject):
     color: int = 0
+
+
+def identifier_list_serializer(
+    obj: list[FortigateObject],
+) -> list[dict[int | str, str]]:
+    return [{o.identifier_name: o.identifier} for o in obj]
