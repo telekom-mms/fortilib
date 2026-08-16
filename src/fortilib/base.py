@@ -1,6 +1,6 @@
 from typing import ClassVar
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class FortigateObject(BaseModel):
@@ -17,6 +17,10 @@ class FortigateObject(BaseModel):
 
 class FortigateCommentedObject(FortigateObject):
     comment: str = ""
+
+
+class FortigateCommentedObjectWithCommentsAlias(FortigateCommentedObject):
+    comment: str = Field(alias="comments", default="")
 
 
 class FortigateNameIdentifiedObject(FortigateObject):

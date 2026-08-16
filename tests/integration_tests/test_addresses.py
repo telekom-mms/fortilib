@@ -32,14 +32,14 @@ class TestIntegrationFirewallAddress(FortigateIntegrationTest):
 
     @pytest.mark.integration_test
     @pytest.mark.order(1)
-    def test_create_address(self) -> None:
+    def test_create(self) -> None:
         self.fw.create_address(self.test_address_ipmask)
         self.fw.create_address(self.test_address_iprange)
         self.fw.create_address(self.test_address_fqdn)
 
     @pytest.mark.integration_test
     @pytest.mark.order(2)
-    def test_read_address(self) -> None:
+    def test_read(self) -> None:
         addresses = self.fw.get_addresses()
 
         test_address_ipmask = get_by(
@@ -80,7 +80,7 @@ class TestIntegrationFirewallAddress(FortigateIntegrationTest):
 
     @pytest.mark.integration_test
     @pytest.mark.order(3)
-    def test_update_address(self) -> None:
+    def test_update(self) -> None:
         self.test_address_ipmask.subnet = ipaddress.IPv4Network("10.1.0.0/24")
         self.fw.update_address(self.test_address_ipmask)
 
@@ -91,11 +91,11 @@ class TestIntegrationFirewallAddress(FortigateIntegrationTest):
         self.test_address_fqdn.fqdn = "mtnu.de"
         self.fw.update_address(self.test_address_fqdn)
 
-        self.test_read_address()
+        self.test_read()
 
     @pytest.mark.integration_test
     @pytest.mark.order(4)
-    def test_delete_address(self) -> None:
+    def test_delete(self) -> None:
         self.fw.delete_address(self.test_address_ipmask)
         self.fw.delete_address(self.test_address_iprange)
         self.fw.delete_address(self.test_address_fqdn)

@@ -9,6 +9,11 @@ from fortilib.address import (
 from fortilib.address_group import FortigateAddressGroup
 from fortilib.base import FortigateObject
 from fortilib.interface import FortigateInterface
+from fortilib.ippool import (
+    FortigateIPPool,
+    FortigateIPPoolOneToOne,
+    FortigateIPPoolOverload,
+)
 
 
 class APIException(Exception):
@@ -29,6 +34,11 @@ class APIException(Exception):
 
 
 class FortigateFirewall:
+    API_URL_ADDRESSES: str = "/api/v2/cmdb/firewall/address"
+    API_URL_ADDRESS_GROUPS: str = "/api/v2/cmdb/firewall/addrgrp"
+    API_URL_INTERFACES: str = "/api/v2/cmdb/firewall/interface"
+    API_URL_IPPOOLS: str = "/api/v2/cmdb/firewall/ippool"
+
     def __init__(
         self,
         url: str,
@@ -79,7 +89,7 @@ class FortigateFirewall:
 
     def get_addresses(self) -> list[FortigateAddress]:
         addresses: list[FortigateAddress] = []
-        for address_dict in self.__get("/api/v2/cmdb/firewall/address"):
+        for address_dict in self.__get(self.API_URL_ADDRESSES):
             match address_dict.get("type"):
                 case "ipmask":
                     address = FortigateIpMaskAddress(**address_dict)
@@ -94,25 +104,48 @@ class FortigateFirewall:
         return addresses
 
     def create_address(self, address: FortigateAddress) -> None:
-        self.__create("/api/v2/cmdb/firewall/address", address)
+        self.__create(self.API_URL_ADDRESSES, address)
 
     def update_address(self, address: FortigateAddress) -> None:
-        self.__update("/api/v2/cmdb/firewall/address", address)
+        self.__update(self.API_URL_ADDRESSES, address)
 
     def delete_address(self, address: FortigateAddress) -> None:
-        self.__delete("/api/v2/cmdb/firewall/address", address)
+        self.__delete(self.API_URL_ADDRESSES, address)
 
     def get_address_groups(self) -> list[FortigateAddressGroup]:
         return [
             FortigateAddressGroup(**result)
-            for result in self.__get("/api/v2/cmdb/firewall/addrgrp")
+            for result in self.__get(self.API_URL_ADDRESS_GROUPS)
         ]
 
     def create_address_group(self, group: FortigateAddressGroup) -> None:
-        self.__create("/api/v2/cmdb/firewall/addrgrp", group)
+        self.__create(self.API_URL_ADDRESS_GROUPS, group)
 
     def update_address_group(self, group: FortigateAddressGroup) -> None:
-        self.__update("/api/v2/cmdb/firewall/addrgrp", group)
+        self.__update(self.API_URL_ADDRESS_GROUPS, group)
 
     def delete_address_group(self, group: FortigateAddressGroup) -> None:
-        self.__delete("/api/v2/cmdb/firewall/addrgrp", group)
+        self.__delete(self.API_URL_ADDRESS_GROUPS, group)
+
+    def get_ippools(self) -> list[FortigateIPPool]:
+        pools: list[FortigateIPPool] = []
+        for pool_dict in self.__get(self.API_URL_IPPOOLS):
+            match pool_dict.get("type"):
+                case "overload":
+                    ippool = FortigateIPPoolOverload(**pool_dict)
+                case "one-to-one":
+                    ippool = FortigateIPPoolOneToOne(**pool_dict)
+                case _:
+                    ippool = FortigateIPPool(**pool_dict)
+            pools.append(ippool)
+
+        return pools
+
+    def create_ippool(self, ippool: FortigateIPPool) -> None:
+        self.__create(self.API_URL_IPPOOLS, ippool)
+
+    def update_ippool(self, ippool: FortigateIPPool) -> None:
+        self.__update(self.API_URL_IPPOOLS, ippool)
+
+    def delete_ippool(self, ippool: FortigateIPPool) -> None:
+        self.__delete(self.API_URL_IPPOOLS, ippool)
