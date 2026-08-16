@@ -6,6 +6,7 @@ from fortilib.address import (
     FortigateIpMaskAddress,
     FortigateIPRangeAddress,
 )
+from fortilib.address_group import FortigateAddressGroup
 from fortilib.base import FortigateObject
 from fortilib.interface import FortigateInterface
 
@@ -100,3 +101,18 @@ class FortigateFirewall:
 
     def delete_address(self, address: FortigateAddress) -> None:
         self.__delete("/api/v2/cmdb/firewall/address", address)
+
+    def get_address_groups(self) -> list[FortigateAddressGroup]:
+        return [
+            FortigateAddressGroup(**result)
+            for result in self.__get("/api/v2/cmdb/firewall/addrgrp")
+        ]
+
+    def create_address_group(self, group: FortigateAddressGroup) -> None:
+        self.__create("/api/v2/cmdb/firewall/addrgrp", group)
+
+    def update_address_group(self, group: FortigateAddressGroup) -> None:
+        self.__update("/api/v2/cmdb/firewall/addrgrp", group)
+
+    def delete_address_group(self, group: FortigateAddressGroup) -> None:
+        self.__delete("/api/v2/cmdb/firewall/addrgrp", group)
