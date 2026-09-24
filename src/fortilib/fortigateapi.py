@@ -212,6 +212,10 @@ class FortigateFirewallApi:
         """Get static routes via Fortigate API"""
         return self.fortigate.get_firewall_route_static()
 
+    def get_firewall_system_status(self):
+        """Get firewall system status via Fortigate API"""
+        return self.fortigate.get_firewall_system_status()
+
     def create_firewall_route_static(self, seq_num: str, route_object: dict):
         """Create static route via Fortigate API
 
@@ -629,6 +633,7 @@ class FortiGateApi:
         "api/v2/cmdb/firewall/proxy-addrgrp/"
     )
     ENDPOINT_FIREWALL_PROXY_POLICY = "api/v2/cmdb/firewall/proxy-policy/"
+    ENDPOINT_MONITOR_SYSTEM_STATUS = "api/v2/monitor/system/status/"
 
     def __init__(
         self,
@@ -797,6 +802,10 @@ class FortiGateApi:
 
         result = self.get(api_url, params)
         self.check_response_code(result)
+
+        if uri == self.ENDPOINT_MONITOR_SYSTEM_STATUS:
+            return result.json()
+
         return result.json()["results"]
 
     def query_api_create(
@@ -1241,4 +1250,9 @@ class FortiGateApi:
     def delete_firewall_phase2_interface(self, name: str):
         return self.query_api_delete(
             FortiGateApi.ENDPOINT_FIREWALL_PHASE2_INTERFACE, name
+        )
+
+    def get_firewall_system_status(self, specific=False, filters=False):
+        return self.query_api_get(
+            FortiGateApi.ENDPOINT_MONITOR_SYSTEM_STATUS, specific, filters
         )
