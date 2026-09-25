@@ -1,11 +1,12 @@
 # Changelog
 
-## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-07-24)
+## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-09-25)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.15...1.0.16)
 
 **Merged pull requests:**
 
+- feat: add system status and transceivers endpoints [\#252](https://github.com/telekom-mms/fortilib/pull/252) ([JulianMuehmelt](https://github.com/JulianMuehmelt))
 - Update dependency ruff to \>=0.16.0,\<0.17.0 [\#250](https://github.com/telekom-mms/fortilib/pull/250) ([renovate[bot]](https://github.com/apps/renovate))
 - Update dependency poethepoet to \>=0.48.0,\<0.49.0 [\#248](https://github.com/telekom-mms/fortilib/pull/248) ([renovate[bot]](https://github.com/apps/renovate))
 - Update dependency poethepoet to \>=0.47.0,\<0.48.0 [\#247](https://github.com/telekom-mms/fortilib/pull/247) ([renovate[bot]](https://github.com/apps/renovate))
