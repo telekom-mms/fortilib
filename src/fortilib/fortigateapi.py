@@ -216,6 +216,10 @@ class FortigateFirewallApi:
         """Get firewall system status via Fortigate API"""
         return self.fortigate.get_firewall_system_status()
 
+    def get_firewall_system_interface_transceivers(self):
+        """Get firewall system interface transceivers via Fortigate API"""
+        return self.fortigate.get_firewall_system_interface_transceivers()
+
     def create_firewall_route_static(self, seq_num: str, route_object: dict):
         """Create static route via Fortigate API
 
@@ -634,6 +638,7 @@ class FortiGateApi:
     )
     ENDPOINT_FIREWALL_PROXY_POLICY = "api/v2/cmdb/firewall/proxy-policy/"
     ENDPOINT_MONITOR_SYSTEM_STATUS = "api/v2/monitor/system/status/"
+    ENDPOINT_MONITOR_SYSTEM_INTERFACE_TRANSCEIVERS = "api/v2/monitor/system/interface/transceivers/"
 
     def __init__(
         self,
@@ -1255,4 +1260,9 @@ class FortiGateApi:
     def get_firewall_system_status(self, specific=False, filters=False):
         return self.query_api_get(
             FortiGateApi.ENDPOINT_MONITOR_SYSTEM_STATUS, specific, filters
+        )
+
+    def get_firewall_system_interface_transceivers(self, specific=False, filters=False):
+        return self.query_api_get(
+            FortiGateApi.ENDPOINT_MONITOR_SYSTEM_INTERFACE_TRANSCEIVERS, specific, filters
         )
