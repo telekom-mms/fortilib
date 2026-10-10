@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.17](https://github.com/telekom-mms/fortilib/tree/1.0.17) (2026-10-10)
+
+[Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.16...1.0.17)
+
+**Merged pull requests:**
+
+- Update dependency ruff to \>=0.17.0,\<0.18.0 [\#253](https://github.com/telekom-mms/fortilib/pull/253) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.0.16](https://github.com/telekom-mms/fortilib/tree/1.0.16) (2026-09-25)
 
 [Full Changelog](https://github.com/telekom-mms/fortilib/compare/1.0.15...1.0.16)
